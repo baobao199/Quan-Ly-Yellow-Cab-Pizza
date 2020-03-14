@@ -30,6 +30,7 @@ namespace Quản_Lý_Yellow_Cab_Pizza
             dgvNguyenLieu.DataSource = nguyenLieuModel.load_Data();
         }
         private void macDinh()
+            //đưa dữ liệu về trạng thái rổng
         {
             txtMaNL.Text = "";
             txtTenNL.Text = "";
@@ -41,7 +42,7 @@ namespace Quản_Lý_Yellow_Cab_Pizza
         }
 
         private void dgvNguyenLieu_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)
-        //hiện thị thông tin lên button khi nhấn vào item
+        //hiện thị thông tin lên textbox khi nhấn vào item trong datagirdview
         {
             i = dgvNguyenLieu.CurrentRow.Index;
             txtMaNL.Text = dgvNguyenLieu.Rows[i].Cells[0].Value.ToString();
@@ -64,7 +65,8 @@ namespace Quản_Lý_Yellow_Cab_Pizza
                 }
                 else if (t <= 5)
                 {
-                    lbTinhTrang.Text = "Cần nhập hàng ngay";
+                    lbTinhTrang.Text = "Nhập hàng ngay";
+                    MessageBox.Show("Nhập hàng ngay");
                 }
             }
             catch
