@@ -1,0 +1,47 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Data;
+using System.Data.SqlClient;
+
+namespace Quản_Lý_Yellow_Cab_Pizza.MVC_Model
+{
+    class xuly
+    {
+        public static SqlConnection con;
+        public static SqlCommand cmd;
+        public static DataTable dt;
+        public static SqlDataAdapter da;
+        public static string str = @"Data Source=localhost\SQLEXPRESS;Initial Catalog=QLYellowCabPizza;Integrated Security=True";
+
+        public static DataTable creatTable(string sql)
+        {
+            con = new SqlConnection(str);
+            con.Open();
+            da = new SqlDataAdapter(sql, con);
+            dt = new DataTable();
+            da.Fill(dt);
+            con.Close();
+            return dt;
+        }
+        public static int executeQuery(string sql)
+        {
+            int re = 0;
+            try
+            {
+                con = new SqlConnection(str);
+                con.Open();
+                cmd = new SqlCommand(sql, con);
+                re = cmd.ExecuteNonQuery();
+                con.Close();
+            }
+            catch
+            {
+
+            }
+            return re;
+        }
+    }
+}

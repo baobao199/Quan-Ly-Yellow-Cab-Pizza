@@ -8,10 +8,11 @@
     <OutputType>WinExe</OutputType>
     <RootNamespace>Quản_Lý_Yellow_Cab_Pizza</RootNamespace>
     <AssemblyName>Quản Lý Yellow Cab Pizza</AssemblyName>
-    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -46,96 +47,99 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="frm_LoaiNguyenLieu.cs">
+    <Compile Include="MVC_Control\nguyenlieu_Control.cs" />
+    <Compile Include="MVC_Model\nguyenlieu_Model.cs" />
+    <Compile Include="MVC_Model\xuly.cs" />
+    <Compile Include="MVC_View\frm_LoaiNguyenLieu.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frm_LoaiNguyenLieu.Designer.cs">
+    <Compile Include="MVC_View\frm_LoaiNguyenLieu.Designer.cs">
       <DependentUpon>frm_LoaiNguyenLieu.cs</DependentUpon>
     </Compile>
-    <Compile Include="frm_Main.cs">
+    <Compile Include="MVC_View\frm_Main.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frm_Main.Designer.cs">
+    <Compile Include="MVC_View\frm_Main.Designer.cs">
       <DependentUpon>frm_Main.cs</DependentUpon>
     </Compile>
-    <Compile Include="frm_NguyenLieu.cs">
+    <Compile Include="MVC_View\frm_NguyenLieu.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frm_NguyenLieu.Designer.cs">
+    <Compile Include="MVC_View\frm_NguyenLieu.Designer.cs">
       <DependentUpon>frm_NguyenLieu.cs</DependentUpon>
     </Compile>
-    <Compile Include="frm_NhaCungCap.cs">
+    <Compile Include="MVC_View\frm_NhaCungCap.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frm_NhaCungCap.Designer.cs">
+    <Compile Include="MVC_View\frm_NhaCungCap.Designer.cs">
       <DependentUpon>frm_NhaCungCap.cs</DependentUpon>
     </Compile>
-    <Compile Include="frm_NhanVien.cs">
+    <Compile Include="MVC_View\frm_NhanVien.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frm_NhanVien.Designer.cs">
+    <Compile Include="MVC_View\frm_NhanVien.Designer.cs">
       <DependentUpon>frm_NhanVien.cs</DependentUpon>
     </Compile>
-    <Compile Include="frm_NhapHang.cs">
+    <Compile Include="MVC_View\frm_NhapHang.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frm_NhapHang.Designer.cs">
+    <Compile Include="MVC_View\frm_NhapHang.Designer.cs">
       <DependentUpon>frm_NhapHang.cs</DependentUpon>
     </Compile>
-    <Compile Include="frm_ReportNhapHang.cs">
+    <Compile Include="MVC_View\frm_ReportNhapHang.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frm_ReportNhapHang.Designer.cs">
+    <Compile Include="MVC_View\frm_ReportNhapHang.Designer.cs">
       <DependentUpon>frm_ReportNhapHang.cs</DependentUpon>
     </Compile>
-    <Compile Include="frm_ReportXuatHang.cs">
+    <Compile Include="MVC_View\frm_ReportXuatHang.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frm_ReportXuatHang.Designer.cs">
+    <Compile Include="MVC_View\frm_ReportXuatHang.Designer.cs">
       <DependentUpon>frm_ReportXuatHang.cs</DependentUpon>
     </Compile>
-    <Compile Include="frm_TaiKhoan.cs">
+    <Compile Include="MVC_View\frm_TaiKhoan.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frm_TaiKhoan.Designer.cs">
+    <Compile Include="MVC_View\frm_TaiKhoan.Designer.cs">
       <DependentUpon>frm_TaiKhoan.cs</DependentUpon>
     </Compile>
-    <Compile Include="frm_XuatHang.cs">
+    <Compile Include="MVC_View\frm_XuatHang.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frm_XuatHang.Designer.cs">
+    <Compile Include="MVC_View\frm_XuatHang.Designer.cs">
       <DependentUpon>frm_XuatHang.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="frm_LoaiNguyenLieu.resx">
+    <EmbeddedResource Include="MVC_View\frm_LoaiNguyenLieu.resx">
       <DependentUpon>frm_LoaiNguyenLieu.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frm_Main.resx">
+    <EmbeddedResource Include="MVC_View\frm_Main.resx">
       <DependentUpon>frm_Main.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frm_NguyenLieu.resx">
+    <EmbeddedResource Include="MVC_View\frm_NguyenLieu.resx">
       <DependentUpon>frm_NguyenLieu.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frm_NhaCungCap.resx">
+    <EmbeddedResource Include="MVC_View\frm_NhaCungCap.resx">
       <DependentUpon>frm_NhaCungCap.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frm_NhanVien.resx">
+    <EmbeddedResource Include="MVC_View\frm_NhanVien.resx">
       <DependentUpon>frm_NhanVien.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frm_NhapHang.resx">
+    <EmbeddedResource Include="MVC_View\frm_NhapHang.resx">
       <DependentUpon>frm_NhapHang.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frm_ReportNhapHang.resx">
+    <EmbeddedResource Include="MVC_View\frm_ReportNhapHang.resx">
       <DependentUpon>frm_ReportNhapHang.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frm_ReportXuatHang.resx">
+    <EmbeddedResource Include="MVC_View\frm_ReportXuatHang.resx">
       <DependentUpon>frm_ReportXuatHang.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frm_TaiKhoan.resx">
+    <EmbeddedResource Include="MVC_View\frm_TaiKhoan.resx">
       <DependentUpon>frm_TaiKhoan.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frm_XuatHang.resx">
+    <EmbeddedResource Include="MVC_View\frm_XuatHang.resx">
       <DependentUpon>frm_XuatHang.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
@@ -193,6 +197,10 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\thong-ke.jpg" />
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <None Include="Resources\save.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
