@@ -30,6 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frm_LoaiNguyenLieu));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.btSave = new System.Windows.Forms.Button();
             this.txtTenLoaiNL = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.txtMaLoaiNL = new System.Windows.Forms.TextBox();
@@ -50,6 +51,7 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.btSave);
             this.groupBox1.Controls.Add(this.txtTenLoaiNL);
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.txtMaLoaiNL);
@@ -60,6 +62,24 @@
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Thông tin loại nguyên liệu";
+            // 
+            // btSave
+            // 
+            this.btSave.BackColor = System.Drawing.Color.White;
+            this.btSave.Cursor = System.Windows.Forms.Cursors.Default;
+            this.btSave.Enabled = false;
+            this.btSave.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btSave.Image = global::Quản_Lý_Yellow_Cab_Pizza.Properties.Resources.save;
+            this.btSave.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btSave.Location = new System.Drawing.Point(347, 102);
+            this.btSave.Margin = new System.Windows.Forms.Padding(6);
+            this.btSave.Name = "btSave";
+            this.btSave.Size = new System.Drawing.Size(71, 44);
+            this.btSave.TabIndex = 39;
+            this.btSave.Text = "Lưu";
+            this.btSave.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btSave.UseVisualStyleBackColor = false;
+            this.btSave.Click += new System.EventHandler(this.btSave_Click);
             // 
             // txtTenLoaiNL
             // 
@@ -127,6 +147,7 @@
             this.btXoa.Text = "Xóa";
             this.btXoa.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btXoa.UseVisualStyleBackColor = false;
+            this.btXoa.Click += new System.EventHandler(this.btXoa_Click);
             // 
             // btSua
             // 
@@ -143,6 +164,7 @@
             this.btSua.Text = "Sửa";
             this.btSua.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btSua.UseVisualStyleBackColor = false;
+            this.btSua.Click += new System.EventHandler(this.btSua_Click);
             // 
             // btThem
             // 
@@ -159,6 +181,7 @@
             this.btThem.Text = "Thêm";
             this.btThem.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btThem.UseVisualStyleBackColor = false;
+            this.btThem.Click += new System.EventHandler(this.btThem_Click);
             // 
             // groupBox2
             // 
@@ -177,6 +200,7 @@
             this.dgvLoaiNL.Name = "dgvLoaiNL";
             this.dgvLoaiNL.Size = new System.Drawing.Size(416, 214);
             this.dgvLoaiNL.TabIndex = 0;
+            this.dgvLoaiNL.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgvLoaiNL_CellMouseClick);
             // 
             // txtTimKiem
             // 
@@ -216,7 +240,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.ClientSize = new System.Drawing.Size(446, 518);
+            this.ClientSize = new System.Drawing.Size(441, 519);
             this.Controls.Add(this.btTimKiem);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.txtTimKiem);
@@ -227,9 +251,10 @@
             this.Controls.Add(this.btThem);
             this.Controls.Add(this.groupBox1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.MinimumSize = new System.Drawing.Size(462, 557);
+            this.MinimumSize = new System.Drawing.Size(457, 558);
             this.Name = "frm_LoaiNguyenLieu";
             this.Text = "Quản lý loại nguyên liệu";
+            this.Load += new System.EventHandler(this.frm_LoaiNguyenLieu_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);
@@ -251,9 +276,10 @@
         private System.Windows.Forms.Button btXoa;
         private System.Windows.Forms.Button btThoat;
         private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.DataGridView dgvLoaiNL;
         private System.Windows.Forms.TextBox txtTimKiem;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button btTimKiem;
+        private System.Windows.Forms.Button btSave;
+        private System.Windows.Forms.DataGridView dgvLoaiNL;
     }
 }
