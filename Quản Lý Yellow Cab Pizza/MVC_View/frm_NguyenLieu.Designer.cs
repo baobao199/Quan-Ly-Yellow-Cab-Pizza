@@ -75,7 +75,7 @@
             this.groupBox1.Controls.Add(this.dgvNguyenLieu);
             this.groupBox1.Location = new System.Drawing.Point(12, 197);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(1040, 332);
+            this.groupBox1.Size = new System.Drawing.Size(1462, 467);
             this.groupBox1.TabIndex = 11;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Danh sách nguyên liệu";
@@ -90,7 +90,7 @@
             this.dgvNguyenLieu.Location = new System.Drawing.Point(6, 19);
             this.dgvNguyenLieu.Name = "dgvNguyenLieu";
             this.dgvNguyenLieu.ReadOnly = true;
-            this.dgvNguyenLieu.Size = new System.Drawing.Size(1028, 307);
+            this.dgvNguyenLieu.Size = new System.Drawing.Size(1450, 442);
             this.dgvNguyenLieu.TabIndex = 0;
             this.dgvNguyenLieu.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgvNguyenLieu_CellMouseClick);
             // 
@@ -115,7 +115,7 @@
             this.groupBox2.Controls.Add(this.label4);
             this.groupBox2.Location = new System.Drawing.Point(12, 12);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(648, 179);
+            this.groupBox2.Size = new System.Drawing.Size(1070, 179);
             this.groupBox2.TabIndex = 12;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Thông tin nguyên liệu";
@@ -129,7 +129,7 @@
             this.btSave.Image = global::Quản_Lý_Yellow_Cab_Pizza.Properties.Resources.save;
             this.btSave.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btSave.Location = new System.Drawing.Point(568, 112);
-            this.btSave.Margin = new System.Windows.Forms.Padding(6);
+            this.btSave.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.btSave.Name = "btSave";
             this.btSave.Size = new System.Drawing.Size(71, 52);
             this.btSave.TabIndex = 38;
@@ -267,7 +267,7 @@
             this.groupBox3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.groupBox3.Controls.Add(this.button1);
             this.groupBox3.Controls.Add(this.textBox1);
-            this.groupBox3.Location = new System.Drawing.Point(1183, 19);
+            this.groupBox3.Location = new System.Drawing.Point(1605, 19);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.Size = new System.Drawing.Size(291, 109);
             this.groupBox3.TabIndex = 15;
@@ -282,7 +282,7 @@
             this.button1.Image = global::Quản_Lý_Yellow_Cab_Pizza.Properties.Resources.find;
             this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.button1.Location = new System.Drawing.Point(113, 54);
-            this.button1.Margin = new System.Windows.Forms.Padding(6);
+            this.button1.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(90, 34);
             this.button1.TabIndex = 16;
@@ -323,13 +323,14 @@
             this.btTimKiem.Image = global::Quản_Lý_Yellow_Cab_Pizza.Properties.Resources.find;
             this.btTimKiem.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btTimKiem.Location = new System.Drawing.Point(226, 29);
-            this.btTimKiem.Margin = new System.Windows.Forms.Padding(6);
+            this.btTimKiem.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.btTimKiem.Name = "btTimKiem";
             this.btTimKiem.Size = new System.Drawing.Size(90, 34);
             this.btTimKiem.TabIndex = 8;
             this.btTimKiem.Text = "Tìm kiếm";
             this.btTimKiem.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btTimKiem.UseVisualStyleBackColor = false;
+            this.btTimKiem.Click += new System.EventHandler(this.btTimKiem_Click);
             // 
             // btMacDinh
             // 
@@ -339,7 +340,7 @@
             this.btMacDinh.Image = global::Quản_Lý_Yellow_Cab_Pizza.Properties.Resources._default;
             this.btMacDinh.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btMacDinh.Location = new System.Drawing.Point(677, 116);
-            this.btMacDinh.Margin = new System.Windows.Forms.Padding(6);
+            this.btMacDinh.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.btMacDinh.Name = "btMacDinh";
             this.btMacDinh.Size = new System.Drawing.Size(90, 52);
             this.btMacDinh.TabIndex = 37;
@@ -356,7 +357,7 @@
             this.btThoat.Image = global::Quản_Lý_Yellow_Cab_Pizza.Properties.Resources.exit;
             this.btThoat.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btThoat.Location = new System.Drawing.Point(955, 116);
-            this.btThoat.Margin = new System.Windows.Forms.Padding(6);
+            this.btThoat.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.btThoat.Name = "btThoat";
             this.btThoat.Size = new System.Drawing.Size(90, 52);
             this.btThoat.TabIndex = 36;
@@ -373,7 +374,7 @@
             this.btXoa.Image = global::Quản_Lý_Yellow_Cab_Pizza.Properties.Resources.delete1;
             this.btXoa.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btXoa.Location = new System.Drawing.Point(862, 116);
-            this.btXoa.Margin = new System.Windows.Forms.Padding(6);
+            this.btXoa.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.btXoa.Name = "btXoa";
             this.btXoa.Size = new System.Drawing.Size(90, 52);
             this.btXoa.TabIndex = 35;
@@ -390,7 +391,7 @@
             this.btSua.Image = global::Quản_Lý_Yellow_Cab_Pizza.Properties.Resources.edit;
             this.btSua.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btSua.Location = new System.Drawing.Point(770, 116);
-            this.btSua.Margin = new System.Windows.Forms.Padding(6);
+            this.btSua.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.btSua.Name = "btSua";
             this.btSua.Size = new System.Drawing.Size(90, 52);
             this.btSua.TabIndex = 34;
@@ -407,8 +408,8 @@
             this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.button2.Image = global::Quản_Lý_Yellow_Cab_Pizza.Properties.Resources._default;
             this.button2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button2.Location = new System.Drawing.Point(1121, 134);
-            this.button2.Margin = new System.Windows.Forms.Padding(6);
+            this.button2.Location = new System.Drawing.Point(1543, 134);
+            this.button2.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(112, 54);
             this.button2.TabIndex = 16;
@@ -424,8 +425,8 @@
             this.btn_capnhat.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btn_capnhat.Image = global::Quản_Lý_Yellow_Cab_Pizza.Properties.Resources.update;
             this.btn_capnhat.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_capnhat.Location = new System.Drawing.Point(1242, 134);
-            this.btn_capnhat.Margin = new System.Windows.Forms.Padding(6);
+            this.btn_capnhat.Location = new System.Drawing.Point(1664, 134);
+            this.btn_capnhat.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.btn_capnhat.Name = "btn_capnhat";
             this.btn_capnhat.Size = new System.Drawing.Size(112, 54);
             this.btn_capnhat.TabIndex = 14;
@@ -441,8 +442,8 @@
             this.btn_xoa.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btn_xoa.Image = global::Quản_Lý_Yellow_Cab_Pizza.Properties.Resources.delete;
             this.btn_xoa.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_xoa.Location = new System.Drawing.Point(1362, 134);
-            this.btn_xoa.Margin = new System.Windows.Forms.Padding(6);
+            this.btn_xoa.Location = new System.Drawing.Point(1784, 134);
+            this.btn_xoa.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.btn_xoa.Name = "btn_xoa";
             this.btn_xoa.Size = new System.Drawing.Size(112, 54);
             this.btn_xoa.TabIndex = 13;

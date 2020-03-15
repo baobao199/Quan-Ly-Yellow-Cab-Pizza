@@ -71,7 +71,7 @@ namespace Quản_Lý_Yellow_Cab_Pizza
             }
             catch
             {
-
+ 
             }
         }
 
@@ -131,6 +131,18 @@ namespace Quản_Lý_Yellow_Cab_Pizza
                 }
                 frm_NguyenLieu_Load(sender, e);
                 macDinh();
+            }
+        }
+
+        private void btTimKiem_Click(object sender, EventArgs e)
+        {
+            if(txtTimKiem.Text == "")
+            {
+                MessageBox.Show("Bạn chưa nhập thông tin cần tìm");
+            }
+            else
+            {
+                dgvNguyenLieu.DataSource = nguyenLieuModel.timKiem_Load(txtTimKiem.Text.Trim());
             }
         }
     }

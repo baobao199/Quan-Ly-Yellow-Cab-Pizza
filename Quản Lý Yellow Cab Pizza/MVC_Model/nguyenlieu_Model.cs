@@ -38,5 +38,12 @@ namespace Quản_Lý_Yellow_Cab_Pizza.MVC_Model
             }
             return re;
         }
+        public DataTable timKiem_Load(string obj)
+        {
+            DataTable da;
+            string sql = "SELECT * FROM NguyenLieu WHERE MaNguyenLieu LIKE '"+obj+"' or TenNguyenLieu = '"+obj+"'";
+            da = xuly.creatTable(sql);
+            return da;
+        }
     }
 }
