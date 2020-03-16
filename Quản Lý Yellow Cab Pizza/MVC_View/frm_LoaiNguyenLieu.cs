@@ -129,17 +129,5 @@ namespace Quản_Lý_Yellow_Cab_Pizza
                 dgvLoaiNL.DataSource = loaiNguyenLieuModel.timKiem_Load(txtTimKiem.Text.Trim());
             }
         }
-
-        private void btktr_Click(object sender, EventArgs e)
-        {
-            if(loaiNguyenLieuControl.ktra(txtMaLoaiNL.Text))
-            {
-                MessageBox.Show("co");
-            }
-            else
-            {
-                MessageBox.Show("khong");
-            }
-        }
     }
 }

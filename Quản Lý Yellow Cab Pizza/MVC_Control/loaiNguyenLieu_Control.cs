@@ -22,9 +22,9 @@ namespace Quản_Lý_Yellow_Cab_Pizza.MVC_Control
         {
             return loaiNguyenLieuModel.sua_LoaiNguyenLieu(maLoaiNguyenLieu, tenLoaiNguyenLieu);
         }
-        public Boolean ktra(string obj)
-        {
-            return loaiNguyenLieuModel.check_Item(obj);
-        }
+        //public Boolean ktra(string obj)
+        //{
+        //    return loaiNguyenLieuModel.check_Item(obj);
+        //}
     }
 }
