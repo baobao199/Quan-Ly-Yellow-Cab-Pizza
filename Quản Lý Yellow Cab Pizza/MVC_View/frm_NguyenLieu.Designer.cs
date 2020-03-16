@@ -92,6 +92,7 @@
             this.dgvNguyenLieu.ReadOnly = true;
             this.dgvNguyenLieu.Size = new System.Drawing.Size(1450, 442);
             this.dgvNguyenLieu.TabIndex = 0;
+            this.dgvNguyenLieu.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvNguyenLieu_CellContentClick);
             this.dgvNguyenLieu.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgvNguyenLieu_CellMouseClick);
             // 
             // groupBox2

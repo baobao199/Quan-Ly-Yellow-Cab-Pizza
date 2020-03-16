@@ -30,9 +30,9 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frm_NhapHang));
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.txtSoLuong = new System.Windows.Forms.TextBox();
             this.btThoat = new System.Windows.Forms.Button();
             this.btXoa = new System.Windows.Forms.Button();
-            this.num_SoLuong = new System.Windows.Forms.NumericUpDown();
             this.txtGiaTien = new System.Windows.Forms.TextBox();
             this.txtLoaiNL = new System.Windows.Forms.TextBox();
             this.btSua = new System.Windows.Forms.Button();
@@ -49,10 +49,9 @@
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.dgvNguyenLieuNhap = new System.Windows.Forms.DataGridView();
             this.label6 = new System.Windows.Forms.Label();
-            this.txtSoHoaDon = new System.Windows.Forms.TextBox();
             this.btTaoHD = new System.Windows.Forms.Button();
+            this.txtSoHoaDon = new System.Windows.Forms.TextBox();
             this.groupBox2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.num_SoLuong)).BeginInit();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvNguyenLieuNhap)).BeginInit();
             this.SuspendLayout();
@@ -61,9 +60,9 @@
             // 
             this.groupBox2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.groupBox2.Controls.Add(this.txtSoLuong);
             this.groupBox2.Controls.Add(this.btThoat);
             this.groupBox2.Controls.Add(this.btXoa);
-            this.groupBox2.Controls.Add(this.num_SoLuong);
             this.groupBox2.Controls.Add(this.txtGiaTien);
             this.groupBox2.Controls.Add(this.txtLoaiNL);
             this.groupBox2.Controls.Add(this.btSua);
@@ -83,6 +82,13 @@
             this.groupBox2.TabIndex = 13;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Thông tin nguyên liệu";
+            // 
+            // txtSoLuong
+            // 
+            this.txtSoLuong.Location = new System.Drawing.Point(438, 58);
+            this.txtSoLuong.Name = "txtSoLuong";
+            this.txtSoLuong.Size = new System.Drawing.Size(164, 20);
+            this.txtSoLuong.TabIndex = 35;
             // 
             // btThoat
             // 
@@ -116,13 +122,6 @@
             this.btXoa.Text = "Xóa";
             this.btXoa.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btXoa.UseVisualStyleBackColor = false;
-            // 
-            // num_SoLuong
-            // 
-            this.num_SoLuong.Location = new System.Drawing.Point(438, 59);
-            this.num_SoLuong.Name = "num_SoLuong";
-            this.num_SoLuong.Size = new System.Drawing.Size(164, 20);
-            this.num_SoLuong.TabIndex = 26;
             // 
             // txtGiaTien
             // 
@@ -165,6 +164,7 @@
             // 
             this.btThem.BackColor = System.Drawing.Color.Gold;
             this.btThem.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btThem.Enabled = false;
             this.btThem.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btThem.Image = global::Quản_Lý_Yellow_Cab_Pizza.Properties.Resources.add;
             this.btThem.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -176,6 +176,7 @@
             this.btThem.Text = "Thêm";
             this.btThem.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btThem.UseVisualStyleBackColor = false;
+            this.btThem.Click += new System.EventHandler(this.btThem_Click);
             // 
             // txtTenNL
             // 
@@ -267,12 +268,14 @@
             // 
             // dgvNguyenLieuNhap
             // 
+            this.dgvNguyenLieuNhap.AllowUserToAddRows = false;
             this.dgvNguyenLieuNhap.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dgvNguyenLieuNhap.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvNguyenLieuNhap.Location = new System.Drawing.Point(6, 19);
             this.dgvNguyenLieuNhap.Name = "dgvNguyenLieuNhap";
+            this.dgvNguyenLieuNhap.ReadOnly = true;
             this.dgvNguyenLieuNhap.Size = new System.Drawing.Size(1028, 307);
             this.dgvNguyenLieuNhap.TabIndex = 0;
             // 
@@ -285,13 +288,6 @@
             this.label6.Size = new System.Drawing.Size(90, 13);
             this.label6.TabIndex = 20;
             this.label6.Text = "Số hóa đơn nhập";
-            // 
-            // txtSoHoaDon
-            // 
-            this.txtSoHoaDon.Location = new System.Drawing.Point(118, 26);
-            this.txtSoHoaDon.Name = "txtSoHoaDon";
-            this.txtSoHoaDon.Size = new System.Drawing.Size(116, 20);
-            this.txtSoHoaDon.TabIndex = 27;
             // 
             // btTaoHD
             // 
@@ -308,6 +304,14 @@
             this.btTaoHD.Text = "Tạo hóa đơn mới";
             this.btTaoHD.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btTaoHD.UseVisualStyleBackColor = false;
+            this.btTaoHD.Click += new System.EventHandler(this.btTaoHD_Click);
+            // 
+            // txtSoHoaDon
+            // 
+            this.txtSoHoaDon.Location = new System.Drawing.Point(114, 26);
+            this.txtSoHoaDon.Name = "txtSoHoaDon";
+            this.txtSoHoaDon.Size = new System.Drawing.Size(129, 20);
+            this.txtSoHoaDon.TabIndex = 36;
             // 
             // frm_NhapHang
             // 
@@ -315,8 +319,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.ClientSize = new System.Drawing.Size(1064, 541);
-            this.Controls.Add(this.btTaoHD);
             this.Controls.Add(this.txtSoHoaDon);
+            this.Controls.Add(this.btTaoHD);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.groupBox2);
@@ -324,9 +328,9 @@
             this.MinimumSize = new System.Drawing.Size(1080, 580);
             this.Name = "frm_NhapHang";
             this.Text = "Nhập hàng";
+            this.Load += new System.EventHandler(this.frm_NhapHang_Load);
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.num_SoLuong)).EndInit();
             this.groupBox1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvNguyenLieuNhap)).EndInit();
             this.ResumeLayout(false);
@@ -337,7 +341,6 @@
         #endregion
 
         private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.NumericUpDown num_SoLuong;
         private System.Windows.Forms.TextBox txtGiaTien;
         private System.Windows.Forms.TextBox txtLoaiNL;
         private System.Windows.Forms.TextBox txtNhaCC;
@@ -354,9 +357,10 @@
         private System.Windows.Forms.Button btSua;
         private System.Windows.Forms.Button btThem;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.TextBox txtSoHoaDon;
         private System.Windows.Forms.Button btTaoHD;
         private System.Windows.Forms.Button btXoa;
         private System.Windows.Forms.Button btThoat;
+        private System.Windows.Forms.TextBox txtSoLuong;
+        private System.Windows.Forms.TextBox txtSoHoaDon;
     }
 }

@@ -50,9 +50,11 @@
     <Compile Include="MVC_Control\loaiNguyenLieu_Control.cs" />
     <Compile Include="MVC_Control\nguyenlieu_Control.cs" />
     <Compile Include="MVC_Control\nhaCungCap_Control.cs" />
+    <Compile Include="MVC_Control\nhapHang_Control.cs" />
     <Compile Include="MVC_Model\loaiNguyenLieu_Model.cs" />
     <Compile Include="MVC_Model\nguyenlieu_Model.cs" />
     <Compile Include="MVC_Model\nhaCungCap_Model.cs" />
+    <Compile Include="MVC_Model\nhapHang_Model.cs" />
     <Compile Include="MVC_Model\xuly.cs" />
     <Compile Include="MVC_View\frm_LoaiNguyenLieu.cs">
       <SubType>Form</SubType>

@@ -53,15 +53,5 @@ namespace Quản_Lý_Yellow_Cab_Pizza.MVC_Model
             da = xuly.creatTable(sql);
             return da;
         }
-        public Boolean check_Item(string obj)
-        {
-            bool re = false;
-            string sql = "select count(MaLoaiNguyenLieu) from LoaiNguyenLieu where MaLoaiNguyenLieu = '" + obj + "'";
-            if (xuly.executeScalar(sql) > 0)
-            {
-                re = true;
-            }
-            return re;
-        }
     }
 }

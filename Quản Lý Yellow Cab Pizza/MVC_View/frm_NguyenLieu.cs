@@ -145,5 +145,10 @@ namespace Quản_Lý_Yellow_Cab_Pizza
                 dgvNguyenLieu.DataSource = nguyenLieuModel.timKiem_Load(txtTimKiem.Text.Trim());
             }
         }
+
+        private void dgvNguyenLieu_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }

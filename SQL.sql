@@ -28,3 +28,25 @@ create table NguyenLieu
 	foreign key (MaLoaiNguyenLieu) references LoaiNguyenLieu(MaLoaiNguyenLieu),
 	foreign key (MaNhaCungCap) references NhaCungCap(MaNhaCungCap)
 );
+select count(MaLoaiNguyenLieu) from LoaiNguyenLieu where MaLoaiNguyenLieu = 'H'
+
+SELECT *
+FROM LoaiNguyenLieu
+WHERE EXISTS (SELECT MaLoaiNguyenLieu FROM LoaiNguyenLieu WHERE MaLoaiNguyenLieu = 'H');
+
+--Nhap(MaNhaCungCap,  NgayNhap, NguoiNhap)
+create table NhapHang
+(
+	SoHoaDon  varchar(10) primary key,
+	MaNguyenLieu varchar(30),
+	TenNguyenLieu varchar(30),
+	LoaiNguyenLieu varchar(30),
+	MaNhaCungCap varchar(30),
+	NgayNhap date default getdate(),
+	GiaTien int,
+	SoLuong int,
+	foreign key (MaNhaCungCap) references NhaCungCap(MaNhaCungCap),
+	foreign key (MaNguyenLieu) references NguyenLieu(MaNguyenLieu),
+);
+select count(SoHoaDon) from NhapHang where SoHoaDon = 'h';
+insert into NhapHang(SoHoaDon,MaNguyenLieu,TenNguyenLieu,LoaiNguyenLieu,MaNhaCungCap,GiaTien,SoLuong) values('YLCNH6','H','" + tenNguyenLieu + ",'" + loaiNguyenLieu + "','" + maNhaCungCap + "','" + giaTien + "','" + SoLuong + "')";

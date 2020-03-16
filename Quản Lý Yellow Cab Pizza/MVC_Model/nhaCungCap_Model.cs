@@ -23,9 +23,9 @@ namespace Quản_Lý_Yellow_Cab_Pizza.MVC_Model
             string sql = "delete from NhaCungCap where MaNhaCungCap = '"+id+"'";
             if (xuly.executeQuery(sql) > 0)
             {
-                return true;
+                re = true;
             }
-            return false;
+            return re;
         }
         public Boolean them_NhaCungCap(string maNhaCungCap, string tenNhaCungCap, string diaChi, string eMail, string soDienThoai)
         {
