@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Quản_Lý_Yellow_Cab_Pizza.MVC_Model;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -7,6 +8,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Data;
+using System.Data.SqlClient;
+using Quản_Lý_Yellow_Cab_Pizza.MVC_Control;
 
 namespace Quản_Lý_Yellow_Cab_Pizza
 {
@@ -17,10 +21,118 @@ namespace Quản_Lý_Yellow_Cab_Pizza
             InitializeComponent();
         }
 
+        nhaCungCap_Model nhaCungCapModel = new nhaCungCap_Model();
+        nhaCungCap_Control nhaCungCapControl = new nhaCungCap_Control();
+        int i;
+
         private void btThoat_Click(object sender, EventArgs e)
         {
             this.Close();
             Dispose();
+        }
+
+        private void frm_NhaCungCap_Load(object sender, EventArgs e)
+        {
+            dgvDanhSachNCC.DataSource = nhaCungCapModel.load_Data();
+        }
+
+        private void dgvDanhSachNCC_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            i = dgvDanhSachNCC.CurrentRow.Index;
+            txtMaNCC.Text = dgvDanhSachNCC.Rows[i].Cells[0].Value.ToString();
+            txtTenNCC.Text = dgvDanhSachNCC.Rows[i].Cells[1].Value.ToString();
+            txtDiaChi.Text = dgvDanhSachNCC.Rows[i].Cells[2].Value.ToString();
+            txtEmail.Text = dgvDanhSachNCC.Rows[i].Cells[3].Value.ToString();
+            txtSDT.Text = dgvDanhSachNCC.Rows[i].Cells[4].Value.ToString();
+        }
+        private void macDinh()
+        {
+            txtMaNCC.Text = "";
+            txtTenNCC.Text = "";
+            txtSDT.Text = "";
+            txtEmail.Text = "";
+            txtDiaChi.Text = "";
+        }
+
+        private void btXoa_Click(object sender, EventArgs e)
+        {
+            DialogResult dr;
+            dr = MessageBox.Show("Bạn có chắc muốn xóa?", "Xóa", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+            if (dr == DialogResult.Yes)
+            {
+                string id = dgvDanhSachNCC.Rows[i].Cells[0].Value.ToString();
+                if (nhaCungCapControl.xoa_NhaCungCap(id))
+                {
+                    MessageBox.Show("Nguyên liệu đã được xóa");
+                }
+                else
+                {
+                    MessageBox.Show("Nguyên liệu chưa được xóa");
+                }
+                frm_NhaCungCap_Load(sender, e);
+                macDinh();
+            }
+        }
+
+        private void btThem_Click(object sender, EventArgs e)
+        {
+            if (txtMaNCC.Text == "" || txtTenNCC.Text == "" || txtDiaChi.Text == "" || txtEmail.Text == "" || txtSDT.Text == "")
+            {
+                MessageBox.Show("Nhập đầy đủ thông tin");
+            }
+            else
+            {
+                if (nhaCungCapControl.them_NhaCungCap(txtMaNCC.Text, txtTenNCC.Text, txtDiaChi.Text, txtEmail.Text, txtSDT.Text))
+                {
+                    MessageBox.Show("Nhà cung cấp đã được thêm");
+                }
+                else
+                {
+                    MessageBox.Show("Nhà cung cấp không được thêm");
+                }
+            }
+            frm_NhaCungCap_Load(sender, e);
+            macDinh();
+        }
+
+        private void btSua_Click(object sender, EventArgs e)
+        {
+            btSave.Enabled = true;
+        }
+
+        private void btSave_Click(object sender, EventArgs e)
+        {
+            if (txtMaNCC.Text == "" || txtTenNCC.Text == "" || txtDiaChi.Text == "" || txtEmail.Text == "" || txtSDT.Text == "")
+            {
+                MessageBox.Show("Vui lòng nhập đầy đủ thông tin");
+            }
+            else
+            {
+                if (nhaCungCapControl.sua_NhaCungCap(txtMaNCC.Text, txtTenNCC.Text, txtDiaChi.Text, txtEmail.Text, txtSDT.Text))
+                {
+                    MessageBox.Show("Nhà cung cấp đã được cập nhật");
+                    btSave.Enabled = false;
+                    frm_NhaCungCap_Load(sender, e);
+                    macDinh();
+                }
+                else
+                {
+                    MessageBox.Show("Nhà cung cấp chưa được cập nhật");
+                }
+            }
+        }
+
+        private void btTimKiem_Click(object sender, EventArgs e)
+        {
+            if (txtTimKiem.Text == "")
+            {
+                MessageBox.Show("Bạn chưa nhập thông tin cần tìm");
+            }
+            else
+            {
+                dgvDanhSachNCC.DataSource = nhaCungCapModel.timKiem_Load(txtTimKiem.Text.Trim());
+            }
+
         }
     }
 }

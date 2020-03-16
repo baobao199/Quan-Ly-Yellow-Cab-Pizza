@@ -44,6 +44,7 @@
             this.txtTimKiem = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.btTimKiem = new System.Windows.Forms.Button();
+            this.btktr = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvLoaiNL)).BeginInit();
@@ -51,6 +52,7 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.btktr);
             this.groupBox1.Controls.Add(this.btSave);
             this.groupBox1.Controls.Add(this.txtTenLoaiNL);
             this.groupBox1.Controls.Add(this.label2);
@@ -234,6 +236,17 @@
             this.btTimKiem.Text = "Tìm kiếm";
             this.btTimKiem.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btTimKiem.UseVisualStyleBackColor = false;
+            this.btTimKiem.Click += new System.EventHandler(this.btTimKiem_Click);
+            // 
+            // btktr
+            // 
+            this.btktr.Location = new System.Drawing.Point(227, 109);
+            this.btktr.Name = "btktr";
+            this.btktr.Size = new System.Drawing.Size(75, 23);
+            this.btktr.TabIndex = 40;
+            this.btktr.Text = "ktr";
+            this.btktr.UseVisualStyleBackColor = true;
+            this.btktr.Click += new System.EventHandler(this.btktr_Click);
             // 
             // frm_LoaiNguyenLieu
             // 
@@ -281,5 +294,6 @@
         private System.Windows.Forms.Button btTimKiem;
         private System.Windows.Forms.Button btSave;
         private System.Windows.Forms.DataGridView dgvLoaiNL;
+        private System.Windows.Forms.Button btktr;
     }
 }

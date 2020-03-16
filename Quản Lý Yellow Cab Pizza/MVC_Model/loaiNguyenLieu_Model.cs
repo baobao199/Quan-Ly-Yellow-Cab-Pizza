@@ -46,5 +46,22 @@ namespace Quản_Lý_Yellow_Cab_Pizza.MVC_Model
             }
             return re;
         }
+        public DataTable timKiem_Load(string obj)
+        {
+            DataTable da;
+            string sql = "SELECT * FROM LoaiNguyenLieu WHERE MaLoaiNguyenLieu LIKE '" + obj + "' or TenLoaiNguyenLieu = '" + obj + "'";
+            da = xuly.creatTable(sql);
+            return da;
+        }
+        public Boolean check_Item(string obj)
+        {
+            bool re = false;
+            string sql = "select count(MaLoaiNguyenLieu) from LoaiNguyenLieu where MaLoaiNguyenLieu = '" + obj + "'";
+            if (xuly.executeScalar(sql) > 0)
+            {
+                re = true;
+            }
+            return re;
+        }
     }
 }

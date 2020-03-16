@@ -43,5 +43,22 @@ namespace Quản_Lý_Yellow_Cab_Pizza.MVC_Model
             }
             return re;
         }
+        public static int executeScalar(string sql)
+        {
+            int re = 0;
+            try
+            {
+                con = new SqlConnection(str);
+                con.Open();
+                cmd = new SqlCommand(sql, con);
+                re = (Int32) cmd.ExecuteScalar();
+                con.Close();
+            }
+            catch
+            {
+
+            }
+            return re;
+        }
     }
 }

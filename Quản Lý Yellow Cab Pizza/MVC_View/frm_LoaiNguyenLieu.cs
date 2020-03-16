@@ -117,5 +117,29 @@ namespace Quản_Lý_Yellow_Cab_Pizza
                 }
             }
         }
+
+        private void btTimKiem_Click(object sender, EventArgs e)
+        {
+            if (txtTimKiem.Text == "")
+            {
+                MessageBox.Show("Bạn chưa nhập thông tin cần tìm");
+            }
+            else
+            {
+                dgvLoaiNL.DataSource = loaiNguyenLieuModel.timKiem_Load(txtTimKiem.Text.Trim());
+            }
+        }
+
+        private void btktr_Click(object sender, EventArgs e)
+        {
+            if(loaiNguyenLieuControl.ktra(txtMaLoaiNL.Text))
+            {
+                MessageBox.Show("co");
+            }
+            else
+            {
+                MessageBox.Show("khong");
+            }
+        }
     }
 }

@@ -30,6 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frm_NhaCungCap));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.btSave = new System.Windows.Forms.Button();
             this.txtEmail = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.txtSDT = new System.Windows.Forms.TextBox();
@@ -56,6 +57,7 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.btSave);
             this.groupBox1.Controls.Add(this.txtEmail);
             this.groupBox1.Controls.Add(this.label5);
             this.groupBox1.Controls.Add(this.txtSDT);
@@ -72,6 +74,24 @@
             this.groupBox1.TabIndex = 10;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Thông tin nhà cung cấp";
+            // 
+            // btSave
+            // 
+            this.btSave.BackColor = System.Drawing.Color.White;
+            this.btSave.Cursor = System.Windows.Forms.Cursors.Default;
+            this.btSave.Enabled = false;
+            this.btSave.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btSave.Image = global::Quản_Lý_Yellow_Cab_Pizza.Properties.Resources.save;
+            this.btSave.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btSave.Location = new System.Drawing.Point(486, 107);
+            this.btSave.Margin = new System.Windows.Forms.Padding(6);
+            this.btSave.Name = "btSave";
+            this.btSave.Size = new System.Drawing.Size(71, 44);
+            this.btSave.TabIndex = 40;
+            this.btSave.Text = "Lưu";
+            this.btSave.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btSave.UseVisualStyleBackColor = false;
+            this.btSave.Click += new System.EventHandler(this.btSave_Click);
             // 
             // txtEmail
             // 
@@ -192,6 +212,7 @@
             this.dgvDanhSachNCC.Name = "dgvDanhSachNCC";
             this.dgvDanhSachNCC.Size = new System.Drawing.Size(554, 221);
             this.dgvDanhSachNCC.TabIndex = 0;
+            this.dgvDanhSachNCC.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgvDanhSachNCC_CellMouseClick);
             // 
             // btTimKiem
             // 
@@ -208,6 +229,7 @@
             this.btTimKiem.Text = "Tìm kiếm";
             this.btTimKiem.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btTimKiem.UseVisualStyleBackColor = false;
+            this.btTimKiem.Click += new System.EventHandler(this.btTimKiem_Click);
             // 
             // btThoat
             // 
@@ -241,6 +263,7 @@
             this.btXoa.Text = "Xóa";
             this.btXoa.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btXoa.UseVisualStyleBackColor = false;
+            this.btXoa.Click += new System.EventHandler(this.btXoa_Click);
             // 
             // btSua
             // 
@@ -257,6 +280,7 @@
             this.btSua.Text = "Sửa";
             this.btSua.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btSua.UseVisualStyleBackColor = false;
+            this.btSua.Click += new System.EventHandler(this.btSua_Click);
             // 
             // btThem
             // 
@@ -273,6 +297,7 @@
             this.btThem.Text = "Thêm";
             this.btThem.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btThem.UseVisualStyleBackColor = false;
+            this.btThem.Click += new System.EventHandler(this.btThem_Click);
             // 
             // frm_NhaCungCap
             // 
@@ -293,6 +318,7 @@
             this.MinimumSize = new System.Drawing.Size(600, 580);
             this.Name = "frm_NhaCungCap";
             this.Text = "Quản lý nhà cung cấp";
+            this.Load += new System.EventHandler(this.frm_NhaCungCap_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);
@@ -324,5 +350,6 @@
         private System.Windows.Forms.TextBox txtTimKiem;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.DataGridView dgvDanhSachNCC;
+        private System.Windows.Forms.Button btSave;
     }
 }
