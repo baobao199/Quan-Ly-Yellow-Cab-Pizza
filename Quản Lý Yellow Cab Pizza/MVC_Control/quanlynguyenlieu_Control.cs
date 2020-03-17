@@ -7,17 +7,17 @@ using System.Threading.Tasks;
 
 namespace Quản_Lý_Yellow_Cab_Pizza.MVC_Control
 {
-    class nguyenlieu_Control
+    class quanlynguyenlieu_Control
     {
-        nguyenlieu_Model nguyenLieuModel = new nguyenlieu_Model();
+        quanlynguyenlieu_Model nguyenLieuModel = new quanlynguyenlieu_Model();
 
         public Boolean xoa_NguyenLieu(string id)
         {
             return nguyenLieuModel.xoa_NguyenLieu(id);
         }
-        public Boolean capNhat_NguyenLieu(String nguyenLieu, string maDanhMuc, string nhaCungCap, int soLuong, int giaTien)
+        public Boolean capNhat_NguyenLieu(String nguyenLieu, string maDanhMuc, string nhaCungCap, int soLuong)
         {
-            return nguyenLieuModel.capNhat_NguyenLieu(nguyenLieu, maDanhMuc,nhaCungCap,soLuong,giaTien);
+            return nguyenLieuModel.capNhat_NguyenLieu(nguyenLieu, maDanhMuc,nhaCungCap,soLuong);
         }
     }
 }

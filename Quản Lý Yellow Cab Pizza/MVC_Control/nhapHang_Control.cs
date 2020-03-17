@@ -14,9 +14,13 @@ namespace Quản_Lý_Yellow_Cab_Pizza.MVC_Control
         {
             return nhapHangModel.check_HoaDon(obj);
         }
-        public Boolean them_NhapNguyenLieu(string soHoaDon, string maNguyenLieu, string tenNguyenLieu, string maNhaCungCap, string loaiNguyenLieu,  int giaTien, int SoLuong)
+        public Boolean them_NhapNguyenLieu(string soHoaDon, string maNguyenLieu, string tenNguyenLieu, string maNhaCungCap, int giaTien, int SoLuong)
         {
-            return nhapHangModel.them_NhapNguyenLieu(soHoaDon,maNguyenLieu,tenNguyenLieu, loaiNguyenLieu, maNhaCungCap,  giaTien, SoLuong);
+            return nhapHangModel.them_NhapNguyenLieu( soHoaDon, maNguyenLieu, tenNguyenLieu,  maNhaCungCap, SoLuong,giaTien);
+        }
+        public Boolean them_HoaDon(string soHoaDon)
+        {
+            return nhapHangModel.them_HoaDon(soHoaDon);
         }
     }
 }

@@ -48,11 +48,11 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="MVC_Control\loaiNguyenLieu_Control.cs" />
-    <Compile Include="MVC_Control\nguyenlieu_Control.cs" />
+    <Compile Include="MVC_Control\quanlynguyenlieu_Control.cs" />
     <Compile Include="MVC_Control\nhaCungCap_Control.cs" />
     <Compile Include="MVC_Control\nhapHang_Control.cs" />
     <Compile Include="MVC_Model\loaiNguyenLieu_Model.cs" />
-    <Compile Include="MVC_Model\nguyenlieu_Model.cs" />
+    <Compile Include="MVC_Model\quanlynguyenlieu_Model.cs" />
     <Compile Include="MVC_Model\nhaCungCap_Model.cs" />
     <Compile Include="MVC_Model\nhapHang_Model.cs" />
     <Compile Include="MVC_Model\xuly.cs" />
@@ -68,11 +68,11 @@
     <Compile Include="MVC_View\frm_Main.Designer.cs">
       <DependentUpon>frm_Main.cs</DependentUpon>
     </Compile>
-    <Compile Include="MVC_View\frm_NguyenLieu.cs">
+    <Compile Include="MVC_View\frm_QuanLyNguyenLieu.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="MVC_View\frm_NguyenLieu.Designer.cs">
-      <DependentUpon>frm_NguyenLieu.cs</DependentUpon>
+    <Compile Include="MVC_View\frm_QuanLyNguyenLieu.Designer.cs">
+      <DependentUpon>frm_QuanLyNguyenLieu.cs</DependentUpon>
     </Compile>
     <Compile Include="MVC_View\frm_NhaCungCap.cs">
       <SubType>Form</SubType>
@@ -124,8 +124,8 @@
     <EmbeddedResource Include="MVC_View\frm_Main.resx">
       <DependentUpon>frm_Main.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="MVC_View\frm_NguyenLieu.resx">
-      <DependentUpon>frm_NguyenLieu.cs</DependentUpon>
+    <EmbeddedResource Include="MVC_View\frm_QuanLyNguyenLieu.resx">
+      <DependentUpon>frm_QuanLyNguyenLieu.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MVC_View\frm_NhaCungCap.resx">
       <DependentUpon>frm_NhaCungCap.cs</DependentUpon>
@@ -204,7 +204,9 @@
   <ItemGroup>
     <None Include="Resources\thong-ke.jpg" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <None Include="Resources\print.png" />
+  </ItemGroup>
   <ItemGroup>
     <None Include="Resources\save.png" />
   </ItemGroup>

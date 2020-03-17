@@ -6,6 +6,15 @@ create table LoaiNguyenLieu
 	TenLoaiNguyenLieu nvarchar(30) not null
 );
 
+--NguyenLieu(MaNguyenLieu, TenNguyenLieu)
+create table NguyenLieu
+(
+	MaNguyenLieu varchar(30) primary key,
+	TenNguyenLieu nvarchar(50),
+	MaLoaiNguyenLieu varchar(30),
+	foreign key (MaLoaiNguyenLieu) references LoaiNguyenLieu(MaLoaiNguyenLieu)
+);
+
 --NhaCungCap(MaNhaCungCap, TenNhaCungCap, DiaChi, Email, SoDienThoai)
 create table NhaCungCap
 (
@@ -16,39 +25,41 @@ create table NhaCungCap
 	SoDienThoai varchar(10) not null
 );
 
---NguyenLieu(MaNguyenLieu, TenNguyenLieu, MaDanhMuc, SoLuong, GiaTien, ChiTiet)
-create table NguyenLieu
+--QuanLyNguyenLieu(MaNguyenLieu, TenNguyenLieu, MaLoaiNguyenLieu, SoLuong, GiaTien)
+create table QuanLyNguyenLieu
 (
 	MaNguyenLieu varchar(30) not null primary key,
 	TenNguyenLieu nvarchar(50) not null,
 	MaLoaiNguyenLieu varchar(30) not null,
 	MaNhaCungCap varchar(30),
 	SoLuong int,
-	Giatien int not null,
+	foreign key (MaNguyenLieu) references NguyenLieu(MaNguyenLieu),
 	foreign key (MaLoaiNguyenLieu) references LoaiNguyenLieu(MaLoaiNguyenLieu),
 	foreign key (MaNhaCungCap) references NhaCungCap(MaNhaCungCap)
 );
-select count(MaLoaiNguyenLieu) from LoaiNguyenLieu where MaLoaiNguyenLieu = 'H'
-
-SELECT *
-FROM LoaiNguyenLieu
-WHERE EXISTS (SELECT MaLoaiNguyenLieu FROM LoaiNguyenLieu WHERE MaLoaiNguyenLieu = 'H');
 
 --Nhap(MaNhaCungCap,  NgayNhap, NguoiNhap)
 create table NhapHang
 (
-	SoHoaDon  varchar(10),
-	MaNguyenLieu varchar(30),
-	TenNguyenLieu varchar(30),
-	LoaiNguyenLieu varchar(30),
-	MaNhaCungCap varchar(30),
+	SoHoaDon  varchar(30) primary key,
 	NgayNhap date default getdate(),
-	GiaTien int,
-	SoLuong int,
-	foreign key (MaNhaCungCap) references NhaCungCap(MaNhaCungCap),
-	foreign key (MaNguyenLieu) references NguyenLieu(MaNguyenLieu),
 );
-select count(SoHoaDon) from NhapHang where SoHoaDon = 'h';
-select * from NhapHang ORDER BY SoHoaDon ASC;
 
-select MaNguyenLieu,TenNguyenLieu,LoaiNguyenLieu,MaNguyenLieu,GiaTien,SoLuong from NhapHang
+create table ChiTietNhapHang
+(
+	SoHoaDon varchar(30),
+	MaNguyenLieu varchar(30),
+	TenNguyenLieu nvarchar(50),
+	MaNhaCungCap varchar(30),
+	SoLuong int,
+	GiaTien int,
+	constraint pk_ctnh primary key(SoHoaDon,MaNguyenLieu),
+	foreign key (MaNguyenLieu) references NguyenLieu(MaNguyenLieu),
+	foreign key (MaNhaCungCap) references NhaCungCap(MaNhaCungCap),
+	foreign key (SoHoaDon) references NhapHang(SoHoaDon)
+);
+
+insert into NhapHang values ('YLCNH0001','03-17-2020')
+--them du lieu vao chi tiet nhap hang
+insert into ChiTietNhapHang values ('YLCNH0001','H','HAM','VIN',2,36000)
+insert into ChiTietNhapHang values ('YLCNH0001','GL','GRALIC','COOP',10,12000)

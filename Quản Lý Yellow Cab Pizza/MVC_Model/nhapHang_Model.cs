@@ -10,10 +10,17 @@ namespace Quản_Lý_Yellow_Cab_Pizza.MVC_Model
 {
     class nhapHang_Model
     {
-        public DataTable load_Data()
+        public DataTable load_NhapHang()
         {
             DataTable da;
             string sql = "select * from NhapHang ORDER BY SoHoaDon ASC";
+            da = xuly.creatTable(sql);
+            return da;
+        }
+        public DataTable load_ChiTietNhapHang()
+        {
+            DataTable da;
+            string sql = "select * from ChiTietNhapHang";
             da = xuly.creatTable(sql);
             return da;
         }
@@ -28,11 +35,21 @@ namespace Quản_Lý_Yellow_Cab_Pizza.MVC_Model
             }
             return re;
         }
-        public Boolean them_NhapNguyenLieu(string soHoaDon, string maNguyenLieu, string tenNguyenLieu, string maNhaCungCap, string loaiNguyenLieu, int giaTien, int SoLuong)
+        public Boolean them_NhapNguyenLieu(string soHoaDon, string maNguyenLieu, string tenNguyenLieu, string maNhaCungCap, int giaTien, int SoLuong)
         {
             bool re = false;
-            string sql = "insert into NhapHang(SoHoaDon,MaNguyenLieu,TenNguyenLieu,LoaiNguyenLieu,MaNhaCungCap,GiaTien,SoLuong) values('" + soHoaDon + "','" + maNguyenLieu + "','" + tenNguyenLieu + "','" + loaiNguyenLieu + "','" + maNhaCungCap + "','" + giaTien + "','" + SoLuong + "')";
+            string sql = "insert into ChiTietNhapHang values('"+soHoaDon+"','" + maNguyenLieu + "','" + tenNguyenLieu + "','" + maNhaCungCap + "','" + SoLuong + "','" + giaTien + "')";
             if (xuly.executeQuery(sql) > 0)
+            {
+                re = true;
+            }
+            return re;
+        }
+        public Boolean them_HoaDon(string soHoaDon)
+        {
+            bool re = false;
+            string sql = "insert into NhapHang(SoHoaDon) values ('" + soHoaDon + "')";
+            if(xuly.executeQuery(sql)>0)
             {
                 re = true;
             }

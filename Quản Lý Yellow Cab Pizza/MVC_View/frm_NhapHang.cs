@@ -19,10 +19,16 @@ namespace Quản_Lý_Yellow_Cab_Pizza
             InitializeComponent();
         }
 
-        int i;
+
         nhapHang_Control nhapHangControl = new nhapHang_Control();
         nhapHang_Model nhapHangModel = new nhapHang_Model();
 
+        private void frm_NhapHang_Load(object sender, EventArgs e)
+        {
+            dgvNguyenLieuNhap.DataSource = nhapHangModel.load_NhapHang();
+            dgvNguyenLieuNhap.DataSource = nhapHangModel.load_ChiTietNhapHang();
+
+        }
         private void btThoat_Click(object sender, EventArgs e)
         {
             this.Close();
@@ -33,12 +39,18 @@ namespace Quản_Lý_Yellow_Cab_Pizza
         private void btTaoHD_Click(object sender, EventArgs e)
         {
             btThem.Enabled = true;
-            string iD1 = dgvNguyenLieuNhap[0, dgvNguyenLieuNhap.RowCount - 1].Value.ToString();
-            int iD3 = int.Parse( iD1.Substring(5));
+            string iD1 = dgvNguyenLieuNhap[0, dgvNguyenLieuNhap.RowCount - 2].Value.ToString();
+            int iD3 = int.Parse(iD1.Substring(5));
 
-            txtSoHoaDon.Text = "YLCNH" + formatID(iD3+1);
-
-            
+            txtSoHoaDon.Text = "YLCNH" + formatID(iD3 + 1);
+            //if (nhapHangControl.them_HoaDon(txtSoHoaDon.Text))
+            //{
+            //    MessageBox.Show("Hóa đơn mới được tạo");
+            //}
+            //else
+            //{
+            //    MessageBox.Show("Hóa đơn không được tạo");
+            //}
         }
 
         private String formatID(int id)
@@ -65,19 +77,18 @@ namespace Quản_Lý_Yellow_Cab_Pizza
 
         private void btThem_Click(object sender, EventArgs e)
         {
-            //if (nhapHangControl.them_NhapNguyenLieu(txtSoHoaDon.Text, txtMaNL.Text, txtTenNL.Text, txtLoaiNL.Text, txtNhaCC.Text, Int32.Parse(txtGiaTien.Text), Int32.Parse(txtSoLuong.Text)))
+            btIn.Enabled = true;
+            btTaoHD.Enabled = false;
+            //if (nhapHangControl.them_NhapNguyenLieu(txtSoHoaDon.Text, txtMaNL.Text, txtTenNL.Text, txtNhaCC.Text, Int32.Parse(txtSoLuong.Text), Int32.Parse(txtGiaTien.Text)))
             //{
-            //    MessageBox.Show("NhapThanh Cong");
+            //    MessageBox.Show("Một sản phẩm đã được thêm");
             //}
             //else
             //{
-            //    MessageBox.Show("Nhap k Thanh Cong");
+            //    MessageBox.Show("Không thể thêm sản phẩm");
             //}
-            //frm_NhapHang_Load(sender, e);
-            //macDinh();
-            int indexRow = dgvNguyenLieuNhap.Rows.Count-1 ;
-            dgvNguyenLieuNhap[1, indexRow].Value = txtMaNL.Text;
-            dgvNguyenLieuNhap[2, indexRow].Value = txtTenNL.Text;
+            frm_NhapHang_Load(sender, e);
+            macDinh();
         }
 
 
@@ -90,12 +101,15 @@ namespace Quản_Lý_Yellow_Cab_Pizza
             txtLoaiNL.Text = "";
             txtSoLuong.Text = "";
             txtNhaCC.Text = "";
+            txtSoHoaDon.Text = "";
         }
 
-        private void frm_NhapHang_Load(object sender, EventArgs e)
+        private void btIn_Click(object sender, EventArgs e)
         {
-            dgvNguyenLieuNhap.DataSource = nhapHangModel.load_Data();
-            dgvNguyenLieuNhap.Columns[0].Visible = false;
+            btTaoHD.Enabled = true;
+            btThem.Enabled = false;
+            macDinh();
+
         }
     }
 }

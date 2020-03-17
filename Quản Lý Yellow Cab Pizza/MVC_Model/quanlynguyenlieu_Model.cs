@@ -8,12 +8,12 @@ using System.Data.SqlClient;
 
 namespace Quản_Lý_Yellow_Cab_Pizza.MVC_Model
 {
-    class nguyenlieu_Model
+    class quanlynguyenlieu_Model
     {
         public DataTable load_Data()
         {
             DataTable re;
-            string sql = "select * from NguyenLieu";
+            string sql = "select * from QuanLyNguyenLieu";
             re = xuly.creatTable(sql);
             return re;
    
@@ -21,17 +21,17 @@ namespace Quản_Lý_Yellow_Cab_Pizza.MVC_Model
         public Boolean xoa_NguyenLieu(string id)
         {
             bool re=false;
-            string sql = "delete  from NguyenLieu where MaNguyenLieu='"+id+"'";
+            string sql = "delete  from QuanLyNguyenLieu where MaNguyenLieu='" + id+"'";
             if (xuly.executeQuery(sql) > 0)
             {
                 re = true;
             }
             return re;
         }
-        public Boolean capNhat_NguyenLieu(String nguyenLieu, string maDanhMuc, string nhaCungCap, int soLuong, int giaTien)
+        public Boolean capNhat_NguyenLieu(String nguyenLieu, string maDanhMuc, string nhaCungCap, int soLuong)
         {
             bool re = false;
-            string sql = "update NguyenLieu set TenNguyenLieu ='"+nguyenLieu+"', MaDanhMuc = '"+maDanhMuc+"', NhaCungCap ='"+nhaCungCap+"', SoLuong='"+soLuong+"', GiaTien = '"+giaTien+"' ";
+            string sql = "update QuanLyNguyenLieu set TenNguyenLieu ='" + nguyenLieu+"', MaDanhMuc = '"+maDanhMuc+"', NhaCungCap ='"+nhaCungCap+"', SoLuong='"+soLuong+"'";
             if (xuly.executeQuery(sql) > 0)
             {
                 re = true;
@@ -41,7 +41,7 @@ namespace Quản_Lý_Yellow_Cab_Pizza.MVC_Model
         public DataTable timKiem_Load(string obj)
         {
             DataTable da;
-            string sql = "SELECT * FROM NguyenLieu WHERE MaNguyenLieu LIKE '"+obj+"' or TenNguyenLieu = '"+obj+"'";
+            string sql = "SELECT * FROM QuanLyNguyenLieu WHERE MaNguyenLieu LIKE '" + obj+"' or TenNguyenLieu = '"+obj+"'";
             da = xuly.creatTable(sql);
             return da;
         }

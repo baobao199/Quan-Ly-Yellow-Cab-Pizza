@@ -30,6 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frm_NhapHang));
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.btIn = new System.Windows.Forms.Button();
             this.txtSoLuong = new System.Windows.Forms.TextBox();
             this.btThoat = new System.Windows.Forms.Button();
             this.btXoa = new System.Windows.Forms.Button();
@@ -49,8 +50,8 @@
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.dgvNguyenLieuNhap = new System.Windows.Forms.DataGridView();
             this.label6 = new System.Windows.Forms.Label();
-            this.btTaoHD = new System.Windows.Forms.Button();
             this.txtSoHoaDon = new System.Windows.Forms.TextBox();
+            this.btTaoHD = new System.Windows.Forms.Button();
             this.groupBox2.SuspendLayout();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvNguyenLieuNhap)).BeginInit();
@@ -60,6 +61,7 @@
             // 
             this.groupBox2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.groupBox2.Controls.Add(this.btIn);
             this.groupBox2.Controls.Add(this.txtSoLuong);
             this.groupBox2.Controls.Add(this.btThoat);
             this.groupBox2.Controls.Add(this.btXoa);
@@ -82,6 +84,24 @@
             this.groupBox2.TabIndex = 13;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Thông tin nguyên liệu";
+            // 
+            // btIn
+            // 
+            this.btIn.BackColor = System.Drawing.Color.Gold;
+            this.btIn.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btIn.Enabled = false;
+            this.btIn.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btIn.Image = global::Quản_Lý_Yellow_Cab_Pizza.Properties.Resources.print;
+            this.btIn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btIn.Location = new System.Drawing.Point(682, 25);
+            this.btIn.Margin = new System.Windows.Forms.Padding(6);
+            this.btIn.Name = "btIn";
+            this.btIn.Size = new System.Drawing.Size(90, 52);
+            this.btIn.TabIndex = 36;
+            this.btIn.Text = "In";
+            this.btIn.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btIn.UseVisualStyleBackColor = false;
+            this.btIn.Click += new System.EventHandler(this.btIn_Click);
             // 
             // txtSoLuong
             // 
@@ -268,14 +288,12 @@
             // 
             // dgvNguyenLieuNhap
             // 
-            this.dgvNguyenLieuNhap.AllowUserToAddRows = false;
             this.dgvNguyenLieuNhap.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dgvNguyenLieuNhap.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvNguyenLieuNhap.Location = new System.Drawing.Point(6, 19);
             this.dgvNguyenLieuNhap.Name = "dgvNguyenLieuNhap";
-            this.dgvNguyenLieuNhap.ReadOnly = true;
             this.dgvNguyenLieuNhap.Size = new System.Drawing.Size(1028, 307);
             this.dgvNguyenLieuNhap.TabIndex = 0;
             // 
@@ -288,6 +306,13 @@
             this.label6.Size = new System.Drawing.Size(90, 13);
             this.label6.TabIndex = 20;
             this.label6.Text = "Số hóa đơn nhập";
+            // 
+            // txtSoHoaDon
+            // 
+            this.txtSoHoaDon.Location = new System.Drawing.Point(114, 26);
+            this.txtSoHoaDon.Name = "txtSoHoaDon";
+            this.txtSoHoaDon.Size = new System.Drawing.Size(129, 20);
+            this.txtSoHoaDon.TabIndex = 36;
             // 
             // btTaoHD
             // 
@@ -305,13 +330,6 @@
             this.btTaoHD.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btTaoHD.UseVisualStyleBackColor = false;
             this.btTaoHD.Click += new System.EventHandler(this.btTaoHD_Click);
-            // 
-            // txtSoHoaDon
-            // 
-            this.txtSoHoaDon.Location = new System.Drawing.Point(114, 26);
-            this.txtSoHoaDon.Name = "txtSoHoaDon";
-            this.txtSoHoaDon.Size = new System.Drawing.Size(129, 20);
-            this.txtSoHoaDon.TabIndex = 36;
             // 
             // frm_NhapHang
             // 
@@ -362,5 +380,6 @@
         private System.Windows.Forms.Button btThoat;
         private System.Windows.Forms.TextBox txtSoLuong;
         private System.Windows.Forms.TextBox txtSoHoaDon;
+        private System.Windows.Forms.Button btIn;
     }
 }

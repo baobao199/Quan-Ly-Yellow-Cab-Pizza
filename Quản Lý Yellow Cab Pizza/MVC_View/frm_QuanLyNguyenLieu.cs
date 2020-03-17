@@ -21,8 +21,8 @@ namespace Quản_Lý_Yellow_Cab_Pizza
 
         int i;
 
-        nguyenlieu_Model nguyenLieuModel = new nguyenlieu_Model();
-        nguyenlieu_Control nguyenlieuControl = new nguyenlieu_Control();
+        quanlynguyenlieu_Model nguyenLieuModel = new quanlynguyenlieu_Model();
+        quanlynguyenlieu_Control nguyenlieuControl = new quanlynguyenlieu_Control();
 
         private void frm_NguyenLieu_Load(object sender, EventArgs e)
             //load dữ liệu lên datagirdview
@@ -36,7 +36,6 @@ namespace Quản_Lý_Yellow_Cab_Pizza
             txtTenNL.Text = "";
             txtNhaCC.Text = "";
             txtLoaiNL.Text = "";
-            txtGiaTien.Text = "";
             txtSoLuong.Text = "";
             lbTinhTrang.Text = "";
         }
@@ -49,7 +48,6 @@ namespace Quản_Lý_Yellow_Cab_Pizza
             txtTenNL.Text = dgvNguyenLieu.Rows[i].Cells[1].Value.ToString();
             txtNhaCC.Text = dgvNguyenLieu.Rows[i].Cells[3].Value.ToString();
             txtLoaiNL.Text = dgvNguyenLieu.Rows[i].Cells[2].Value.ToString();
-            txtGiaTien.Text = dgvNguyenLieu.Rows[i].Cells[5].Value.ToString();
             txtSoLuong.Text = dgvNguyenLieu.Rows[i].Cells[4].Value.ToString();
             try
             {
@@ -87,13 +85,13 @@ namespace Quản_Lý_Yellow_Cab_Pizza
 
         private void btSave_Click(object sender, EventArgs e)
         {
-            if(txtTenNL.Text =="" ||txtMaNL.Text == "" || txtNhaCC.Text == "" || txtSoLuong.Text == "" || txtGiaTien.Text =="")
+            if(txtTenNL.Text =="" ||txtMaNL.Text == "" || txtNhaCC.Text == "" || txtSoLuong.Text == "")
             {
                 MessageBox.Show("Vui lòng nhập đầy đủ thông tin");
             }
             else
             {
-                if (nguyenlieuControl.capNhat_NguyenLieu(txtTenNL.Text, txtMaNL.Text, txtNhaCC.Text, Int32.Parse(txtSoLuong.Text), Int32.Parse(txtGiaTien.Text)))
+                if (nguyenlieuControl.capNhat_NguyenLieu(txtTenNL.Text, txtMaNL.Text, txtNhaCC.Text, Int32.Parse(txtSoLuong.Text)))
                 {
                     MessageBox.Show("Nguyên liệu đã được cập nhật");
                     btSave.Enabled = false;
