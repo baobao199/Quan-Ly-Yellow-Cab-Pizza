@@ -33,9 +33,34 @@ namespace Quản_Lý_Yellow_Cab_Pizza
         private void btTaoHD_Click(object sender, EventArgs e)
         {
             btThem.Enabled = true;
-            int t = Int32.Parse(dgvNguyenLieuNhap[0, dgvNguyenLieuNhap.RowCount - 2].Value.ToString().Substring(5)); //lấy giá trị cuối trong Data
-            txtSoHoaDon.Text = "YLCNH" +(t+1);
+            string iD1 = dgvNguyenLieuNhap[0, dgvNguyenLieuNhap.RowCount - 1].Value.ToString();
+            int iD3 = int.Parse( iD1.Substring(5));
 
+            txtSoHoaDon.Text = "YLCNH" + formatID(iD3+1);
+
+            
+        }
+
+        private String formatID(int id)
+        {
+            string re = "";
+            if(id < 10)
+            {
+                re = "000" + id.ToString();
+            }
+            else if(id < 100)
+            {
+                re = "00" + id.ToString();
+            }
+            else if(id < 1000)
+            {
+                re = "0" + id.ToString();
+            }
+            else
+            {
+                re =  id.ToString();
+            }
+            return re;
         }
 
         private void btThem_Click(object sender, EventArgs e)
@@ -50,7 +75,7 @@ namespace Quản_Lý_Yellow_Cab_Pizza
             //}
             //frm_NhapHang_Load(sender, e);
             //macDinh();
-            int indexRow = dgvNguyenLieuNhap.Rows.Count - 1;
+            int indexRow = dgvNguyenLieuNhap.Rows.Count-1 ;
             dgvNguyenLieuNhap[1, indexRow].Value = txtMaNL.Text;
             dgvNguyenLieuNhap[2, indexRow].Value = txtTenNL.Text;
         }
@@ -70,6 +95,7 @@ namespace Quản_Lý_Yellow_Cab_Pizza
         private void frm_NhapHang_Load(object sender, EventArgs e)
         {
             dgvNguyenLieuNhap.DataSource = nhapHangModel.load_Data();
+            dgvNguyenLieuNhap.Columns[0].Visible = false;
         }
     }
 }

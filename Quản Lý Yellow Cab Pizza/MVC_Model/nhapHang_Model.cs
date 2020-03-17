@@ -13,10 +13,11 @@ namespace Quản_Lý_Yellow_Cab_Pizza.MVC_Model
         public DataTable load_Data()
         {
             DataTable da;
-            string sql = "select * from NhapHang";
+            string sql = "select * from NhapHang ORDER BY SoHoaDon ASC";
             da = xuly.creatTable(sql);
             return da;
         }
+
         public Boolean check_HoaDon(string obj)
         {
             bool re = false;

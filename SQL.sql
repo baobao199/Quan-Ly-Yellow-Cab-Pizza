@@ -37,7 +37,7 @@ WHERE EXISTS (SELECT MaLoaiNguyenLieu FROM LoaiNguyenLieu WHERE MaLoaiNguyenLieu
 --Nhap(MaNhaCungCap,  NgayNhap, NguoiNhap)
 create table NhapHang
 (
-	SoHoaDon  varchar(10) primary key,
+	SoHoaDon  varchar(10),
 	MaNguyenLieu varchar(30),
 	TenNguyenLieu varchar(30),
 	LoaiNguyenLieu varchar(30),
@@ -49,4 +49,6 @@ create table NhapHang
 	foreign key (MaNguyenLieu) references NguyenLieu(MaNguyenLieu),
 );
 select count(SoHoaDon) from NhapHang where SoHoaDon = 'h';
-insert into NhapHang(SoHoaDon,MaNguyenLieu,TenNguyenLieu,LoaiNguyenLieu,MaNhaCungCap,GiaTien,SoLuong) values('YLCNH6','H','" + tenNguyenLieu + ",'" + loaiNguyenLieu + "','" + maNhaCungCap + "','" + giaTien + "','" + SoLuong + "')";
+select * from NhapHang ORDER BY SoHoaDon ASC;
+
+select MaNguyenLieu,TenNguyenLieu,LoaiNguyenLieu,MaNguyenLieu,GiaTien,SoLuong from NhapHang
