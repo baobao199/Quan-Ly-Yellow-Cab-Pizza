@@ -26,34 +26,42 @@ namespace Quản_Lý_Yellow_Cab_Pizza
         private void frm_NhapHang_Load(object sender, EventArgs e)
         {
             dgvNguyenLieuNhap.DataSource = nhapHangModel.load_ChiTietNhapHang();
-
+            dgvNguyenLieuNhap.Columns["SoHoaDon"].Visible = false;
         }
         private void btThoat_Click(object sender, EventArgs e)
         {
+            nhapHangControl.xoa_ChiTietNguyenLieu(txtSoHoaDon.Text);
             this.Close();
             Dispose();
-
         }
 
         private void btTaoHD_Click(object sender, EventArgs e)
         {
             btThem.Enabled = true;
+            txtMaNL.Focus();
             DataTable dt = nhapHangModel.load_NhapHang();
 
-            string iD1 = dt.Rows[0][0].ToString();
-            int iD3 = int.Parse(iD1.Substring(5));
 
-            
-
-            txtSoHoaDon.Text = "YLCNH" + formatID(iD3 + 1);
-            if (nhapHangControl.them_HoaDon(txtSoHoaDon.Text))
+            if (dt.Rows.Count > 0)
             {
-                MessageBox.Show("Hóa đơn mới được tạo");
-                btTaoHD.Enabled = false;
+                string iD1 = dt.Rows[0][0].ToString();
+                int iD3 = int.Parse(iD1.Substring(5));
+                txtSoHoaDon.Text = "YLCNH" + formatID(iD3 + 1);
+                if (nhapHangControl.them_HoaDon(txtSoHoaDon.Text))
+                {
+                    MessageBox.Show("Hóa đơn mới được tạo");
+                    btTaoHD.Enabled = false;
+                }
+                else
+                {
+                    MessageBox.Show("Hóa đơn không được tạo");
+                }
             }
             else
             {
-                MessageBox.Show("Hóa đơn không được tạo");
+                txtSoHoaDon.Text = "YLCNH0001";
+                nhapHangControl.them_HoaDon(txtSoHoaDon.Text);
+                MessageBox.Show("Hóa đơn mới được tạo");
             }
         }
 
@@ -82,21 +90,34 @@ namespace Quản_Lý_Yellow_Cab_Pizza
         private void btThem_Click(object sender, EventArgs e)
         {
             btIn.Enabled = true;
+            btSua.Enabled = true;
+            btXoa.Enabled = true;
             btTaoHD.Enabled = false;
-            DateTime ngayNhap = DateTime.Now;
-            if (nhapHangControl.them_BaoCaoNhapHang(txtSoHoaDon.Text, txtMaNL.Text, txtTenNL.Text, txtNhaCC.Text, ngayNhap ,Int32.Parse(txtSoLuong.Text), Int32.Parse(txtGiaTien.Text)))
-            {
 
-                nhapHangControl.them_NhapNguyenLieu(txtSoHoaDon.Text, txtMaNL.Text, txtTenNL.Text, txtNhaCC.Text, Int32.Parse(txtSoLuong.Text), Int32.Parse(txtGiaTien.Text));
-                MessageBox.Show("Một sản phẩm đã được thêm");
-                txtMaNL.Focus();
-            }
-            else
+            txtMaNL.Enabled = true;
+            try
             {
-                MessageBox.Show("Không thể thêm sản phẩm");
+                DateTime ngayNhap = DateTime.Now;
+                if (nhapHangControl.them_BaoCaoNhapHang(txtSoHoaDon.Text, txtMaNL.Text, txtTenNL.Text, txtNhaCC.Text, ngayNhap, Int32.Parse(txtSoLuong.Text), Int32.Parse(txtGiaTien.Text)))
+                {
+
+                    nhapHangControl.them_NhapNguyenLieu(txtSoHoaDon.Text, txtMaNL.Text, txtTenNL.Text, txtNhaCC.Text, Int32.Parse(txtSoLuong.Text), Int32.Parse(txtGiaTien.Text));
+                    MessageBox.Show("Một sản phẩm đã được thêm");
+                    txtMaNL.Focus();
+                }
+                else
+                {
+                    MessageBox.Show("Không thể thêm sản phẩm");
+                }
+                frm_NhapHang_Load(sender, e);
+                macDinh();
             }
-            frm_NhapHang_Load(sender, e);
-            macDinh();
+            catch
+            {
+                MessageBox.Show("Lỗi rồi ~~");
+                macDinh();
+            }
+           
         }
 
 
@@ -114,6 +135,8 @@ namespace Quản_Lý_Yellow_Cab_Pizza
         {
             btTaoHD.Enabled = true;
             btThem.Enabled = false;
+            btSua.Enabled = false;
+            btXoa.Enabled = false;
             macDinh();
             if (nhapHangControl.xoa_ChiTietNguyenLieu(txtSoHoaDon.Text))
             {
@@ -131,13 +154,53 @@ namespace Quản_Lý_Yellow_Cab_Pizza
         private void dgvNguyenLieuNhap_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)
         {
             int i;
+            txtMaNL.Enabled = false;
             i = dgvNguyenLieuNhap.CurrentRow.Index;
-
+   
+            txtSoHoaDon.Text = dgvNguyenLieuNhap.Rows[i].Cells[0].Value.ToString();
             txtMaNL.Text = dgvNguyenLieuNhap.Rows[i].Cells[1].Value.ToString();
             txtTenNL.Text = dgvNguyenLieuNhap.Rows[i].Cells[2].Value.ToString();
             txtNhaCC.Text = dgvNguyenLieuNhap.Rows[i].Cells[3].Value.ToString();
             txtSoLuong.Text = dgvNguyenLieuNhap.Rows[i].Cells[4].Value.ToString();
             txtGiaTien.Text = dgvNguyenLieuNhap.Rows[i].Cells[5].Value.ToString();
+        }
+
+        private void btSua_Click(object sender, EventArgs e)
+        {
+            if(txtMaNL.Text == "" || txtTenNL.Text == "" || txtNhaCC.Text == "" || txtSoLuong.Text == "" || txtGiaTien.Text == "")
+            {
+                MessageBox.Show("Vui lòng nhập đầy đủ thông tin");
+            }
+            else
+            {
+                if(nhapHangControl.sua_ChiTietNhapHang(txtSoHoaDon.Text, txtMaNL.Text, txtTenNL.Text, txtNhaCC.Text, Int32.Parse(txtSoLuong.Text), Int32.Parse(txtGiaTien.Text)))
+                {
+                    
+                    nhapHangControl.sua_BaoCaoNhapHang(txtSoHoaDon.Text, txtMaNL.Text, txtTenNL.Text, txtNhaCC.Text, Int32.Parse(txtSoLuong.Text), Int32.Parse(txtGiaTien.Text));
+                    MessageBox.Show("Nguyên liệu đã được cập nhật");
+                }
+                else
+                {
+                    MessageBox.Show("Nguyên liệu không được cập nhật");
+                }
+            }
+            frm_NhapHang_Load(sender, e);
+        }
+
+        private void btXoa_Click(object sender, EventArgs e)
+        {
+            if (nhapHangControl.xoa_ChiTietNhapHang(txtSoHoaDon.Text,txtMaNL.Text))
+            {
+
+                nhapHangControl.xoa_BaoCaoNhapHang(txtSoHoaDon.Text, txtMaNL.Text);
+                MessageBox.Show("Nguyên liệu đã được xóa");
+                macDinh();
+            }
+            else
+            {
+                MessageBox.Show("Nguyên liệu không xóa được");
+            }
+            frm_NhapHang_Load(sender, e);
         }
     }
 }

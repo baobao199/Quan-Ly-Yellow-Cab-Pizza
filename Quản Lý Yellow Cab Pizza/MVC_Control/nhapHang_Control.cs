@@ -30,5 +30,21 @@ namespace Quản_Lý_Yellow_Cab_Pizza.MVC_Control
         {
             return nhapHangModel.them_BaoCaoNhapHang(soHoaDon, maNguyenLieu, tenNguyenLieu,  maNhaCungCap, ngayNhap ,SoLuong, giaTien);
         }
+        public Boolean sua_BaoCaoNhapHang(string maHoaDon, string maNguyenLieu, string tenNguyenLieu, string maNhaCungCap,int SoLuong, int giaTien)
+        {
+            return nhapHangModel.sua_BaoCaoNhapHang(maHoaDon ,maNguyenLieu, tenNguyenLieu, maNhaCungCap, SoLuong, giaTien);
+        }
+        public Boolean sua_ChiTietNhapHang(string soHoaDon, string maNguyenLieu, string tenNguyenLieu, string maNhaCungCap, int SoLuong, int giaTien)
+        {
+            return nhapHangModel.sua_ChiTietNhapHang(soHoaDon, maNguyenLieu, tenNguyenLieu, maNhaCungCap, SoLuong, giaTien);
+        }
+        public Boolean xoa_ChiTietNhapHang(string soHoaDon, string maNguyenLieu)
+        {
+            return nhapHangModel.xoa_ChiTietNhapHang(soHoaDon, maNguyenLieu);
+        }
+        public Boolean xoa_BaoCaoNhapHang(string soHoaDon, string maNguyenLieu)
+        {
+            return nhapHangModel.xoa_BaoCaoNhapHang(soHoaDon, maNguyenLieu);
+        }
     }
 }

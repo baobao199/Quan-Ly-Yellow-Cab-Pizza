@@ -38,7 +38,7 @@ namespace Quản_Lý_Yellow_Cab_Pizza.MVC_Model
         public Boolean them_NhapNguyenLieu(string soHoaDon, string maNguyenLieu, string tenNguyenLieu, string maNhaCungCap, int giaTien, int SoLuong)
         {
             bool re = false;
-            string sql = "insert into ChiTietNhapHang values('"+soHoaDon+"','" + maNguyenLieu + "','" + tenNguyenLieu + "','" + maNhaCungCap + "','" + SoLuong + "','" + giaTien + "')";
+            string sql = "insert into ChiTietNhapHang values('" + soHoaDon + "','" + maNguyenLieu + "','" + tenNguyenLieu + "','" + maNhaCungCap + "','" + SoLuong + "','" + giaTien + "')";
             if (xuly.executeQuery(sql) > 0)
             {
                 re = true;
@@ -49,7 +49,7 @@ namespace Quản_Lý_Yellow_Cab_Pizza.MVC_Model
         {
             bool re = false;
             string sql = "insert into NhapHang(SoHoaDon) values ('" + soHoaDon + "')";
-            if(xuly.executeQuery(sql)>0)
+            if (xuly.executeQuery(sql) > 0)
             {
                 re = true;
             }
@@ -58,32 +58,65 @@ namespace Quản_Lý_Yellow_Cab_Pizza.MVC_Model
         public Boolean xoa_ChiTietNguyenLieu(string soHoaDon)
         {
             bool re = false;
-            string sql = "delete ChiTietNhapHang where SoHoaDon = '"+soHoaDon+"' ";
+            string sql = "delete ChiTietNhapHang where SoHoaDon = '" + soHoaDon + "' ";
             if (xuly.executeQuery(sql) > 0)
             {
                 re = true;
             }
             return re;
         }
-        public Boolean them_BaoCaoNhapHang(string soHoaDon, string maNguyenLieu, string tenNguyenLieu, string maNhaCungCap,DateTime ngayNhap, int SoLuong, int giaTien)
+        public Boolean them_BaoCaoNhapHang(string soHoaDon, string maNguyenLieu, string tenNguyenLieu, string maNhaCungCap, DateTime ngayNhap, int soLuong, int giaTien)
         {
             bool re = false;
-            string sql = "insert into BaoCaoNhapHang values('" + soHoaDon + "','" + maNguyenLieu + "','" + tenNguyenLieu + "','" + maNhaCungCap + "','"+ngayNhap+"','" + SoLuong + "','" + giaTien + "')";
+            string sql = "insert into BaoCaoNhapHang values('" + soHoaDon + "','" + maNguyenLieu + "','" + tenNguyenLieu + "','" + maNhaCungCap + "','" + ngayNhap + "','" + soLuong + "','" + giaTien + "')";
             if (xuly.executeQuery(sql) > 0)
             {
                 re = true;
             }
             return re;
         }
-        //public Boolean sua_BaoCaoNhapHang(string soHoaDon, string maNguyenLieu, string tenNguyenLieu, string maNhaCungCap, DateTime ngayNhap, int SoLuong, int giaTien)
-        //{
-        //    bool re = false;
-        //    string sql = "insert into BaoCaoNhapHang values('" + soHoaDon + "','" + maNguyenLieu + "','" + tenNguyenLieu + "','" + maNhaCungCap + "','" + ngayNhap + "','" + SoLuong + "','" + giaTien + "')";
-        //    if (xuly.executeQuery(sql) > 0)
-        //    {
-        //        re = true;
-        //    }
-        //    return re;
+        public Boolean sua_BaoCaoNhapHang(string soHoaDon, string maNguyenLieu, string tenNguyenLieu, string maNhaCungCap, int soLuong, int giaTien)
+        {
+            bool re = false;
+            string sql = "update BaoCaoNhapHang set MaNguyenLieu ='"+maNguyenLieu+"', TenNguyenLieu = '"+tenNguyenLieu+"', MaNhaCungCap ='"+maNhaCungCap+"', SoLuong='"+soLuong+"', GiaTien = '"+giaTien+"' where SoHoaDon = '"+soHoaDon+"' and MaNguyenLieu = '"+maNguyenLieu+"'";
+            if (xuly.executeQuery(sql) > 0)
+            {
+                re = true;
+            }
+            return re;
+        }
+
+        public Boolean sua_ChiTietNhapHang(string soHoaDon, string maNguyenLieu, string tenNguyenLieu, string maNhaCungCap, int soLuong, int giaTien)
+        {
+            bool re = false;
+            string sql = "update ChiTietNhapHang set MaNguyenLieu ='" + maNguyenLieu + "', TenNguyenLieu = '" + tenNguyenLieu + "', MaNhaCungCap ='" + maNhaCungCap + "', SoLuong='" + soLuong + "', GiaTien = '" + giaTien + "' where SoHoaDon = '" + soHoaDon + "' and MaNguyenLieu = '" + maNguyenLieu + "'";
+            if (xuly.executeQuery(sql) > 0)
+            {
+                re = true;
+            }
+            return re;
+        }
+
+        public Boolean xoa_ChiTietNhapHang(string soHoaDon, string maNguyenLieu)
+        {
+            bool re = false;
+            string sql = "delete ChiTietNhapHang where SoHoaDon ='"+soHoaDon+"' and MaNguyenLieu = '" + maNguyenLieu + "'";
+            if (xuly.executeQuery(sql) > 0)
+            {
+                re = true;
+            }
+            return re;
+        }
+
+        public Boolean xoa_BaoCaoNhapHang(string soHoaDon, string maNguyenLieu)
+        {
+            bool re = false;
+            string sql = "delete BaoCaoNhapHang where SoHoaDon = '" + soHoaDon + "' and MaNguyenLieu = '" + maNguyenLieu + "'";
+            if (xuly.executeQuery(sql) > 0)
+            {
+                re = true;
+            }
+            return re;
         }
     }
 }

@@ -79,8 +79,12 @@ insert into NhapHang values ('YLCNH0001','03-17-2020')
 insert into ChiTietNhapHang values ('YLCNH0001','H','HAM','VIN',2,36000)
 insert into ChiTietNhapHang values ('YLCNH0001','GL','GRALIC','COOP',10,12000)
 
+insert into BaoCaoNhapHang values ('YLCNH0001','H','HAM','VIN','',2,36000)
+
 delete ChiTietNhapHang where SoHoaDon = 'YLCNH0002';
 delete NhapHang where SoHoaDon = 'YLCNH0004';
 delete BaoCaoNhapHang where SoHoaDon = 'YLCNH0002';
+
+update ChiTietNhapHang set MaNguyenLieu ='gl', TenNguyenLieu = 'gralic', MaNhaCungCap ='vin', SoLuong= 1, GiaTien = 5 where SoHoaDon = 'YLCNH0002' and MaNguyenLieu = 'gl'
 
 insert into BaoCaoNhapHang values ('YLCNH0001','GL','GRALIC','COOP','',10,12000)

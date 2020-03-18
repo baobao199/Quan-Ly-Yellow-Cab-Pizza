@@ -127,6 +127,7 @@
             // 
             this.btXoa.BackColor = System.Drawing.Color.Gold;
             this.btXoa.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btXoa.Enabled = false;
             this.btXoa.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btXoa.Image = global::Quản_Lý_Yellow_Cab_Pizza.Properties.Resources.delete1;
             this.btXoa.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -138,6 +139,7 @@
             this.btXoa.Text = "Xóa";
             this.btXoa.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btXoa.UseVisualStyleBackColor = false;
+            this.btXoa.Click += new System.EventHandler(this.btXoa_Click);
             // 
             // txtGiaTien
             // 
@@ -150,6 +152,7 @@
             // 
             this.btSua.BackColor = System.Drawing.Color.Gold;
             this.btSua.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btSua.Enabled = false;
             this.btSua.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btSua.Image = global::Quản_Lý_Yellow_Cab_Pizza.Properties.Resources.edit;
             this.btSua.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -161,6 +164,7 @@
             this.btSua.Text = "Sửa";
             this.btSua.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btSua.UseVisualStyleBackColor = false;
+            this.btSua.Click += new System.EventHandler(this.btSua_Click);
             // 
             // txtNhaCC
             // 
