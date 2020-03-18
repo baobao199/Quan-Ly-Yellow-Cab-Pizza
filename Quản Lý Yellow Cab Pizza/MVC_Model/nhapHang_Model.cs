@@ -13,7 +13,7 @@ namespace Quản_Lý_Yellow_Cab_Pizza.MVC_Model
         public DataTable load_NhapHang()
         {
             DataTable da;
-            string sql = "select * from NhapHang ORDER BY SoHoaDon ASC";
+            string sql = "select * from NhapHang ORDER BY SoHoaDon  DESC";
             da = xuly.creatTable(sql);
             return da;
         }
@@ -54,6 +54,36 @@ namespace Quản_Lý_Yellow_Cab_Pizza.MVC_Model
                 re = true;
             }
             return re;
+        }
+        public Boolean xoa_ChiTietNguyenLieu(string soHoaDon)
+        {
+            bool re = false;
+            string sql = "delete ChiTietNhapHang where SoHoaDon = '"+soHoaDon+"' ";
+            if (xuly.executeQuery(sql) > 0)
+            {
+                re = true;
+            }
+            return re;
+        }
+        public Boolean them_BaoCaoNhapHang(string soHoaDon, string maNguyenLieu, string tenNguyenLieu, string maNhaCungCap,DateTime ngayNhap, int SoLuong, int giaTien)
+        {
+            bool re = false;
+            string sql = "insert into BaoCaoNhapHang values('" + soHoaDon + "','" + maNguyenLieu + "','" + tenNguyenLieu + "','" + maNhaCungCap + "','"+ngayNhap+"','" + SoLuong + "','" + giaTien + "')";
+            if (xuly.executeQuery(sql) > 0)
+            {
+                re = true;
+            }
+            return re;
+        }
+        //public Boolean sua_BaoCaoNhapHang(string soHoaDon, string maNguyenLieu, string tenNguyenLieu, string maNhaCungCap, DateTime ngayNhap, int SoLuong, int giaTien)
+        //{
+        //    bool re = false;
+        //    string sql = "insert into BaoCaoNhapHang values('" + soHoaDon + "','" + maNguyenLieu + "','" + tenNguyenLieu + "','" + maNhaCungCap + "','" + ngayNhap + "','" + SoLuong + "','" + giaTien + "')";
+        //    if (xuly.executeQuery(sql) > 0)
+        //    {
+        //        re = true;
+        //    }
+        //    return re;
         }
     }
 }

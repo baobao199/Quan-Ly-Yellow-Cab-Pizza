@@ -25,7 +25,6 @@ namespace Quản_Lý_Yellow_Cab_Pizza
 
         private void frm_NhapHang_Load(object sender, EventArgs e)
         {
-            dgvNguyenLieuNhap.DataSource = nhapHangModel.load_NhapHang();
             dgvNguyenLieuNhap.DataSource = nhapHangModel.load_ChiTietNhapHang();
 
         }
@@ -39,18 +38,23 @@ namespace Quản_Lý_Yellow_Cab_Pizza
         private void btTaoHD_Click(object sender, EventArgs e)
         {
             btThem.Enabled = true;
-            string iD1 = dgvNguyenLieuNhap[0, dgvNguyenLieuNhap.RowCount - 2].Value.ToString();
+            DataTable dt = nhapHangModel.load_NhapHang();
+
+            string iD1 = dt.Rows[0][0].ToString();
             int iD3 = int.Parse(iD1.Substring(5));
 
+            
+
             txtSoHoaDon.Text = "YLCNH" + formatID(iD3 + 1);
-            //if (nhapHangControl.them_HoaDon(txtSoHoaDon.Text))
-            //{
-            //    MessageBox.Show("Hóa đơn mới được tạo");
-            //}
-            //else
-            //{
-            //    MessageBox.Show("Hóa đơn không được tạo");
-            //}
+            if (nhapHangControl.them_HoaDon(txtSoHoaDon.Text))
+            {
+                MessageBox.Show("Hóa đơn mới được tạo");
+                btTaoHD.Enabled = false;
+            }
+            else
+            {
+                MessageBox.Show("Hóa đơn không được tạo");
+            }
         }
 
         private String formatID(int id)
@@ -79,14 +83,18 @@ namespace Quản_Lý_Yellow_Cab_Pizza
         {
             btIn.Enabled = true;
             btTaoHD.Enabled = false;
-            //if (nhapHangControl.them_NhapNguyenLieu(txtSoHoaDon.Text, txtMaNL.Text, txtTenNL.Text, txtNhaCC.Text, Int32.Parse(txtSoLuong.Text), Int32.Parse(txtGiaTien.Text)))
-            //{
-            //    MessageBox.Show("Một sản phẩm đã được thêm");
-            //}
-            //else
-            //{
-            //    MessageBox.Show("Không thể thêm sản phẩm");
-            //}
+            DateTime ngayNhap = DateTime.Now;
+            if (nhapHangControl.them_BaoCaoNhapHang(txtSoHoaDon.Text, txtMaNL.Text, txtTenNL.Text, txtNhaCC.Text, ngayNhap ,Int32.Parse(txtSoLuong.Text), Int32.Parse(txtGiaTien.Text)))
+            {
+
+                nhapHangControl.them_NhapNguyenLieu(txtSoHoaDon.Text, txtMaNL.Text, txtTenNL.Text, txtNhaCC.Text, Int32.Parse(txtSoLuong.Text), Int32.Parse(txtGiaTien.Text));
+                MessageBox.Show("Một sản phẩm đã được thêm");
+                txtMaNL.Focus();
+            }
+            else
+            {
+                MessageBox.Show("Không thể thêm sản phẩm");
+            }
             frm_NhapHang_Load(sender, e);
             macDinh();
         }
@@ -98,10 +106,8 @@ namespace Quản_Lý_Yellow_Cab_Pizza
             txtMaNL.Text = "";
             txtTenNL.Text = "";
             txtGiaTien.Text = "";
-            txtLoaiNL.Text = "";
             txtSoLuong.Text = "";
             txtNhaCC.Text = "";
-            txtSoHoaDon.Text = "";
         }
 
         private void btIn_Click(object sender, EventArgs e)
@@ -109,7 +115,29 @@ namespace Quản_Lý_Yellow_Cab_Pizza
             btTaoHD.Enabled = true;
             btThem.Enabled = false;
             macDinh();
+            if (nhapHangControl.xoa_ChiTietNguyenLieu(txtSoHoaDon.Text))
+            {
+                MessageBox.Show("Hóa đơn đang được xuất file exel");
+                
+            }
+            else
+            {
+                MessageBox.Show("Xuất hóa đơn thất bại");
+            }
+            txtSoHoaDon.Text = "";
+            frm_NhapHang_Load(sender, e);
+        }
 
+        private void dgvNguyenLieuNhap_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            int i;
+            i = dgvNguyenLieuNhap.CurrentRow.Index;
+
+            txtMaNL.Text = dgvNguyenLieuNhap.Rows[i].Cells[1].Value.ToString();
+            txtTenNL.Text = dgvNguyenLieuNhap.Rows[i].Cells[2].Value.ToString();
+            txtNhaCC.Text = dgvNguyenLieuNhap.Rows[i].Cells[3].Value.ToString();
+            txtSoLuong.Text = dgvNguyenLieuNhap.Rows[i].Cells[4].Value.ToString();
+            txtGiaTien.Text = dgvNguyenLieuNhap.Rows[i].Cells[5].Value.ToString();
         }
     }
 }

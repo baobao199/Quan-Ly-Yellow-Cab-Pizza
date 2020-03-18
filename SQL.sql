@@ -59,7 +59,28 @@ create table ChiTietNhapHang
 	foreign key (SoHoaDon) references NhapHang(SoHoaDon)
 );
 
+create table BaoCaoNhapHang
+(
+	SoHoaDon  varchar(30),
+	MaNguyenLieu varchar(30),
+	TenNguyenLieu nvarchar(50),
+	MaNhaCungCap varchar(30),
+	NgayNhap date default getdate(),
+	SoLuong int,
+	GiaTien int,
+	constraint pk_ctbc primary key(SoHoaDon,MaNguyenLieu),
+	foreign key (MaNguyenLieu) references NguyenLieu(MaNguyenLieu),
+	foreign key (MaNhaCungCap) references NhaCungCap(MaNhaCungCap),
+	foreign key (SoHoaDon) references NhapHang(SoHoaDon)
+);
+
 insert into NhapHang values ('YLCNH0001','03-17-2020')
 --them du lieu vao chi tiet nhap hang
 insert into ChiTietNhapHang values ('YLCNH0001','H','HAM','VIN',2,36000)
 insert into ChiTietNhapHang values ('YLCNH0001','GL','GRALIC','COOP',10,12000)
+
+delete ChiTietNhapHang where SoHoaDon = 'YLCNH0002';
+delete NhapHang where SoHoaDon = 'YLCNH0004';
+delete BaoCaoNhapHang where SoHoaDon = 'YLCNH0002';
+
+insert into BaoCaoNhapHang values ('YLCNH0001','GL','GRALIC','COOP','',10,12000)
