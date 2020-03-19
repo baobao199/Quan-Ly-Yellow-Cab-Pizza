@@ -28,10 +28,10 @@ namespace Quản_Lý_Yellow_Cab_Pizza.MVC_Model
             }
             return re;
         }
-        public Boolean capNhat_NguyenLieu(String nguyenLieu, string maDanhMuc, string nhaCungCap, int soLuong)
+        public Boolean capNhat_NguyenLieu(string maNguyenLieu, string tenNguyenLieu, string maLoaiNguyenLieu, string maNhaCungCap, int soLuong)
         {
             bool re = false;
-            string sql = "update QuanLyNguyenLieu set TenNguyenLieu ='" + nguyenLieu+"', MaDanhMuc = '"+maDanhMuc+"', NhaCungCap ='"+nhaCungCap+"', SoLuong='"+soLuong+"'";
+            string sql = "update QuanLyNguyenLieu set TenNguyenLieu ='" + tenNguyenLieu+"', MaLoaiNguyenLieu = '"+maLoaiNguyenLieu+"', MaNhaCungCap ='"+maNhaCungCap+"', SoLuong='"+soLuong+"' where MaNguyenLieu = '"+maNguyenLieu+"'" ;
             if (xuly.executeQuery(sql) > 0)
             {
                 re = true;

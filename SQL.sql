@@ -88,3 +88,6 @@ delete BaoCaoNhapHang where SoHoaDon = 'YLCNH0002';
 update ChiTietNhapHang set MaNguyenLieu ='gl', TenNguyenLieu = 'gralic', MaNhaCungCap ='vin', SoLuong= 1, GiaTien = 5 where SoHoaDon = 'YLCNH0002' and MaNguyenLieu = 'gl'
 
 insert into BaoCaoNhapHang values ('YLCNH0001','GL','GRALIC','COOP','',10,12000)
+
+
+

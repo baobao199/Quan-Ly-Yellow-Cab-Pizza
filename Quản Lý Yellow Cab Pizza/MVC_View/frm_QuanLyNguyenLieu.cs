@@ -76,6 +76,8 @@ namespace Quản_Lý_Yellow_Cab_Pizza
         private void btMacDinh_Click(object sender, EventArgs e)
         {
             macDinh();
+            frm_NguyenLieu_Load(sender, e);
+
         }
 
         private void btSua_Click(object sender, EventArgs e)
@@ -91,7 +93,7 @@ namespace Quản_Lý_Yellow_Cab_Pizza
             }
             else
             {
-                if (nguyenlieuControl.capNhat_NguyenLieu(txtTenNL.Text, txtMaNL.Text, txtNhaCC.Text, Int32.Parse(txtSoLuong.Text)))
+                if (nguyenlieuControl.capnhat_NguyenLieu(txtMaNL.Text,txtTenNL.Text, txtLoaiNL.Text, txtNhaCC.Text, Int32.Parse(txtSoLuong.Text)))
                 {
                     MessageBox.Show("Nguyên liệu đã được cập nhật");
                     btSave.Enabled = false;
