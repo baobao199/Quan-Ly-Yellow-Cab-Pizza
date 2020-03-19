@@ -134,5 +134,11 @@ namespace Quản_Lý_Yellow_Cab_Pizza
             }
 
         }
+
+        private void btMacDinh_Click(object sender, EventArgs e)
+        {
+            macDinh();
+            frm_NhaCungCap_Load(sender, e);
+        }
     }
 }

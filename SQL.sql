@@ -90,4 +90,8 @@ update ChiTietNhapHang set MaNguyenLieu ='gl', TenNguyenLieu = 'gralic', MaNhaCu
 insert into BaoCaoNhapHang values ('YLCNH0001','GL','GRALIC','COOP','',10,12000)
 
 
+update QuanLyNguyenLieu set SoLuong = SoLuong +  (select SoLuong from BaoCaoNhapHang where MaNguyenLieu = 'GL' and SoHoaDon = 'YLCNH0002') where MaNguyenLieu ='GL'
 
+select count(MaNguyenLieu) from QuanLyNguyenLieu where MaNguyenLieu = 'l';
+
+delete LoaiNguyenLieu where MaLoaiNguyenLieu='d'

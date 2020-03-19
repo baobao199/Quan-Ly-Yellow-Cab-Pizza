@@ -50,6 +50,7 @@
             this.btXoa = new System.Windows.Forms.Button();
             this.btSua = new System.Windows.Forms.Button();
             this.btThem = new System.Windows.Forms.Button();
+            this.btMacDinh = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDanhSachNCC)).BeginInit();
@@ -57,6 +58,7 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.btMacDinh);
             this.groupBox1.Controls.Add(this.btSave);
             this.groupBox1.Controls.Add(this.txtEmail);
             this.groupBox1.Controls.Add(this.label5);
@@ -299,6 +301,23 @@
             this.btThem.UseVisualStyleBackColor = false;
             this.btThem.Click += new System.EventHandler(this.btThem_Click);
             // 
+            // btMacDinh
+            // 
+            this.btMacDinh.BackColor = System.Drawing.Color.Transparent;
+            this.btMacDinh.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btMacDinh.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btMacDinh.Image = global::Quản_Lý_Yellow_Cab_Pizza.Properties.Resources._default;
+            this.btMacDinh.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btMacDinh.Location = new System.Drawing.Point(379, 106);
+            this.btMacDinh.Margin = new System.Windows.Forms.Padding(6);
+            this.btMacDinh.Name = "btMacDinh";
+            this.btMacDinh.Size = new System.Drawing.Size(95, 45);
+            this.btMacDinh.TabIndex = 38;
+            this.btMacDinh.Text = "Mặc Định";
+            this.btMacDinh.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btMacDinh.UseVisualStyleBackColor = false;
+            this.btMacDinh.Click += new System.EventHandler(this.btMacDinh_Click);
+            // 
             // frm_NhaCungCap
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -351,5 +370,6 @@
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.DataGridView dgvDanhSachNCC;
         private System.Windows.Forms.Button btSave;
+        private System.Windows.Forms.Button btMacDinh;
     }
 }

@@ -19,7 +19,7 @@ namespace Quản_Lý_Yellow_Cab_Pizza.MVC_Model
         public Boolean xoa_LoaiNguyenLieu(string id)
         {
             bool re = false;
-            string sql = "delete from LoaiNguyenLieu where MaLoaiNguyenLieu='" + id + "'";
+            string sql = "delete LoaiNguyenLieu where MaLoaiNguyenLieu='" + id + "'";
             if (xuly.executeQuery(sql) > 0)
             {
                 re = true; 

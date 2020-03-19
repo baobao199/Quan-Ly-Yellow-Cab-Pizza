@@ -44,6 +44,7 @@
             this.txtTimKiem = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.btTimKiem = new System.Windows.Forms.Button();
+            this.btMacDinh = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvLoaiNL)).BeginInit();
@@ -51,6 +52,7 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.btMacDinh);
             this.groupBox1.Controls.Add(this.btSave);
             this.groupBox1.Controls.Add(this.txtTenLoaiNL);
             this.groupBox1.Controls.Add(this.label2);
@@ -83,7 +85,7 @@
             // 
             // txtTenLoaiNL
             // 
-            this.txtTenLoaiNL.Location = new System.Drawing.Point(158, 82);
+            this.txtTenLoaiNL.Location = new System.Drawing.Point(158, 69);
             this.txtTenLoaiNL.Name = "txtTenLoaiNL";
             this.txtTenLoaiNL.Size = new System.Drawing.Size(181, 20);
             this.txtTenLoaiNL.TabIndex = 25;
@@ -91,7 +93,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(44, 85);
+            this.label2.Location = new System.Drawing.Point(44, 72);
             this.label2.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(105, 13);
@@ -236,6 +238,23 @@
             this.btTimKiem.UseVisualStyleBackColor = false;
             this.btTimKiem.Click += new System.EventHandler(this.btTimKiem_Click);
             // 
+            // btMacDinh
+            // 
+            this.btMacDinh.BackColor = System.Drawing.Color.Transparent;
+            this.btMacDinh.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btMacDinh.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btMacDinh.Image = global::Quản_Lý_Yellow_Cab_Pizza.Properties.Resources._default;
+            this.btMacDinh.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btMacDinh.Location = new System.Drawing.Point(244, 101);
+            this.btMacDinh.Margin = new System.Windows.Forms.Padding(6);
+            this.btMacDinh.Name = "btMacDinh";
+            this.btMacDinh.Size = new System.Drawing.Size(95, 45);
+            this.btMacDinh.TabIndex = 39;
+            this.btMacDinh.Text = "Mặc Định";
+            this.btMacDinh.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btMacDinh.UseVisualStyleBackColor = false;
+            this.btMacDinh.Click += new System.EventHandler(this.btMacDinh_Click);
+            // 
             // frm_LoaiNguyenLieu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -282,5 +301,6 @@
         private System.Windows.Forms.Button btTimKiem;
         private System.Windows.Forms.Button btSave;
         private System.Windows.Forms.DataGridView dgvLoaiNL;
+        private System.Windows.Forms.Button btMacDinh;
     }
 }

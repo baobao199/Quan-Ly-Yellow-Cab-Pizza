@@ -54,8 +54,7 @@ namespace Quản_Lý_Yellow_Cab_Pizza
             dr = MessageBox.Show("Bạn có chắc muốn xóa?", "Xóa", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
             if (dr == DialogResult.Yes)
             {
-                string id = dgvLoaiNL.Rows[i].Cells[0].Value.ToString();
-                if (loaiNguyenLieuControl.xoa_LoaiNguyenLieu(id))
+                if (loaiNguyenLieuControl.xoa_LoaiNguyenLieu(txtMaLoaiNL.Text))
                 {
                     MessageBox.Show("Nguyên liệu đã được xóa");
                 }
@@ -128,6 +127,12 @@ namespace Quản_Lý_Yellow_Cab_Pizza
             {
                 dgvLoaiNL.DataSource = loaiNguyenLieuModel.timKiem_Load(txtTimKiem.Text.Trim());
             }
+        }
+
+        private void btMacDinh_Click(object sender, EventArgs e)
+        {
+            frm_LoaiNguyenLieu_Load(sender, e);
+            macDinh();
         }
     }
 }
