@@ -50,6 +50,8 @@
             this.label6 = new System.Windows.Forms.Label();
             this.txtSoHoaDon = new System.Windows.Forms.TextBox();
             this.btTaoHD = new System.Windows.Forms.Button();
+            this.txtMaLoaiNL = new System.Windows.Forms.TextBox();
+            this.label4 = new System.Windows.Forms.Label();
             this.groupBox2.SuspendLayout();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvNguyenLieuNhap)).BeginInit();
@@ -59,6 +61,8 @@
             // 
             this.groupBox2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.groupBox2.Controls.Add(this.txtMaLoaiNL);
+            this.groupBox2.Controls.Add(this.label4);
             this.groupBox2.Controls.Add(this.btIn);
             this.groupBox2.Controls.Add(this.txtSoLuong);
             this.groupBox2.Controls.Add(this.btThoat);
@@ -219,7 +223,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(53, 25);
+            this.label1.Location = new System.Drawing.Point(38, 28);
             this.label1.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(82, 13);
@@ -229,7 +233,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(53, 61);
+            this.label2.Location = new System.Drawing.Point(38, 64);
             this.label2.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(86, 13);
@@ -239,7 +243,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(54, 99);
+            this.label5.Location = new System.Drawing.Point(39, 102);
             this.label5.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(78, 13);
@@ -316,6 +320,23 @@
             this.btTaoHD.UseVisualStyleBackColor = false;
             this.btTaoHD.Click += new System.EventHandler(this.btTaoHD_Click);
             // 
+            // txtMaLoaiNL
+            // 
+            this.txtMaLoaiNL.Location = new System.Drawing.Point(144, 136);
+            this.txtMaLoaiNL.Name = "txtMaLoaiNL";
+            this.txtMaLoaiNL.Size = new System.Drawing.Size(164, 20);
+            this.txtMaLoaiNL.TabIndex = 38;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(38, 139);
+            this.label4.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(101, 13);
+            this.label4.TabIndex = 37;
+            this.label4.Text = "Mã loại nguyên liệu:";
+            // 
             // frm_NhapHang
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -364,5 +385,7 @@
         private System.Windows.Forms.TextBox txtSoLuong;
         private System.Windows.Forms.TextBox txtSoHoaDon;
         private System.Windows.Forms.Button btIn;
+        private System.Windows.Forms.TextBox txtMaLoaiNL;
+        private System.Windows.Forms.Label label4;
     }
 }

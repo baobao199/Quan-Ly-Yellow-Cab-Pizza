@@ -93,8 +93,8 @@ namespace Quản_Lý_Yellow_Cab_Pizza
             btSua.Enabled = true;
             btXoa.Enabled = true;
             btTaoHD.Enabled = false;
-
             txtMaNL.Enabled = true;
+
             try
             {
                 DateTime ngayNhap = DateTime.Now;
@@ -102,6 +102,17 @@ namespace Quản_Lý_Yellow_Cab_Pizza
                 {
 
                     nhapHangControl.them_NhapNguyenLieu(txtSoHoaDon.Text, txtMaNL.Text, txtTenNL.Text, txtNhaCC.Text, Int32.Parse(txtSoLuong.Text), Int32.Parse(txtGiaTien.Text));
+                    if ((nhapHangControl.check_NguyenLieu(txtMaNL.Text)))
+                    {
+                        
+                        nhapHangControl.capnhat_SoLuong(Int32.Parse(txtSoLuong.Text), txtMaNL.Text, txtSoHoaDon.Text);
+                    }
+                    else
+                    {
+                        MessageBox.Show("KHÔNG");
+                        nhapHangControl.them_QuanLyNguyenLieu(txtMaNL.Text, txtTenNL.Text, txtMaLoaiNL.Text, txtNhaCC.Text, Int32.Parse(txtSoLuong.Text));
+                    }
+                    
                     MessageBox.Show("Một sản phẩm đã được thêm");
                     txtMaNL.Focus();
                 }
@@ -137,7 +148,7 @@ namespace Quản_Lý_Yellow_Cab_Pizza
             btThem.Enabled = false;
             btSua.Enabled = false;
             btXoa.Enabled = false;
-            macDinh();
+            
             if (nhapHangControl.xoa_ChiTietNguyenLieu(txtSoHoaDon.Text))
             {
                 MessageBox.Show("Hóa đơn đang được xuất file exel");
@@ -147,6 +158,8 @@ namespace Quản_Lý_Yellow_Cab_Pizza
             {
                 MessageBox.Show("Xuất hóa đơn thất bại");
             }
+
+            macDinh();
             txtSoHoaDon.Text = "";
             frm_NhapHang_Load(sender, e);
         }

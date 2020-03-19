@@ -38,6 +38,7 @@ namespace Quản_Lý_Yellow_Cab_Pizza
             txtLoaiNL.Text = "";
             txtSoLuong.Text = "";
             lbTinhTrang.Text = "";
+            txtTimKiem.Text = "";
         }
 
         private void dgvNguyenLieu_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)
