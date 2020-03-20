@@ -19,14 +19,17 @@ namespace Quản_Lý_Yellow_Cab_Pizza
             InitializeComponent();
         }
 
-        private void btThoat_Click(object sender, EventArgs e)
-        {
-            this.Close();
-            Dispose();
-        }
+
         xuatHang_Model xuatHangModel = new xuatHang_Model();
         xuatHang_Control xuatHangControl = new xuatHang_Control();
 
+        private void btThoat_Click(object sender, EventArgs e)
+        {
+            xuatHangControl.xoa_ChiTietXuatHang(txtSoHoaDon.Text);
+            this.Close();
+            Dispose();
+        }
+    
         private void frm_XuatHang_Load(object sender, EventArgs e)
         {
             dgvNguyenLieuXuat.DataSource = xuatHangModel.load_ChiTietXuatHang();
@@ -82,6 +85,117 @@ namespace Quản_Lý_Yellow_Cab_Pizza
                 re = id.ToString();
             }
             return re;
+        }
+
+        private void btThem_Click(object sender, EventArgs e)
+        {
+            btIn.Enabled = true;
+            btSua.Enabled = true;
+            btXoa.Enabled = true;
+            btTaoHD.Enabled = false;
+            txtMaNL.Enabled = true;
+
+            try
+            {
+                DateTime ngayNhap = DateTime.Now;
+                if (xuatHangControl.them_BaoCaoXuatHang(txtSoHoaDon.Text, txtMaNL.Text, txtTenNL.Text, txtNhaCC.Text, ngayNhap, Int32.Parse(txtSoLuong.Text), Int32.Parse(txtGiaTien.Text)))
+                {
+
+                    xuatHangControl.them_XuatNguyenLieu(txtSoHoaDon.Text, txtMaNL.Text, txtTenNL.Text, txtNhaCC.Text, Int32.Parse(txtSoLuong.Text), Int32.Parse(txtGiaTien.Text));
+                    if ((xuatHangControl.check_NguyenLieu(txtMaNL.Text)))
+                    {
+
+                        xuatHangControl.capnhat_SoLuong(Int32.Parse(txtSoLuong.Text), txtMaNL.Text, txtSoHoaDon.Text);
+                    }
+                    else
+                    {
+                        MessageBox.Show("Nguyên liệu đã hết hàng");
+                    }
+
+                    MessageBox.Show("Một sản phẩm đã được thêm");
+                    txtMaNL.Focus();
+                }
+                else
+                {
+                    MessageBox.Show("Không thể thêm sản phẩm");
+                }
+                frm_XuatHang_Load(sender, e);
+                macDinh();
+            }
+            catch
+            {
+                MessageBox.Show("Lỗi rồi ~~");
+                macDinh();
+            }
+
+        }
+        public void macDinh()
+        {
+            txtMaNL.Text = "";
+            txtTenNL.Text = "";
+            txtGiaTien.Text = "";
+            txtSoLuong.Text = "";
+            txtNhaCC.Text = "";
+        }
+
+        private void btSua_Click(object sender, EventArgs e)
+        {
+            if (txtMaNL.Text == "" || txtTenNL.Text == "" || txtNhaCC.Text == "" || txtSoLuong.Text == "" || txtGiaTien.Text == "")
+            {
+                MessageBox.Show("Vui lòng nhập đầy đủ thông tin");
+            }
+            else
+            {
+                if (xuatHangControl.sua_ChiTietXuatHang(txtSoHoaDon.Text, txtMaNL.Text, txtTenNL.Text, txtNhaCC.Text, Int32.Parse(txtSoLuong.Text), Int32.Parse(txtGiaTien.Text)))
+                {
+
+                    xuatHangControl.sua_BaoCaoXuatHang(txtSoHoaDon.Text, txtMaNL.Text, txtTenNL.Text, txtNhaCC.Text, Int32.Parse(txtSoLuong.Text), Int32.Parse(txtGiaTien.Text));
+                    MessageBox.Show("Nguyên liệu đã được cập nhật");
+                }
+                else
+                {
+                    MessageBox.Show("Nguyên liệu không được cập nhật");
+                }
+            }
+            frm_XuatHang_Load(sender, e);
+        }
+
+        private void btXoa_Click(object sender, EventArgs e)
+        {
+            if (xuatHangControl.xoa_ChiTietXuatHang(txtSoHoaDon.Text, txtMaNL.Text))
+            {
+
+                xuatHangControl.xoa_BaoCaoXuatHang(txtSoHoaDon.Text, txtMaNL.Text);
+                MessageBox.Show("Nguyên liệu đã được xóa");
+                macDinh();
+            }
+            else
+            {
+                MessageBox.Show("Nguyên liệu không xóa được");
+            }
+            frm_XuatHang_Load(sender, e);
+        }
+
+        private void btIn_Click(object sender, EventArgs e)
+        {
+            btTaoHD.Enabled = true;
+            btThem.Enabled = false;
+            btSua.Enabled = false;
+            btXoa.Enabled = false;
+
+            if (xuatHangControl.xoa_ChiTietXuatHang(txtSoHoaDon.Text))
+            {
+                MessageBox.Show("Hóa đơn đang được xuất file exel");
+
+            }
+            else
+            {
+                MessageBox.Show("Xuất hóa đơn thất bại");
+            }
+
+            macDinh();
+            txtSoHoaDon.Text = "";
+            frm_XuatHang_Load(sender, e);
         }
     }
 }
