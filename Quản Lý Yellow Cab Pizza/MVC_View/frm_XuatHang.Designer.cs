@@ -47,8 +47,8 @@
             this.label5 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.btTaoHoaDon = new System.Windows.Forms.Button();
-            this.txtHDXuat = new System.Windows.Forms.TextBox();
+            this.btTaoHD = new System.Windows.Forms.Button();
+            this.txtSoHoaDon = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.dgvNguyenLieuXuat = new System.Windows.Forms.DataGridView();
@@ -114,6 +114,7 @@
             this.btThoat.Text = "Thoát";
             this.btThoat.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btThoat.UseVisualStyleBackColor = false;
+            this.btThoat.Click += new System.EventHandler(this.btThoat_Click);
             // 
             // btThem
             // 
@@ -253,28 +254,29 @@
             this.label4.TabIndex = 16;
             this.label4.Text = "Loại nguyên liệu";
             // 
-            // btTaoHoaDon
+            // btTaoHD
             // 
-            this.btTaoHoaDon.BackColor = System.Drawing.Color.Gold;
-            this.btTaoHoaDon.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btTaoHoaDon.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btTaoHoaDon.Image = global::Quản_Lý_Yellow_Cab_Pizza.Properties.Resources.nhap;
-            this.btTaoHoaDon.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btTaoHoaDon.Location = new System.Drawing.Point(71, 95);
-            this.btTaoHoaDon.Margin = new System.Windows.Forms.Padding(6);
-            this.btTaoHoaDon.Name = "btTaoHoaDon";
-            this.btTaoHoaDon.Size = new System.Drawing.Size(132, 52);
-            this.btTaoHoaDon.TabIndex = 31;
-            this.btTaoHoaDon.Text = "Tạo hóa đơn mới";
-            this.btTaoHoaDon.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btTaoHoaDon.UseVisualStyleBackColor = false;
+            this.btTaoHD.BackColor = System.Drawing.Color.Gold;
+            this.btTaoHD.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btTaoHD.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btTaoHD.Image = global::Quản_Lý_Yellow_Cab_Pizza.Properties.Resources.nhap;
+            this.btTaoHD.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btTaoHD.Location = new System.Drawing.Point(71, 95);
+            this.btTaoHD.Margin = new System.Windows.Forms.Padding(6);
+            this.btTaoHD.Name = "btTaoHD";
+            this.btTaoHD.Size = new System.Drawing.Size(132, 52);
+            this.btTaoHD.TabIndex = 31;
+            this.btTaoHD.Text = "Tạo hóa đơn mới";
+            this.btTaoHD.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btTaoHD.UseVisualStyleBackColor = false;
+            this.btTaoHD.Click += new System.EventHandler(this.btTaoHoaDon_Click);
             // 
-            // txtHDXuat
+            // txtSoHoaDon
             // 
-            this.txtHDXuat.Location = new System.Drawing.Point(134, 41);
-            this.txtHDXuat.Name = "txtHDXuat";
-            this.txtHDXuat.Size = new System.Drawing.Size(116, 20);
-            this.txtHDXuat.TabIndex = 30;
+            this.txtSoHoaDon.Location = new System.Drawing.Point(134, 41);
+            this.txtSoHoaDon.Name = "txtSoHoaDon";
+            this.txtSoHoaDon.Size = new System.Drawing.Size(116, 20);
+            this.txtSoHoaDon.TabIndex = 30;
             // 
             // label6
             // 
@@ -317,14 +319,15 @@
             this.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.ClientSize = new System.Drawing.Size(1064, 541);
             this.Controls.Add(this.groupBox1);
-            this.Controls.Add(this.btTaoHoaDon);
-            this.Controls.Add(this.txtHDXuat);
+            this.Controls.Add(this.btTaoHD);
+            this.Controls.Add(this.txtSoHoaDon);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.groupBox2);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MinimumSize = new System.Drawing.Size(1080, 580);
             this.Name = "frm_XuatHang";
             this.Text = "Xuất hàng";
+            this.Load += new System.EventHandler(this.frm_XuatHang_Load);
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             this.groupBox1.ResumeLayout(false);
@@ -351,8 +354,8 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Button btTaoHoaDon;
-        private System.Windows.Forms.TextBox txtHDXuat;
+        private System.Windows.Forms.Button btTaoHD;
+        private System.Windows.Forms.TextBox txtSoHoaDon;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.TextBox txtSLXuat;
         private System.Windows.Forms.TextBox txtSLCon;

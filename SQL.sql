@@ -95,3 +95,39 @@ update QuanLyNguyenLieu set SoLuong = SoLuong +  (select SoLuong from BaoCaoNhap
 select count(MaNguyenLieu) from QuanLyNguyenLieu where MaNguyenLieu = 'l';
 
 delete LoaiNguyenLieu where MaLoaiNguyenLieu='d'
+
+--Nhap(MaNhaCungCap,  NgayNhap, NguoiNhap)
+create table XuatHang
+(
+	SoHoaDon  varchar(30) primary key,
+	NgayNhap date default getdate(),
+);
+
+create table ChiTietXuatHang
+(
+	SoHoaDon varchar(30),
+	MaNguyenLieu varchar(30),
+	TenNguyenLieu nvarchar(50),
+	MaNhaCungCap varchar(30),
+	SoLuong int,
+	GiaTien int,
+	constraint pk_ctxh primary key(SoHoaDon,MaNguyenLieu),
+	foreign key (MaNguyenLieu) references NguyenLieu(MaNguyenLieu),
+	foreign key (MaNhaCungCap) references NhaCungCap(MaNhaCungCap),
+	foreign key (SoHoaDon) references XuatHang(SoHoaDon)
+);
+
+create table BaoCaoXuatHang
+(
+	SoHoaDon  varchar(30),
+	MaNguyenLieu varchar(30),
+	TenNguyenLieu nvarchar(50),
+	MaNhaCungCap varchar(30),
+	NgayNhap date default getdate(),
+	SoLuong int,
+	GiaTien int,
+	constraint pk_ctbcxh primary key(SoHoaDon,MaNguyenLieu),
+	foreign key (MaNguyenLieu) references NguyenLieu(MaNguyenLieu),
+	foreign key (MaNhaCungCap) references NhaCungCap(MaNhaCungCap),
+	foreign key (SoHoaDon) references XuatHang(SoHoaDon)
+);
