@@ -17,5 +17,15 @@ namespace Quản_Lý_Yellow_Cab_Pizza.MVC_Model
             da = xuly.creatTable(sql);
             return da;
         }
+        public Boolean ThanhTien()
+        {
+            bool re = false;
+            string sql = "update BaoCaoNhapHang set ThanhTien =  SoLuong * GiaTien FROM BaoCaoNhapHang;";
+            if (xuly.executeQuery(sql) > 0)
+            {
+                re = true;
+            }
+            return re;
+        }
     }
 }
