@@ -33,11 +33,11 @@
             this.dgvNhapExel = new System.Windows.Forms.DataGridView();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.dpDenNgay = new System.Windows.Forms.DateTimePicker();
-            this.label1 = new System.Windows.Forms.Label();
             this.dpTuNgay = new System.Windows.Forms.DateTimePicker();
-            this.label2 = new System.Windows.Forms.Label();
             this.btXuatExel = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
             this.btnTimKiem = new System.Windows.Forms.Button();
+            this.label2 = new System.Windows.Forms.Label();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvNhapExel)).BeginInit();
             this.groupBox1.SuspendLayout();
@@ -63,11 +63,11 @@
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.btXuatExel);
             this.groupBox1.Controls.Add(this.dpDenNgay);
+            this.groupBox1.Controls.Add(this.dpTuNgay);
+            this.groupBox1.Controls.Add(this.btXuatExel);
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Controls.Add(this.btnTimKiem);
-            this.groupBox1.Controls.Add(this.dpTuNgay);
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Location = new System.Drawing.Point(12, 25);
             this.groupBox1.Name = "groupBox1";
@@ -78,41 +78,27 @@
             // 
             // dpDenNgay
             // 
-            this.dpDenNgay.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dpDenNgay.Location = new System.Drawing.Point(492, 48);
-            this.dpDenNgay.Margin = new System.Windows.Forms.Padding(6);
+            this.dpDenNgay.CustomFormat = "yyyy-MM-dd";
+            this.dpDenNgay.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dpDenNgay.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dpDenNgay.Location = new System.Drawing.Point(476, 45);
+            this.dpDenNgay.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.dpDenNgay.Name = "dpDenNgay";
-            this.dpDenNgay.Size = new System.Drawing.Size(139, 20);
-            this.dpDenNgay.TabIndex = 11;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(150, 48);
-            this.label1.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(46, 13);
-            this.label1.TabIndex = 8;
-            this.label1.Text = "Từ ngày";
+            this.dpDenNgay.Size = new System.Drawing.Size(114, 22);
+            this.dpDenNgay.TabIndex = 15;
+            this.dpDenNgay.Value = new System.DateTime(2020, 3, 5, 0, 0, 0, 0);
             // 
             // dpTuNgay
             // 
-            this.dpTuNgay.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dpTuNgay.Location = new System.Drawing.Point(208, 47);
-            this.dpTuNgay.Margin = new System.Windows.Forms.Padding(6);
+            this.dpTuNgay.CustomFormat = "yyyy-MM-dd";
+            this.dpTuNgay.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dpTuNgay.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dpTuNgay.Location = new System.Drawing.Point(215, 48);
+            this.dpTuNgay.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.dpTuNgay.Name = "dpTuNgay";
-            this.dpTuNgay.Size = new System.Drawing.Size(139, 20);
-            this.dpTuNgay.TabIndex = 10;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(403, 48);
-            this.label2.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(53, 13);
-            this.label2.TabIndex = 9;
-            this.label2.Text = "Đến ngày";
+            this.dpTuNgay.Size = new System.Drawing.Size(114, 22);
+            this.dpTuNgay.TabIndex = 14;
+            this.dpTuNgay.Value = new System.DateTime(2020, 3, 5, 0, 0, 0, 0);
             // 
             // btXuatExel
             // 
@@ -121,13 +107,24 @@
             this.btXuatExel.Image = global::Quản_Lý_Yellow_Cab_Pizza.Properties.Resources.exel;
             this.btXuatExel.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btXuatExel.Location = new System.Drawing.Point(426, 107);
-            this.btXuatExel.Margin = new System.Windows.Forms.Padding(6);
+            this.btXuatExel.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.btXuatExel.Name = "btXuatExel";
             this.btXuatExel.Size = new System.Drawing.Size(129, 64);
             this.btXuatExel.TabIndex = 13;
             this.btXuatExel.Text = "Xuất Exel";
             this.btXuatExel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btXuatExel.UseVisualStyleBackColor = false;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(150, 48);
+            this.label1.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(60, 16);
+            this.label1.TabIndex = 8;
+            this.label1.Text = "Từ ngày:";
             // 
             // btnTimKiem
             // 
@@ -136,13 +133,25 @@
             this.btnTimKiem.Image = global::Quản_Lý_Yellow_Cab_Pizza.Properties.Resources.find;
             this.btnTimKiem.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnTimKiem.Location = new System.Drawing.Point(255, 107);
-            this.btnTimKiem.Margin = new System.Windows.Forms.Padding(6);
+            this.btnTimKiem.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.btnTimKiem.Name = "btnTimKiem";
             this.btnTimKiem.Size = new System.Drawing.Size(129, 64);
             this.btnTimKiem.TabIndex = 12;
             this.btnTimKiem.Text = "Tìm kiếm";
             this.btnTimKiem.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnTimKiem.UseVisualStyleBackColor = false;
+            this.btnTimKiem.Click += new System.EventHandler(this.btnTimKiem_Click);
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(403, 48);
+            this.label2.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(68, 16);
+            this.label2.TabIndex = 9;
+            this.label2.Text = "Đến ngày:";
             // 
             // frm_ReportNhapHang
             // 
@@ -156,6 +165,7 @@
             this.MinimumSize = new System.Drawing.Size(855, 580);
             this.Name = "frm_ReportNhapHang";
             this.Text = "frm_ReportNhapHang";
+            this.Load += new System.EventHandler(this.frm_ReportNhapHang_Load);
             this.groupBox2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvNhapExel)).EndInit();
             this.groupBox1.ResumeLayout(false);
@@ -170,10 +180,10 @@
         private System.Windows.Forms.DataGridView dgvNhapExel;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Button btXuatExel;
-        private System.Windows.Forms.DateTimePicker dpDenNgay;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button btnTimKiem;
-        private System.Windows.Forms.DateTimePicker dpTuNgay;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.DateTimePicker dpTuNgay;
+        private System.Windows.Forms.DateTimePicker dpDenNgay;
     }
 }

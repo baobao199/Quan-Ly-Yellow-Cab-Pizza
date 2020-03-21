@@ -51,11 +51,13 @@
     <Compile Include="MVC_Control\quanlynguyenlieu_Control.cs" />
     <Compile Include="MVC_Control\nhaCungCap_Control.cs" />
     <Compile Include="MVC_Control\nhapHang_Control.cs" />
+    <Compile Include="MVC_Control\reportNhapHang_Control.cs" />
     <Compile Include="MVC_Control\xuatHang_Control.cs" />
     <Compile Include="MVC_Model\loaiNguyenLieu_Model.cs" />
     <Compile Include="MVC_Model\quanlynguyenlieu_Model.cs" />
     <Compile Include="MVC_Model\nhaCungCap_Model.cs" />
     <Compile Include="MVC_Model\nhapHang_Model.cs" />
+    <Compile Include="MVC_Model\reportNhapHang_Model.cs" />
     <Compile Include="MVC_Model\xuatHang_Model.cs" />
     <Compile Include="MVC_Model\xuly.cs" />
     <Compile Include="MVC_View\frm_LoaiNguyenLieu.cs">
@@ -211,6 +213,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\save.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

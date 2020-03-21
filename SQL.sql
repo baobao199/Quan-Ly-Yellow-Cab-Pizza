@@ -131,3 +131,4 @@ create table BaoCaoXuatHang
 	foreign key (MaNhaCungCap) references NhaCungCap(MaNhaCungCap),
 	foreign key (SoHoaDon) references XuatHang(SoHoaDon)
 );
+ 
