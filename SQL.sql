@@ -1,4 +1,4 @@
-use QLYellowCabPizza
+﻿use QLYellowCabPizza
 --DanhMucNguyenLieu(MaNguyenLieu, TenDanhMuc)
 create table LoaiNguyenLieu
 (
@@ -132,3 +132,8 @@ create table BaoCaoXuatHang
 	foreign key (SoHoaDon) references XuatHang(SoHoaDon)
 );
  
+ --Bổ sung
+ ALTER TABLE BaoCaoNhapHang
+ ADD ThanhTien int;
+update BaoCaoNhapHang set ThanhTien =  SoLuong * GiaTien FROM BaoCaoNhapHang;
+
