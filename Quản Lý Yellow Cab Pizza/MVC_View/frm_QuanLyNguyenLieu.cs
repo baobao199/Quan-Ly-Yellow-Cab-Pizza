@@ -28,6 +28,20 @@ namespace Quản_Lý_Yellow_Cab_Pizza
             //load dữ liệu lên datagirdview
         {
             dgvNguyenLieu.DataSource = nguyenLieuModel.load_Data();
+
+            dgvNguyenLieu.Columns["MaNguyenLieu"].Width = 155;
+            dgvNguyenLieu.Columns["TenNguyenLieu"].Width = 200;
+            dgvNguyenLieu.Columns["MaLoaiNguyenLieu"].Width = 150;
+            dgvNguyenLieu.Columns["MaNhaCungCap"].Width = 200;
+            dgvNguyenLieu.Columns["SoLuong"].Width = 150;
+            dgvNguyenLieu.Columns["GiaTien"].Width = 150;
+
+            dgvNguyenLieu.Columns[0].HeaderText = "Mã Nguyên Liệu";
+            dgvNguyenLieu.Columns[1].HeaderText = "Tên Nguyên Liệu";
+            dgvNguyenLieu.Columns[2].HeaderText = "Mã Loại Nguyên Liệu";
+            dgvNguyenLieu.Columns[3].HeaderText = "Mã Nhà Cung Cấp";
+            dgvNguyenLieu.Columns[4].HeaderText = "Số Lượng";
+            dgvNguyenLieu.Columns[5].HeaderText = "Giá Tiền";
         }
         private void macDinh()
             //đưa dữ liệu về trạng thái rổng
@@ -44,14 +58,16 @@ namespace Quản_Lý_Yellow_Cab_Pizza
         private void dgvNguyenLieu_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)
         //hiện thị thông tin lên textbox khi nhấn vào item trong datagirdview
         {
-            i = dgvNguyenLieu.CurrentRow.Index;
-            txtMaNL.Text = dgvNguyenLieu.Rows[i].Cells[0].Value.ToString();
-            txtTenNL.Text = dgvNguyenLieu.Rows[i].Cells[1].Value.ToString();
-            txtNhaCC.Text = dgvNguyenLieu.Rows[i].Cells[3].Value.ToString();
-            txtLoaiNL.Text = dgvNguyenLieu.Rows[i].Cells[2].Value.ToString();
-            txtSoLuong.Text = dgvNguyenLieu.Rows[i].Cells[4].Value.ToString();
             try
             {
+                i = dgvNguyenLieu.CurrentRow.Index;
+                txtMaNL.Text = dgvNguyenLieu.Rows[i].Cells[0].Value.ToString();
+                txtTenNL.Text = dgvNguyenLieu.Rows[i].Cells[1].Value.ToString();
+                txtNhaCC.Text = dgvNguyenLieu.Rows[i].Cells[3].Value.ToString();
+                txtLoaiNL.Text = dgvNguyenLieu.Rows[i].Cells[2].Value.ToString();
+                txtSoLuong.Text = dgvNguyenLieu.Rows[i].Cells[4].Value.ToString();
+                txtGiaTien.Text = dgvNguyenLieu.Rows[i].Cells[5].Value.ToString();
+
                 int t = Int32.Parse(txtSoLuong.Text);
                 if (t >= 10)
                 {
@@ -94,8 +110,9 @@ namespace Quản_Lý_Yellow_Cab_Pizza
             }
             else
             {
-                if (nguyenlieuControl.capnhat_NguyenLieu(txtMaNL.Text,txtTenNL.Text, txtLoaiNL.Text, txtNhaCC.Text, Int32.Parse(txtSoLuong.Text)))
+                if (nguyenlieuControl.capnhat_NguyenLieu(txtMaNL.Text,txtTenNL.Text, txtLoaiNL.Text, txtNhaCC.Text, Int32.Parse(txtSoLuong.Text), Int32.Parse(txtGiaTien.Text)))
                 {
+                    nguyenlieuControl.capNhat_BaoCaoNhapHang(txtMaNL.Text, txtTenNL.Text, txtLoaiNL.Text, txtNhaCC.Text, Int32.Parse(txtSoLuong.Text), Int32.Parse(txtGiaTien.Text));
                     MessageBox.Show("Nguyên liệu đã được cập nhật");
                     btSave.Enabled = false;
                     frm_NguyenLieu_Load(sender, e);
@@ -124,6 +141,7 @@ namespace Quản_Lý_Yellow_Cab_Pizza
                 string id = dgvNguyenLieu.Rows[i].Cells[0].Value.ToString(); 
                 if (nguyenlieuControl.xoa_NguyenLieu(id))
                 {
+                    nguyenlieuControl.xoa_BaoCaoNhapHang(id);
                     MessageBox.Show("Nguyên liệu đã được xóa");
                 }
                 else

@@ -30,6 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frm_NhaCungCap));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.btMacDinh = new System.Windows.Forms.Button();
             this.btSave = new System.Windows.Forms.Button();
             this.txtEmail = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
@@ -50,7 +51,6 @@
             this.btXoa = new System.Windows.Forms.Button();
             this.btSua = new System.Windows.Forms.Button();
             this.btThem = new System.Windows.Forms.Button();
-            this.btMacDinh = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDanhSachNCC)).BeginInit();
@@ -77,6 +77,23 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Thông tin nhà cung cấp";
             // 
+            // btMacDinh
+            // 
+            this.btMacDinh.BackColor = System.Drawing.Color.Transparent;
+            this.btMacDinh.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btMacDinh.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btMacDinh.Image = global::Quản_Lý_Yellow_Cab_Pizza.Properties.Resources._default;
+            this.btMacDinh.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btMacDinh.Location = new System.Drawing.Point(379, 106);
+            this.btMacDinh.Margin = new System.Windows.Forms.Padding(6);
+            this.btMacDinh.Name = "btMacDinh";
+            this.btMacDinh.Size = new System.Drawing.Size(95, 45);
+            this.btMacDinh.TabIndex = 38;
+            this.btMacDinh.Text = "Mặc Định";
+            this.btMacDinh.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btMacDinh.UseVisualStyleBackColor = false;
+            this.btMacDinh.Click += new System.EventHandler(this.btMacDinh_Click);
+            // 
             // btSave
             // 
             this.btSave.BackColor = System.Drawing.Color.White;
@@ -89,7 +106,7 @@
             this.btSave.Margin = new System.Windows.Forms.Padding(6);
             this.btSave.Name = "btSave";
             this.btSave.Size = new System.Drawing.Size(71, 44);
-            this.btSave.TabIndex = 40;
+            this.btSave.TabIndex = 10;
             this.btSave.Text = "Lưu";
             this.btSave.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btSave.UseVisualStyleBackColor = false;
@@ -100,7 +117,7 @@
             this.txtEmail.Location = new System.Drawing.Point(379, 70);
             this.txtEmail.Name = "txtEmail";
             this.txtEmail.Size = new System.Drawing.Size(146, 20);
-            this.txtEmail.TabIndex = 33;
+            this.txtEmail.TabIndex = 5;
             // 
             // label5
             // 
@@ -117,7 +134,7 @@
             this.txtSDT.Location = new System.Drawing.Point(379, 31);
             this.txtSDT.Name = "txtSDT";
             this.txtSDT.Size = new System.Drawing.Size(146, 20);
-            this.txtSDT.TabIndex = 31;
+            this.txtSDT.TabIndex = 4;
             // 
             // label4
             // 
@@ -134,7 +151,7 @@
             this.txtDiaChi.Location = new System.Drawing.Point(132, 114);
             this.txtDiaChi.Name = "txtDiaChi";
             this.txtDiaChi.Size = new System.Drawing.Size(146, 20);
-            this.txtDiaChi.TabIndex = 29;
+            this.txtDiaChi.TabIndex = 3;
             // 
             // label3
             // 
@@ -151,7 +168,7 @@
             this.txtTenNCC.Location = new System.Drawing.Point(132, 70);
             this.txtTenNCC.Name = "txtTenNCC";
             this.txtTenNCC.Size = new System.Drawing.Size(146, 20);
-            this.txtTenNCC.TabIndex = 27;
+            this.txtTenNCC.TabIndex = 2;
             // 
             // label2
             // 
@@ -168,7 +185,7 @@
             this.txtMaNCC.Location = new System.Drawing.Point(132, 31);
             this.txtMaNCC.Name = "txtMaNCC";
             this.txtMaNCC.Size = new System.Drawing.Size(146, 20);
-            this.txtMaNCC.TabIndex = 25;
+            this.txtMaNCC.TabIndex = 1;
             // 
             // label1
             // 
@@ -195,7 +212,7 @@
             this.txtTimKiem.Location = new System.Drawing.Point(225, 257);
             this.txtTimKiem.Name = "txtTimKiem";
             this.txtTimKiem.Size = new System.Drawing.Size(145, 20);
-            this.txtTimKiem.TabIndex = 29;
+            this.txtTimKiem.TabIndex = 7;
             // 
             // groupBox2
             // 
@@ -213,7 +230,7 @@
             this.dgvDanhSachNCC.Location = new System.Drawing.Point(0, 19);
             this.dgvDanhSachNCC.Name = "dgvDanhSachNCC";
             this.dgvDanhSachNCC.Size = new System.Drawing.Size(554, 221);
-            this.dgvDanhSachNCC.TabIndex = 0;
+            this.dgvDanhSachNCC.TabIndex = 50;
             this.dgvDanhSachNCC.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgvDanhSachNCC_CellMouseClick);
             // 
             // btTimKiem
@@ -227,7 +244,7 @@
             this.btTimKiem.Margin = new System.Windows.Forms.Padding(6);
             this.btTimKiem.Name = "btTimKiem";
             this.btTimKiem.Size = new System.Drawing.Size(90, 34);
-            this.btTimKiem.TabIndex = 27;
+            this.btTimKiem.TabIndex = 8;
             this.btTimKiem.Text = "Tìm kiếm";
             this.btTimKiem.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btTimKiem.UseVisualStyleBackColor = false;
@@ -278,7 +295,7 @@
             this.btSua.Margin = new System.Windows.Forms.Padding(6);
             this.btSua.Name = "btSua";
             this.btSua.Size = new System.Drawing.Size(90, 52);
-            this.btSua.TabIndex = 7;
+            this.btSua.TabIndex = 9;
             this.btSua.Text = "Sửa";
             this.btSua.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btSua.UseVisualStyleBackColor = false;
@@ -300,23 +317,6 @@
             this.btThem.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btThem.UseVisualStyleBackColor = false;
             this.btThem.Click += new System.EventHandler(this.btThem_Click);
-            // 
-            // btMacDinh
-            // 
-            this.btMacDinh.BackColor = System.Drawing.Color.Transparent;
-            this.btMacDinh.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btMacDinh.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btMacDinh.Image = global::Quản_Lý_Yellow_Cab_Pizza.Properties.Resources._default;
-            this.btMacDinh.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btMacDinh.Location = new System.Drawing.Point(379, 106);
-            this.btMacDinh.Margin = new System.Windows.Forms.Padding(6);
-            this.btMacDinh.Name = "btMacDinh";
-            this.btMacDinh.Size = new System.Drawing.Size(95, 45);
-            this.btMacDinh.TabIndex = 38;
-            this.btMacDinh.Text = "Mặc Định";
-            this.btMacDinh.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btMacDinh.UseVisualStyleBackColor = false;
-            this.btMacDinh.Click += new System.EventHandler(this.btMacDinh_Click);
             // 
             // frm_NhaCungCap
             // 

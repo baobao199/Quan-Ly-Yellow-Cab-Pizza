@@ -27,11 +27,11 @@ namespace Quản_Lý_Yellow_Cab_Pizza.MVC_Model
             return da;
         }
 
-        public Boolean them_NhapNguyenLieu(string soHoaDon, string maNguyenLieu, string tenNguyenLieu, string maNhaCungCap, int giaTien, int SoLuong)
+        public Boolean them_NhapNguyenLieu(string soHoaDon, string maNguyenLieu, string tenNguyenLieu, string maLoaiNguyenLieu, string maNhaCungCap, int giaTien, int SoLuong)
             //thêm nguyên liệu nhập
         {
             bool re = false;
-            string sql = "insert into ChiTietNhapHang values('" + soHoaDon + "','" + maNguyenLieu + "','" + tenNguyenLieu + "','" + maNhaCungCap + "','" + SoLuong + "','" + giaTien + "')";
+            string sql = "insert into ChiTietNhapHang values('" + soHoaDon + "','" + maNguyenLieu + "','" + tenNguyenLieu + "','"+maLoaiNguyenLieu+"','" + maNhaCungCap + "','" + SoLuong + "','" + giaTien + "')";
             if (xuly.executeQuery(sql) > 0)
             {
                 re = true;
@@ -60,22 +60,22 @@ namespace Quản_Lý_Yellow_Cab_Pizza.MVC_Model
             }
             return re;
         }
-        public Boolean them_BaoCaoNhapHang(string soHoaDon, string maNguyenLieu, string tenNguyenLieu, string maNhaCungCap, DateTime ngayNhap, int soLuong, int giaTien)
+        public Boolean them_BaoCaoNhapHang(string soHoaDon, string maNguyenLieu, string tenNguyenLieu, string maLoaiNguyenLieu, string maNhaCungCap, DateTime ngayNhap, int soLuong, int giaTien)
             // thêm dữ liệu vào báo cáo nhập hàng
         {
             bool re = false;
-            string sql = "insert into BaoCaoNhapHang values('" + soHoaDon + "','" + maNguyenLieu + "','" + tenNguyenLieu + "','" + maNhaCungCap + "','" + ngayNhap + "','" + soLuong + "','" + giaTien + "')";
+            string sql = "insert into BaoCaoNhapHang values('" + soHoaDon + "','" + maNguyenLieu + "','" + tenNguyenLieu + "','"+maLoaiNguyenLieu+"','" + maNhaCungCap + "','" + ngayNhap + "','" + soLuong + "','" + giaTien + "')";
             if (xuly.executeQuery(sql) > 0)
             {
                 re = true;
             }
             return re;
         }
-        public Boolean sua_BaoCaoNhapHang(string soHoaDon, string maNguyenLieu, string tenNguyenLieu, string maNhaCungCap, int soLuong, int giaTien)
+        public Boolean sua_BaoCaoNhapHang(string soHoaDon, string maNguyenLieu, string tenNguyenLieu, string maLoaiNguyenLieu,string maNhaCungCap, int soLuong, int giaTien)
             //cập nhật nguyên liệu báo cáo nhâp hàng
         {
             bool re = false;
-            string sql = "update BaoCaoNhapHang set MaNguyenLieu ='"+maNguyenLieu+"', TenNguyenLieu = '"+tenNguyenLieu+"', MaNhaCungCap ='"+maNhaCungCap+"', SoLuong='"+soLuong+"', GiaTien = '"+giaTien+"' where SoHoaDon = '"+soHoaDon+"' and MaNguyenLieu = '"+maNguyenLieu+"'";
+            string sql = "update BaoCaoNhapHang set MaNguyenLieu ='"+maNguyenLieu+"', TenNguyenLieu = '"+tenNguyenLieu+"', MaLoaiNguyenLieu='"+maLoaiNguyenLieu+"' ,MaNhaCungCap ='"+maNhaCungCap+"', SoLuong='"+soLuong+"', GiaTien = '"+giaTien+"' where SoHoaDon = '"+soHoaDon+"' and MaNguyenLieu = '"+maNguyenLieu+"'";
             if (xuly.executeQuery(sql) > 0)
             {
                 re = true;
@@ -83,11 +83,11 @@ namespace Quản_Lý_Yellow_Cab_Pizza.MVC_Model
             return re;
         }
 
-        public Boolean sua_ChiTietNhapHang(string soHoaDon, string maNguyenLieu, string tenNguyenLieu, string maNhaCungCap, int soLuong, int giaTien)
+        public Boolean sua_ChiTietNhapHang(string soHoaDon, string maNguyenLieu, string tenNguyenLieu, string maLoaiNguyenLieu, string maNhaCungCap, int soLuong, int giaTien)
             //cập nhật chi tiết nhập hàng
         {
             bool re = false;
-            string sql = "update ChiTietNhapHang set MaNguyenLieu ='" + maNguyenLieu + "', TenNguyenLieu = '" + tenNguyenLieu + "', MaNhaCungCap ='" + maNhaCungCap + "', SoLuong='" + soLuong + "', GiaTien = '" + giaTien + "' where SoHoaDon = '" + soHoaDon + "' and MaNguyenLieu = '" + maNguyenLieu + "'";
+            string sql = "update ChiTietNhapHang set MaNguyenLieu ='" + maNguyenLieu + "', TenNguyenLieu = '" + tenNguyenLieu + "',  MaLoaiNguyenLieu='" + maLoaiNguyenLieu + "' ,MaNhaCungCap ='" + maNhaCungCap + "', SoLuong='" + soLuong + "', GiaTien = '" + giaTien + "' where SoHoaDon = '" + soHoaDon + "' and MaNguyenLieu = '" + maNguyenLieu + "'";
             if (xuly.executeQuery(sql) > 0)
             {
                 re = true;
@@ -140,11 +140,11 @@ namespace Quản_Lý_Yellow_Cab_Pizza.MVC_Model
             }
             return re;
         }
-        public Boolean them_QuanLyNguyenLieu(string maNguyenLieu, string tenNguyenLieu, string maLoaiNguyenLieu, string maNhaCungCap, int soLuong)
+        public Boolean them_QuanLyNguyenLieu(string maNguyenLieu, string tenNguyenLieu, string maLoaiNguyenLieu, string maNhaCungCap, int soLuong, int GiaTien)
             //thêm vào quản lý nguyên liệu nếu không có
         {
             bool re = false;
-            string sql = "insert into QuanLyNguyenLieu values('"+maNguyenLieu+"','"+tenNguyenLieu+"','"+maLoaiNguyenLieu+"','"+maNhaCungCap+"','"+soLuong+"')";
+            string sql = "insert into QuanLyNguyenLieu values('"+maNguyenLieu+"','"+tenNguyenLieu+"','"+maLoaiNguyenLieu+"','"+maNhaCungCap+"','"+soLuong+ "','" + GiaTien + "')";
             if (xuly.executeQuery(sql) > 0)
             {
                 re = true;

@@ -27,6 +27,20 @@ namespace Quản_Lý_Yellow_Cab_Pizza
         {
             dgvNguyenLieuNhap.DataSource = nhapHangModel.load_ChiTietNhapHang();
             dgvNguyenLieuNhap.Columns["SoHoaDon"].Visible = false;
+
+            dgvNguyenLieuNhap.Columns["MaNguyenLieu"].Width = 150;
+            dgvNguyenLieuNhap.Columns["TenNguyenLieu"].Width = 200;
+            dgvNguyenLieuNhap.Columns["MaLoaiNguyenLieu"].Width = 150;
+            dgvNguyenLieuNhap.Columns["MaNhaCungCap"].Width = 200;
+            dgvNguyenLieuNhap.Columns["SoLuong"].Width = 150;
+            dgvNguyenLieuNhap.Columns["GiaTien"].Width = 150;
+
+            dgvNguyenLieuNhap.Columns[1].HeaderText = "Mã Nguyên Liệu";
+            dgvNguyenLieuNhap.Columns[2].HeaderText = "Tên Nguyên Liệu";
+            dgvNguyenLieuNhap.Columns[3].HeaderText = "Mã Loại Nguyên Liệu";
+            dgvNguyenLieuNhap.Columns[4].HeaderText = "Mã Nhà Cung Cấp";
+            dgvNguyenLieuNhap.Columns[5].HeaderText = "Số Lượng";
+            dgvNguyenLieuNhap.Columns[6].HeaderText = "Giá Tiền";
         }
         private void btThoat_Click(object sender, EventArgs e)
         {
@@ -98,10 +112,10 @@ namespace Quản_Lý_Yellow_Cab_Pizza
             try
             {
                 DateTime ngayNhap = DateTime.Now;
-                if (nhapHangControl.them_BaoCaoNhapHang(txtSoHoaDon.Text, txtMaNL.Text, txtTenNL.Text, txtNhaCC.Text, ngayNhap, Int32.Parse(txtSoLuong.Text), Int32.Parse(txtGiaTien.Text)))
+                if (nhapHangControl.them_BaoCaoNhapHang(txtSoHoaDon.Text, txtMaNL.Text, txtTenNL.Text,txtMaLoaiNL.Text ,txtNhaCC.Text, ngayNhap, Int32.Parse(txtSoLuong.Text), Int32.Parse(txtGiaTien.Text)))
                 {
 
-                    nhapHangControl.them_NhapNguyenLieu(txtSoHoaDon.Text, txtMaNL.Text, txtTenNL.Text, txtNhaCC.Text, Int32.Parse(txtSoLuong.Text), Int32.Parse(txtGiaTien.Text));
+                    nhapHangControl.them_NhapNguyenLieu(txtSoHoaDon.Text, txtMaNL.Text, txtTenNL.Text, txtMaLoaiNL.Text, txtNhaCC.Text, Int32.Parse(txtSoLuong.Text), Int32.Parse(txtGiaTien.Text));
                     if ((nhapHangControl.check_NguyenLieu(txtMaNL.Text)))
                     {
                         
@@ -109,8 +123,7 @@ namespace Quản_Lý_Yellow_Cab_Pizza
                     }
                     else
                     {
-                        MessageBox.Show("KHÔNG");
-                        nhapHangControl.them_QuanLyNguyenLieu(txtMaNL.Text, txtTenNL.Text, txtMaLoaiNL.Text, txtNhaCC.Text, Int32.Parse(txtSoLuong.Text));
+                        nhapHangControl.them_QuanLyNguyenLieu(txtMaNL.Text, txtTenNL.Text, txtMaLoaiNL.Text, txtNhaCC.Text, Int32.Parse(txtSoLuong.Text), Int32.Parse(txtGiaTien.Text));
                     }
                     
                     MessageBox.Show("Một sản phẩm đã được thêm");
@@ -131,8 +144,6 @@ namespace Quản_Lý_Yellow_Cab_Pizza
            
         }
 
-
-
         public void macDinh()
         {
             txtMaNL.Text = "";
@@ -140,6 +151,7 @@ namespace Quản_Lý_Yellow_Cab_Pizza
             txtGiaTien.Text = "";
             txtSoLuong.Text = "";
             txtNhaCC.Text = "";
+            txtMaLoaiNL.Text = "";
         }
 
         private void btIn_Click(object sender, EventArgs e)
@@ -173,9 +185,10 @@ namespace Quản_Lý_Yellow_Cab_Pizza
             txtSoHoaDon.Text = dgvNguyenLieuNhap.Rows[i].Cells[0].Value.ToString();
             txtMaNL.Text = dgvNguyenLieuNhap.Rows[i].Cells[1].Value.ToString();
             txtTenNL.Text = dgvNguyenLieuNhap.Rows[i].Cells[2].Value.ToString();
-            txtNhaCC.Text = dgvNguyenLieuNhap.Rows[i].Cells[3].Value.ToString();
-            txtSoLuong.Text = dgvNguyenLieuNhap.Rows[i].Cells[4].Value.ToString();
-            txtGiaTien.Text = dgvNguyenLieuNhap.Rows[i].Cells[5].Value.ToString();
+            txtMaLoaiNL.Text = dgvNguyenLieuNhap.Rows[i].Cells[3].Value.ToString();
+            txtNhaCC.Text = dgvNguyenLieuNhap.Rows[i].Cells[4].Value.ToString();
+            txtSoLuong.Text = dgvNguyenLieuNhap.Rows[i].Cells[5].Value.ToString();
+            txtGiaTien.Text = dgvNguyenLieuNhap.Rows[i].Cells[6].Value.ToString();
         }
 
         private void btSua_Click(object sender, EventArgs e)
@@ -186,10 +199,10 @@ namespace Quản_Lý_Yellow_Cab_Pizza
             }
             else
             {
-                if(nhapHangControl.sua_ChiTietNhapHang(txtSoHoaDon.Text, txtMaNL.Text, txtTenNL.Text, txtNhaCC.Text, Int32.Parse(txtSoLuong.Text), Int32.Parse(txtGiaTien.Text)))
+                if(nhapHangControl.sua_ChiTietNhapHang(txtSoHoaDon.Text, txtMaNL.Text, txtTenNL.Text, txtMaLoaiNL.Text, txtNhaCC.Text, Int32.Parse(txtSoLuong.Text), Int32.Parse(txtGiaTien.Text)))
                 {
-                    
-                    nhapHangControl.sua_BaoCaoNhapHang(txtSoHoaDon.Text, txtMaNL.Text, txtTenNL.Text, txtNhaCC.Text, Int32.Parse(txtSoLuong.Text), Int32.Parse(txtGiaTien.Text));
+                    nhapHangControl.capnhat_SoLuong(Int32.Parse(txtSoLuong.Text),txtMaNL.Text,txtSoHoaDon.Text);
+                    nhapHangControl.sua_BaoCaoNhapHang(txtSoHoaDon.Text, txtMaNL.Text, txtTenNL.Text, txtMaLoaiNL.Text, txtNhaCC.Text, Int32.Parse(txtSoLuong.Text), Int32.Parse(txtGiaTien.Text));
                     MessageBox.Show("Nguyên liệu đã được cập nhật");
                 }
                 else

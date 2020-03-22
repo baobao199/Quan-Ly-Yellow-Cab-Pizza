@@ -37,11 +37,11 @@ namespace Quản_Lý_Yellow_Cab_Pizza.MVC_Model
             }
             return re;
         }
-        public Boolean them_XuatNguyenLieu(string soHoaDon, string maNguyenLieu, string tenNguyenLieu, string maNhaCungCap, int giaTien, int SoLuong)
+        public Boolean them_ChiTietXuatHang(string soHoaDon, string maNguyenLieu, string tenNguyenLieu, string maLoaiNguyenLieu, string maNhaCungCap, int giaTien, int SoLuong)
         //thêm nguyên liệu nhập
         {
             bool re = false;
-            string sql = "insert into ChiTietXuatHang values('" + soHoaDon + "','" + maNguyenLieu + "','" + tenNguyenLieu + "','" + maNhaCungCap + "','" + SoLuong + "','" + giaTien + "')";
+            string sql = "insert into ChiTietXuatHang values('" + soHoaDon + "','" + maNguyenLieu + "','" + tenNguyenLieu + "','" + maLoaiNguyenLieu + "','" + maNhaCungCap + "','" + giaTien + "','" +  SoLuong + "')";
             if (xuly.executeQuery(sql) > 0)
             {
                 re = true;
@@ -60,22 +60,22 @@ namespace Quản_Lý_Yellow_Cab_Pizza.MVC_Model
             }
             return re;
         }
-        public Boolean them_BaoCaoXuatHang(string soHoaDon, string maNguyenLieu, string tenNguyenLieu, string maNhaCungCap, DateTime ngayNhap, int soLuong, int giaTien)
+        public Boolean them_BaoCaoXuatHang(string soHoaDon, string maNguyenLieu, string tenNguyenLieu, string maLoaiNguyenLieu, string maNhaCungCap, DateTime ngayNhap, int soLuong, int giaTien)
         // thêm dữ liệu vào báo cáo nhập hàng
         {
             bool re = false;
-            string sql = "insert into BaoCaoXuatHang values('" + soHoaDon + "','" + maNguyenLieu + "','" + tenNguyenLieu + "','" + maNhaCungCap + "','" + ngayNhap + "','" + soLuong + "','" + giaTien + "')";
+            string sql = "insert into BaoCaoXuatHang values('" + soHoaDon + "','" + maNguyenLieu + "','" + tenNguyenLieu + "','" + maLoaiNguyenLieu + "','" + maNhaCungCap + "','" + ngayNhap + "','" + soLuong + "','" + giaTien + "')";
             if (xuly.executeQuery(sql) > 0)
             {
                 re = true;
             }
             return re;
         }
-        public Boolean sua_BaoCaoXuatHang(string soHoaDon, string maNguyenLieu, string tenNguyenLieu, string maNhaCungCap, int soLuong, int giaTien)
+        public Boolean sua_BaoCaoXuatHang(string soHoaDon, string maNguyenLieu, string tenNguyenLieu, string maLoaiNguyenLieu, string maNhaCungCap, int soLuong, int giaTien)
         //cập nhật nguyên liệu báo cáo nhâp hàng
         {
             bool re = false;
-            string sql = "update BaoCaoXuatHang set MaNguyenLieu ='" + maNguyenLieu + "', TenNguyenLieu = '" + tenNguyenLieu + "', MaNhaCungCap ='" + maNhaCungCap + "', SoLuong='" + soLuong + "', GiaTien = '" + giaTien + "' where SoHoaDon = '" + soHoaDon + "' and MaNguyenLieu = '" + maNguyenLieu + "'";
+            string sql = "update BaoCaoXuatHang set MaNguyenLieu ='" + maNguyenLieu + "', TenNguyenLieu = '" + tenNguyenLieu + "', MaLoaiNguyenLieu='" + maLoaiNguyenLieu + "' ,MaNhaCungCap ='" + maNhaCungCap + "', SoLuong='" + soLuong + "', GiaTien = '" + giaTien + "' where SoHoaDon = '" + soHoaDon + "' and MaNguyenLieu = '" + maNguyenLieu + "'";
             if (xuly.executeQuery(sql) > 0)
             {
                 re = true;
@@ -83,11 +83,11 @@ namespace Quản_Lý_Yellow_Cab_Pizza.MVC_Model
             return re;
         }
 
-        public Boolean sua_ChiTietXuatHang(string soHoaDon, string maNguyenLieu, string tenNguyenLieu, string maNhaCungCap, int soLuong, int giaTien)
+        public Boolean sua_ChiTietXuatHang(string soHoaDon, string maNguyenLieu, string tenNguyenLieu, string maLoaiNguyenLieu, string maNhaCungCap, int soLuong, int giaTien)
         //cập nhật chi tiết nhập hàng
         {
             bool re = false;
-            string sql = "update ChiTietXuatHang set MaNguyenLieu ='" + maNguyenLieu + "', TenNguyenLieu = '" + tenNguyenLieu + "', MaNhaCungCap ='" + maNhaCungCap + "', SoLuong='" + soLuong + "', GiaTien = '" + giaTien + "' where SoHoaDon = '" + soHoaDon + "' and MaNguyenLieu = '" + maNguyenLieu + "'";
+            string sql = "update ChiTietXuatHang set MaNguyenLieu ='" + maNguyenLieu + "', TenNguyenLieu = '" + tenNguyenLieu + "',  MaLoaiNguyenLieu='" + maLoaiNguyenLieu + "' ,MaNhaCungCap ='" + maNhaCungCap + "', SoLuong='" + soLuong + "', GiaTien = '" + giaTien + "' where SoHoaDon = '" + soHoaDon + "' and MaNguyenLieu = '" + maNguyenLieu + "'";
             if (xuly.executeQuery(sql) > 0)
             {
                 re = true;

@@ -37,11 +37,13 @@
             this.lbTinhTrang = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.txtLoaiNL = new System.Windows.Forms.TextBox();
+            this.txtNhaCC = new System.Windows.Forms.TextBox();
             this.txtTenNL = new System.Windows.Forms.TextBox();
             this.txtMaNL = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.button1 = new System.Windows.Forms.Button();
@@ -56,8 +58,8 @@
             this.button2 = new System.Windows.Forms.Button();
             this.btn_capnhat = new System.Windows.Forms.Button();
             this.btn_xoa = new System.Windows.Forms.Button();
-            this.label5 = new System.Windows.Forms.Label();
-            this.txtNhaCC = new System.Windows.Forms.TextBox();
+            this.txtGiaTien = new System.Windows.Forms.TextBox();
+            this.label3 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvNguyenLieu)).BeginInit();
             this.groupBox2.SuspendLayout();
@@ -97,6 +99,8 @@
             // 
             this.groupBox2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.groupBox2.Controls.Add(this.txtGiaTien);
+            this.groupBox2.Controls.Add(this.label3);
             this.groupBox2.Controls.Add(this.btSave);
             this.groupBox2.Controls.Add(this.txtSoLuong);
             this.groupBox2.Controls.Add(this.lbTinhTrang);
@@ -137,7 +141,7 @@
             // 
             // txtSoLuong
             // 
-            this.txtSoLuong.Location = new System.Drawing.Point(438, 58);
+            this.txtSoLuong.Location = new System.Drawing.Point(438, 29);
             this.txtSoLuong.Name = "txtSoLuong";
             this.txtSoLuong.Size = new System.Drawing.Size(164, 20);
             this.txtSoLuong.TabIndex = 6;
@@ -169,6 +173,13 @@
             this.txtLoaiNL.Size = new System.Drawing.Size(164, 20);
             this.txtLoaiNL.TabIndex = 4;
             // 
+            // txtNhaCC
+            // 
+            this.txtNhaCC.Location = new System.Drawing.Point(144, 96);
+            this.txtNhaCC.Name = "txtNhaCC";
+            this.txtNhaCC.Size = new System.Drawing.Size(164, 20);
+            this.txtNhaCC.TabIndex = 3;
+            // 
             // txtTenNL
             // 
             this.txtTenNL.ForeColor = System.Drawing.SystemColors.WindowText;
@@ -188,7 +199,7 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(373, 61);
+            this.label7.Location = new System.Drawing.Point(373, 32);
             this.label7.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(52, 13);
@@ -214,6 +225,16 @@
             this.label2.Size = new System.Drawing.Size(86, 13);
             this.label2.TabIndex = 18;
             this.label2.Text = "Tên nguyên liệu:";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(54, 99);
+            this.label5.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(78, 13);
+            this.label5.TabIndex = 15;
+            this.label5.Text = "Nhà cung cấp:";
             // 
             // label4
             // 
@@ -414,22 +435,22 @@
             this.btn_xoa.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btn_xoa.UseVisualStyleBackColor = false;
             // 
-            // label5
+            // txtGiaTien
             // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(54, 99);
-            this.label5.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(78, 13);
-            this.label5.TabIndex = 15;
-            this.label5.Text = "Nhà cung cấp:";
+            this.txtGiaTien.Location = new System.Drawing.Point(438, 61);
+            this.txtGiaTien.Name = "txtGiaTien";
+            this.txtGiaTien.Size = new System.Drawing.Size(164, 20);
+            this.txtGiaTien.TabIndex = 39;
             // 
-            // txtNhaCC
+            // label3
             // 
-            this.txtNhaCC.Location = new System.Drawing.Point(144, 96);
-            this.txtNhaCC.Name = "txtNhaCC";
-            this.txtNhaCC.Size = new System.Drawing.Size(164, 20);
-            this.txtNhaCC.TabIndex = 3;
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(373, 64);
+            this.label3.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(46, 13);
+            this.label3.TabIndex = 40;
+            this.label3.Text = "Giá tiền:";
             // 
             // frm_NguyenLieu
             // 
@@ -496,5 +517,7 @@
         private System.Windows.Forms.Button btSave;
         private System.Windows.Forms.TextBox txtNhaCC;
         private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.TextBox txtGiaTien;
+        private System.Windows.Forms.Label label3;
     }
 }

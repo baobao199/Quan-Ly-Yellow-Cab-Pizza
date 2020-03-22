@@ -27,6 +27,10 @@ namespace Quản_Lý_Yellow_Cab_Pizza
         private void frm_LoaiNguyenLieu_Load(object sender, EventArgs e)
         {
             dgvLoaiNL.DataSource = loaiNguyenLieuModel.load_Data();
+            dgvLoaiNL.Columns["MaLoaiNguyenLieu"].Width = 187;
+            dgvLoaiNL.Columns["TenLoaiNguyenLieu"].Width = 187;
+            dgvLoaiNL.Columns[0].HeaderText = "Mã Loại Nguyên Liệu";
+            dgvLoaiNL.Columns[0].HeaderText = "Tên Loại Nguyên Liệu";
         }
 
         private void btThoat_Click(object sender, EventArgs e)

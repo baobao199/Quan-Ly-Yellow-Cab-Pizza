@@ -10,9 +10,9 @@ namespace Quản_Lý_Yellow_Cab_Pizza.MVC_Control
     class nhapHang_Control
     {
         nhapHang_Model nhapHangModel = new nhapHang_Model();
-        public Boolean them_NhapNguyenLieu(string soHoaDon, string maNguyenLieu, string tenNguyenLieu, string maNhaCungCap, int giaTien, int SoLuong)
+        public Boolean them_NhapNguyenLieu(string soHoaDon, string maNguyenLieu, string tenNguyenLieu, string maLoaiNguyenLieu, string maNhaCungCap, int giaTien, int SoLuong)
         {
-            return nhapHangModel.them_NhapNguyenLieu(soHoaDon, maNguyenLieu, tenNguyenLieu, maNhaCungCap, SoLuong, giaTien);
+            return nhapHangModel.them_NhapNguyenLieu(soHoaDon, maNguyenLieu, tenNguyenLieu, maLoaiNguyenLieu, maNhaCungCap, SoLuong, giaTien);
         }
         public Boolean them_HoaDon(string soHoaDon)
         {
@@ -22,17 +22,17 @@ namespace Quản_Lý_Yellow_Cab_Pizza.MVC_Control
         {
             return nhapHangModel.xoa_ChiTietNguyenLieu(soHoaDon);
         }
-        public Boolean them_BaoCaoNhapHang(string soHoaDon, string maNguyenLieu, string tenNguyenLieu, string maNhaCungCap, DateTime ngayNhap, int SoLuong, int giaTien)
+        public Boolean them_BaoCaoNhapHang(string soHoaDon, string maNguyenLieu, string tenNguyenLieu, string maLoaiNguyenLieu, string maNhaCungCap, DateTime ngayNhap, int SoLuong, int giaTien)
         {
-            return nhapHangModel.them_BaoCaoNhapHang(soHoaDon, maNguyenLieu, tenNguyenLieu, maNhaCungCap, ngayNhap, SoLuong, giaTien);
+            return nhapHangModel.them_BaoCaoNhapHang(soHoaDon, maNguyenLieu, tenNguyenLieu, maLoaiNguyenLieu, maNhaCungCap, ngayNhap, SoLuong, giaTien);
         }
-        public Boolean sua_BaoCaoNhapHang(string maHoaDon, string maNguyenLieu, string tenNguyenLieu, string maNhaCungCap, int SoLuong, int giaTien)
+        public Boolean sua_BaoCaoNhapHang(string maHoaDon, string maNguyenLieu, string tenNguyenLieu,string maLoaiNguyenLieu, string maNhaCungCap, int SoLuong, int giaTien)
         {
-            return nhapHangModel.sua_BaoCaoNhapHang(maHoaDon, maNguyenLieu, tenNguyenLieu, maNhaCungCap, SoLuong, giaTien);
+            return nhapHangModel.sua_BaoCaoNhapHang(maHoaDon, maNguyenLieu, tenNguyenLieu, maLoaiNguyenLieu, maNhaCungCap, SoLuong, giaTien);
         }
-        public Boolean sua_ChiTietNhapHang(string soHoaDon, string maNguyenLieu, string tenNguyenLieu, string maNhaCungCap, int SoLuong, int giaTien)
+        public Boolean sua_ChiTietNhapHang(string soHoaDon, string maNguyenLieu, string tenNguyenLieu, string maLoaiNguyenLieu, string maNhaCungCap, int SoLuong, int giaTien)
         {
-            return nhapHangModel.sua_ChiTietNhapHang(soHoaDon, maNguyenLieu, tenNguyenLieu, maNhaCungCap, SoLuong, giaTien);
+            return nhapHangModel.sua_ChiTietNhapHang(soHoaDon, maNguyenLieu, tenNguyenLieu, maLoaiNguyenLieu, maNhaCungCap, SoLuong, giaTien);
         }
         public Boolean xoa_ChiTietNhapHang(string soHoaDon, string maNguyenLieu)
         {
@@ -50,9 +50,9 @@ namespace Quản_Lý_Yellow_Cab_Pizza.MVC_Control
         {
             return nhapHangModel.check_NguyenLieu(maNguyenLieu);
         }
-        public Boolean them_QuanLyNguyenLieu(string maNguyenLieu, string tenNguyenLieu, string maLoaiNguyenLieu, string maNhaCungCap, int soLuong)
+        public Boolean them_QuanLyNguyenLieu(string maNguyenLieu, string tenNguyenLieu, string maLoaiNguyenLieu, string maNhaCungCap, int soLuong, int giaTien)
         {
-            return nhapHangModel.them_QuanLyNguyenLieu(maNguyenLieu, tenNguyenLieu, maLoaiNguyenLieu, maNhaCungCap, soLuong);
+            return nhapHangModel.them_QuanLyNguyenLieu(maNguyenLieu, tenNguyenLieu, maLoaiNguyenLieu, maNhaCungCap, soLuong, giaTien);
         }
     }
 }

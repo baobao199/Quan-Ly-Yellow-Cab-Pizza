@@ -24,14 +24,15 @@ namespace Quản_Lý_Yellow_Cab_Pizza
 
         private void btnTimKiem_Click(object sender, EventArgs e)
         {
-            dgvNhapExel.DataSource = reportNhapHangModel.load_ReportNhapHang(dpTuNgay.Value.ToString("yyyy-MM-dd"), dpDenNgay.Value.ToString("yyyy-MM-dd"));
             reportNhapHangControl.ThanhTien();
+            dgvNhapExel.DataSource = reportNhapHangModel.load_ReportNhapHang(dpTuNgay.Value.ToString("yyyy-MM-dd"), dpDenNgay.Value.ToString("yyyy-MM-dd"));
+            
         }
 
         private void frm_ReportNhapHang_Load(object sender, EventArgs e)
         {
-            //dpDenNgay.Value = DateTime.Now;
-            //dpTuNgay.Value = DateTime.Now;
+            dpDenNgay.Value = DateTime.Now;
+            dpTuNgay.Value = DateTime.Now;
         }
 
         private void btXuatExel_Click(object sender, EventArgs e)

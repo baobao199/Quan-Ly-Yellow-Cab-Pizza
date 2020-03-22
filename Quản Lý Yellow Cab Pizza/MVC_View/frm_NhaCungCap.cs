@@ -34,6 +34,14 @@ namespace Quản_Lý_Yellow_Cab_Pizza
         private void frm_NhaCungCap_Load(object sender, EventArgs e)
         {
             dgvDanhSachNCC.DataSource = nhaCungCapModel.load_Data();
+            dgvDanhSachNCC.Columns["MaNhaCungCap"].Width = 110;
+            dgvDanhSachNCC.Columns["TenNhaCungCap"].Width = 110;
+
+            dgvDanhSachNCC.Columns[0].HeaderText = "Mã NCC";
+            dgvDanhSachNCC.Columns[1].HeaderText = "Tên NCC";
+            dgvDanhSachNCC.Columns[2].HeaderText = "Địa Chỉ";
+            dgvDanhSachNCC.Columns[3].HeaderText = "Email";
+            dgvDanhSachNCC.Columns[4].HeaderText = "Số Điện Thoại";
         }
 
         private void dgvDanhSachNCC_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)

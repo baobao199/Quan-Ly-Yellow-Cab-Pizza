@@ -14,26 +14,26 @@ namespace Quản_Lý_Yellow_Cab_Pizza.MVC_Control
         {
             return xuatHangModel.them_HoaDon(soHoaDon);
         }
-        public Boolean them_XuatNguyenLieu(string soHoaDon, string maNguyenLieu, string tenNguyenLieu, string maNhaCungCap, int giaTien, int SoLuong)
+        public Boolean them_ChiTietXuatHang(string soHoaDon, string maNguyenLieu, string tenNguyenLieu, string maLoaiNguyenLieu ,string maNhaCungCap, int giaTien, int SoLuong)
         {
-            return xuatHangModel.them_XuatNguyenLieu(soHoaDon, maNguyenLieu, tenNguyenLieu, maNhaCungCap, giaTien, SoLuong);
+            return xuatHangModel.them_ChiTietXuatHang(soHoaDon, maNguyenLieu, tenNguyenLieu, maLoaiNguyenLieu, maNhaCungCap, giaTien, SoLuong);
         }
 
         public Boolean xoa_ChiTietXuatHang(string soHoaDon)
         {
             return xuatHangModel.xoa_ChiTietXuatHang(soHoaDon);
         }
-        public Boolean them_BaoCaoXuatHang(string soHoaDon, string maNguyenLieu, string tenNguyenLieu, string maNhaCungCap, DateTime ngayNhap, int soLuong, int giaTien)
+        public Boolean them_BaoCaoXuatHang(string soHoaDon, string maNguyenLieu, string tenNguyenLieu, string maLoaiNguyenLieu, string maNhaCungCap, DateTime ngayNhap, int soLuong, int giaTien)
         {
-            return xuatHangModel.them_BaoCaoXuatHang(soHoaDon, maNguyenLieu, tenNguyenLieu, maNhaCungCap, ngayNhap, soLuong, giaTien);
+            return xuatHangModel.them_BaoCaoXuatHang(soHoaDon, maNguyenLieu, tenNguyenLieu, maLoaiNguyenLieu, maNhaCungCap, ngayNhap, soLuong, giaTien);
         }
-        public Boolean sua_BaoCaoXuatHang(string soHoaDon, string maNguyenLieu, string tenNguyenLieu, string maNhaCungCap, int soLuong, int giaTien)
+        public Boolean sua_BaoCaoXuatHang(string soHoaDon, string maNguyenLieu, string tenNguyenLieu, string maLoaiNguyenLieu, string maNhaCungCap, int soLuong, int giaTien)
         {
-            return xuatHangModel.sua_BaoCaoXuatHang( soHoaDon,  maNguyenLieu,  tenNguyenLieu,  maNhaCungCap,  soLuong,  giaTien);
+            return xuatHangModel.sua_BaoCaoXuatHang( soHoaDon,  maNguyenLieu,  tenNguyenLieu, maLoaiNguyenLieu,  maNhaCungCap,  soLuong,  giaTien);
         }
-        public Boolean sua_ChiTietXuatHang(string soHoaDon, string maNguyenLieu, string tenNguyenLieu, string maNhaCungCap, int soLuong, int giaTien)
+        public Boolean sua_ChiTietXuatHang(string soHoaDon, string maNguyenLieu, string tenNguyenLieu, string maLoaiNguyenLieu, string maNhaCungCap, int soLuong, int giaTien)
         {
-            return xuatHangModel.sua_ChiTietXuatHang(soHoaDon, maNguyenLieu, tenNguyenLieu, maNhaCungCap, soLuong, giaTien);
+            return xuatHangModel.sua_ChiTietXuatHang(soHoaDon, maNguyenLieu, tenNguyenLieu, maLoaiNguyenLieu,maNhaCungCap, soLuong, giaTien);
         }
         public Boolean xoa_ChiTietXuatHang(string soHoaDon, string maNguyenLieu)
         {
