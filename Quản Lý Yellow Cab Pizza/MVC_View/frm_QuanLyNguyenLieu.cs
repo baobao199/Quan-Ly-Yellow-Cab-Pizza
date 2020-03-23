@@ -25,7 +25,7 @@ namespace Quản_Lý_Yellow_Cab_Pizza
         quanlynguyenlieu_Control nguyenlieuControl = new quanlynguyenlieu_Control();
 
         private void frm_NguyenLieu_Load(object sender, EventArgs e)
-            //load dữ liệu lên datagirdview
+        //load dữ liệu lên datagirdview
         {
             dgvNguyenLieu.DataSource = nguyenLieuModel.load_Data();
 
@@ -42,6 +42,19 @@ namespace Quản_Lý_Yellow_Cab_Pizza
             dgvNguyenLieu.Columns[3].HeaderText = "Mã Nhà Cung Cấp";
             dgvNguyenLieu.Columns[4].HeaderText = "Số Lượng";
             dgvNguyenLieu.Columns[5].HeaderText = "Giá Tiền";
+            
+
+            //MessageBox.Show(dgvNguyenLieu.Rows[0].Cells[4].Value.ToString());
+            for (i = 0; i < dgvNguyenLieu.Rows.Count; i++)
+            {
+                if (Int32.Parse(dgvNguyenLieu.Rows[i].Cells[4].Value.ToString()) < 0)
+                {
+                    string mgl = dgvNguyenLieu.Rows[0].Cells[0].Value.ToString();
+                    string sl = dgvNguyenLieu.Rows[i].Cells[4].Value.ToString(); sl = "0";
+                    nguyenlieuControl.capNhat_SoLuong(mgl, Int32.Parse(sl));
+                }
+                continue;
+            }
         }
         private void macDinh()
             //đưa dữ liệu về trạng thái rổng
@@ -53,6 +66,7 @@ namespace Quản_Lý_Yellow_Cab_Pizza
             txtSoLuong.Text = "";
             lbTinhTrang.Text = "";
             txtTimKiem.Text = "";
+            txtGiaTien.Text = "";
         }
 
         private void dgvNguyenLieu_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)
@@ -73,15 +87,18 @@ namespace Quản_Lý_Yellow_Cab_Pizza
                 {
                     lbTinhTrang.Text = "Còn Hàng";
                 }
-                else if (t < 10)
+                else if (t > 5 && t < 10)
                 {
                     lbTinhTrang.Text = "Sắp hết hàng";
                     
                 }
-                else if (t <= 5)
+                else if (t > 0 && t <= 5)
                 {
                     lbTinhTrang.Text = "Nhập hàng ngay";
-                    MessageBox.Show("Nhập hàng ngay");
+                }
+                else if (t == 0)
+                {
+                    lbTinhTrang.Text = "Hết hàng";
                 }
             }
             catch
@@ -97,10 +114,6 @@ namespace Quản_Lý_Yellow_Cab_Pizza
 
         }
 
-        private void btSua_Click(object sender, EventArgs e)
-        {
-            btSave.Enabled = true;
-        }
 
         private void btSave_Click(object sender, EventArgs e)
         {
@@ -108,13 +121,16 @@ namespace Quản_Lý_Yellow_Cab_Pizza
             {
                 MessageBox.Show("Vui lòng nhập đầy đủ thông tin");
             }
+            else if (Int32.Parse(txtSoLuong.Text) < 0)
+            {
+                MessageBox.Show("Số lượng không thể âm");
+            }
             else
             {
                 if (nguyenlieuControl.capnhat_NguyenLieu(txtMaNL.Text,txtTenNL.Text, txtLoaiNL.Text, txtNhaCC.Text, Int32.Parse(txtSoLuong.Text), Int32.Parse(txtGiaTien.Text)))
                 {
                     nguyenlieuControl.capNhat_BaoCaoNhapHang(txtMaNL.Text, txtTenNL.Text, txtLoaiNL.Text, txtNhaCC.Text, Int32.Parse(txtSoLuong.Text), Int32.Parse(txtGiaTien.Text));
                     MessageBox.Show("Nguyên liệu đã được cập nhật");
-                    btSave.Enabled = false;
                     frm_NguyenLieu_Load(sender, e);
                     macDinh();
                 }
@@ -131,27 +147,6 @@ namespace Quản_Lý_Yellow_Cab_Pizza
             Dispose();
         }
 
-        private void btXoa_Click(object sender, EventArgs e)
-        {
-            
-            DialogResult dr;
-            dr = MessageBox.Show("Bạn có chắc muốn xóa?", "Xóa", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
-            if (dr == DialogResult.Yes)
-            {
-                string id = dgvNguyenLieu.Rows[i].Cells[0].Value.ToString(); 
-                if (nguyenlieuControl.xoa_NguyenLieu(id))
-                {
-                    nguyenlieuControl.xoa_BaoCaoNhapHang(id);
-                    MessageBox.Show("Nguyên liệu đã được xóa");
-                }
-                else
-                {
-                    MessageBox.Show("Nguyên liệu chưa được xóa");
-                }
-                frm_NguyenLieu_Load(sender, e);
-                macDinh();
-            }
-        }
 
         private void btTimKiem_Click(object sender, EventArgs e)
         {
@@ -165,9 +160,5 @@ namespace Quản_Lý_Yellow_Cab_Pizza
             }
         }
 
-        private void dgvNguyenLieu_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
     }
 }

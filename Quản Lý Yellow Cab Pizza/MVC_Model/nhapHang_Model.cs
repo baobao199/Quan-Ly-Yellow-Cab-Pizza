@@ -26,6 +26,15 @@ namespace Quản_Lý_Yellow_Cab_Pizza.MVC_Model
             da = xuly.creatTable(sql);
             return da;
         }
+        
+        public DataTable load_NguyenLieu(string maNguyenLieu)
+        //load nguyên liệu lên phần mềm
+        {
+            DataTable da;
+            string sql = "select * from NguyenLieu where MaNguyenLieu ='" + maNguyenLieu + "'";
+            da = xuly.creatTable(sql);
+            return da;
+        }
 
         public Boolean them_NhapNguyenLieu(string soHoaDon, string maNguyenLieu, string tenNguyenLieu, string maLoaiNguyenLieu, string maNhaCungCap, int giaTien, int SoLuong)
             //thêm nguyên liệu nhập
@@ -49,6 +58,8 @@ namespace Quản_Lý_Yellow_Cab_Pizza.MVC_Model
             }
             return re;
         }
+
+
         public Boolean xoa_ChiTietNguyenLieu(string soHoaDon)
             // xóa hóa đơn để tạo hóa đơn mới
         {
@@ -60,6 +71,30 @@ namespace Quản_Lý_Yellow_Cab_Pizza.MVC_Model
             }
             return re;
         }
+        public Boolean xoa_ChiTietNhapHang(string soHoaDon, string maNguyenLieu)
+        //xóa 1 nguyên liệu trong chi tiết nhập hàng
+        {
+            bool re = false;
+            string sql = "delete ChiTietNhapHang where SoHoaDon ='" + soHoaDon + "' and MaNguyenLieu = '" + maNguyenLieu + "'";
+            if (xuly.executeQuery(sql) > 0)
+            {
+                re = true;
+            }
+            return re;
+        }
+        public Boolean xoa_BaoCaoNhapHang(string soHoaDon, string maNguyenLieu)
+        //xóa 1 nguyên liệu trong báo cáo nhập hàng bằng số hóa đơn
+        {
+            bool re = false;
+            string sql = "delete BaoCaoNhapHang where SoHoaDon = '" + soHoaDon + "' and MaNguyenLieu = '" + maNguyenLieu + "'";
+            if (xuly.executeQuery(sql) > 0)
+            {
+                re = true;
+            }
+            return re;
+        }
+
+
         public Boolean them_BaoCaoNhapHang(string soHoaDon, string maNguyenLieu, string tenNguyenLieu, string maLoaiNguyenLieu, string maNhaCungCap, DateTime ngayNhap, int soLuong, int giaTien)
             // thêm dữ liệu vào báo cáo nhập hàng
         {
@@ -71,6 +106,8 @@ namespace Quản_Lý_Yellow_Cab_Pizza.MVC_Model
             }
             return re;
         }
+
+
         public Boolean sua_BaoCaoNhapHang(string soHoaDon, string maNguyenLieu, string tenNguyenLieu, string maLoaiNguyenLieu,string maNhaCungCap, int soLuong, int giaTien)
             //cập nhật nguyên liệu báo cáo nhâp hàng
         {
@@ -95,29 +132,7 @@ namespace Quản_Lý_Yellow_Cab_Pizza.MVC_Model
             return re;
         }
 
-        public Boolean xoa_ChiTietNhapHang(string soHoaDon, string maNguyenLieu)
-            //xóa 1 nguyên liệu trong chi tiết nhập hàng
-        {
-            bool re = false;
-            string sql = "delete ChiTietNhapHang where SoHoaDon ='"+soHoaDon+"' and MaNguyenLieu = '" + maNguyenLieu + "'";
-            if (xuly.executeQuery(sql) > 0)
-            {
-                re = true;
-            }
-            return re;
-        }
 
-        public Boolean xoa_BaoCaoNhapHang(string soHoaDon, string maNguyenLieu)
-            //xóa 1 nguyên liệu trong báo cáo nhập hàng
-        {
-            bool re = false;
-            string sql = "delete BaoCaoNhapHang where SoHoaDon = '" + soHoaDon + "' and MaNguyenLieu = '" + maNguyenLieu + "'";
-            if (xuly.executeQuery(sql) > 0)
-            {
-                re = true;
-            }
-            return re;
-        }
         public Boolean capnhat_SoLuong(int soLuong, string maNguyenLieu, string soHoaDon)
             //cập nhật số lượng nguyên liệu nhập vào quản lý nguyên liệu
         {
@@ -129,6 +144,33 @@ namespace Quản_Lý_Yellow_Cab_Pizza.MVC_Model
             }
             return re;
         }
+
+
+        public Boolean capnhat_SoLuongSuaBot(int soLuong, string maNguyenLieu)
+        //cập nhật số lượng nguyên liệu nhập vào quản lý nguyên liệu
+        {
+            bool re = false;
+            string sql = "update QuanLyNguyenLieu set SoLuong = SoLuong - '"+soLuong+ "' where MaNguyenLieu='" + maNguyenLieu + "'";
+            if (xuly.executeQuery(sql) > 0)
+            {
+                re = true;
+            }
+            return re;
+        }
+
+        public Boolean capnhat_SoLuongSuaThem(int soLuong, string maNguyenLieu)
+        //cập nhật số lượng nguyên liệu nhập vào quản lý nguyên liệu
+        {
+            bool re = false;
+            string sql = "update QuanLyNguyenLieu set SoLuong = SoLuong + '" + soLuong + "' where MaNguyenLieu='"+maNguyenLieu+"' ";
+            if (xuly.executeQuery(sql) > 0)
+            {
+                re = true;
+            }
+            return re;
+        }
+
+
         public Boolean check_NguyenLieu(string maNguyenLieu)
             //kiểm tra nguyên liệu có trong quản lý nguyên liệu hay không
         {
@@ -140,11 +182,24 @@ namespace Quản_Lý_Yellow_Cab_Pizza.MVC_Model
             }
             return re;
         }
+
+
         public Boolean them_QuanLyNguyenLieu(string maNguyenLieu, string tenNguyenLieu, string maLoaiNguyenLieu, string maNhaCungCap, int soLuong, int GiaTien)
             //thêm vào quản lý nguyên liệu nếu không có
         {
             bool re = false;
             string sql = "insert into QuanLyNguyenLieu values('"+maNguyenLieu+"','"+tenNguyenLieu+"','"+maLoaiNguyenLieu+"','"+maNhaCungCap+"','"+soLuong+ "','" + GiaTien + "')";
+            if (xuly.executeQuery(sql) > 0)
+            {
+                re = true;
+            }
+            return re;
+        }
+
+        public Boolean xoa_NhapHang(string soHoaDon)
+        {
+            bool re = false;
+            string sql = "delete NhapHang where SoHoaDon ='"+soHoaDon+"'";
             if (xuly.executeQuery(sql) > 0)
             {
                 re = true;

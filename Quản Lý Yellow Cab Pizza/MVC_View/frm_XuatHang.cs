@@ -43,9 +43,17 @@ namespace Quản_Lý_Yellow_Cab_Pizza.MVC_View
             dgvNguyenLieuXuat.Columns[6].HeaderText = "Giá Tiền";
         }
 
+
+        private void btThoat_Click(object sender, EventArgs e)
+        {
+            xuatHangControl.xoa_ChiTietXuatNguyenLieu(txtSoHoaDon.Text);
+            xuatHangControl.xoa_XuatHang(txtSoHoaDon.Text);
+            this.Close();
+            Dispose();
+        }
+
         private void btTaoHD_Click(object sender, EventArgs e)
         {
-            btThem.Enabled = true;
             txtMaNL.Focus();
             DataTable dt = xuatHangModel.load_XuatHang();
 
@@ -58,7 +66,7 @@ namespace Quản_Lý_Yellow_Cab_Pizza.MVC_View
                 if (xuatHangControl.them_HoaDon(txtSoHoaDon.Text))
                 {
                     MessageBox.Show("Hóa đơn mới được tạo");
-                    btTaoHD.Enabled = false;
+
                 }
                 else
                 {
@@ -98,37 +106,41 @@ namespace Quản_Lý_Yellow_Cab_Pizza.MVC_View
 
         private void btThem_Click(object sender, EventArgs e)
         {
-            btIn.Enabled = true;
-            btSua.Enabled = true;
-            btXoa.Enabled = true;
-            btTaoHD.Enabled = false;
-            txtMaNL.Enabled = true;
-
             try
             {
-                DateTime ngayNhap = DateTime.Now;
-                if (xuatHangControl.them_BaoCaoXuatHang(txtSoHoaDon.Text, txtMaNL.Text, txtTenNL.Text, txtMaLoaiNL.Text, txtNhaCC.Text, ngayNhap, Int32.Parse(txtSoLuong.Text), Int32.Parse(txtGiaTien.Text)))
+                DateTime ngayXuat = DateTime.Now;
+                DataTable dt = xuatHangModel.check_ConHang(Int32.Parse(txtSoLuong.Text),txtMaNL.Text);
+                int iD1 =Int32.Parse(dt.Rows[0][0].ToString());
+                if (iD1 < 0)
                 {
-                    xuatHangControl.them_ChiTietXuatHang(txtSoHoaDon.Text, txtMaNL.Text, txtTenNL.Text, txtMaLoaiNL.Text, txtNhaCC.Text, Int32.Parse(txtSoLuong.Text), Int32.Parse(txtGiaTien.Text));
-                    if ((xuatHangControl.check_NguyenLieu(txtMaNL.Text)))
-                    {
-
-                        xuatHangControl.capnhat_SoLuong(Int32.Parse(txtSoLuong.Text), txtMaNL.Text, txtSoHoaDon.Text);
-                    }
-                    else
-                    {
-                        MessageBox.Show("Nguyên liệu đã hết");
-                    }
-
-                    MessageBox.Show("Một sản phẩm đã được thêm");
-                    txtMaNL.Focus();
+                    MessageBox.Show("Nguyên liệu không đủ để xuất");
                 }
                 else
                 {
-                    MessageBox.Show("Không thể thêm sản phẩm");
+                    if (xuatHangControl.them_BaoCaoXuatHang(txtSoHoaDon.Text, txtMaNL.Text, txtTenNL.Text, txtMaLoaiNL.Text, txtNhaCC.Text, ngayXuat, Int32.Parse(txtSoLuong.Text), Int32.Parse(txtGiaTien.Text)))
+                    {
+
+                        xuatHangControl.them_ChiTietXuatNguyenLieu(txtSoHoaDon.Text, txtMaNL.Text, txtTenNL.Text, txtMaLoaiNL.Text, txtNhaCC.Text, Int32.Parse(txtSoLuong.Text), Int32.Parse(txtGiaTien.Text));
+                        if ((xuatHangControl.check_NguyenLieu(txtMaNL.Text)))
+                        {
+
+                            xuatHangControl.capnhat_SoLuong(Int32.Parse(txtSoLuong.Text), txtMaNL.Text);
+                        }
+                        else
+                        {
+                            MessageBox.Show("Nguyên liệu không tồn tại hoặc đã hết");
+                        }
+
+                        MessageBox.Show("Một sản phẩm đã được thêm");
+                        txtMaNL.Focus();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Không thể thêm sản phẩm");
+                    }
+                    frm_XuatHang_Load(sender, e);
+                    macDinh();
                 }
-                frm_XuatHang_Load(sender, e);
-                macDinh();
             }
             catch
             {
@@ -140,10 +152,43 @@ namespace Quản_Lý_Yellow_Cab_Pizza.MVC_View
         {
             txtMaNL.Text = "";
             txtTenNL.Text = "";
+            txtMaLoaiNL.Text = "";
+            txtNhaCC.Text = "";
             txtGiaTien.Text = "";
             txtSoLuong.Text = "";
-            txtNhaCC.Text = "";
-            txtMaLoaiNL.Text = "";
+        }
+
+        private void btIn_Click(object sender, EventArgs e)
+        {
+
+            if (xuatHangControl.xoa_ChiTietXuatNguyenLieu(txtSoHoaDon.Text))
+            {
+                MessageBox.Show("Hóa đơn đang được xuất file exel");
+
+            }
+            else
+            {
+                MessageBox.Show("Xuất hóa đơn thất bại");
+                xuatHangControl.xoa_XuatHang(txtSoHoaDon.Text);
+            }
+
+            macDinh();
+            txtSoHoaDon.Text = "";
+            frm_XuatHang_Load(sender, e);
+        }
+
+        private void dgvNguyenLieuXuat_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            int i;
+            i = dgvNguyenLieuXuat.CurrentRow.Index;
+
+            txtSoHoaDon.Text = dgvNguyenLieuXuat.Rows[i].Cells[0].Value.ToString();
+            txtMaNL.Text = dgvNguyenLieuXuat.Rows[i].Cells[1].Value.ToString();
+            txtTenNL.Text = dgvNguyenLieuXuat.Rows[i].Cells[2].Value.ToString();
+            txtMaLoaiNL.Text = dgvNguyenLieuXuat.Rows[i].Cells[3].Value.ToString();
+            txtNhaCC.Text = dgvNguyenLieuXuat.Rows[i].Cells[4].Value.ToString();
+            txtSoLuong.Text = dgvNguyenLieuXuat.Rows[i].Cells[5].Value.ToString();
+            txtGiaTien.Text = dgvNguyenLieuXuat.Rows[i].Cells[6].Value.ToString();
         }
 
         private void btSua_Click(object sender, EventArgs e)
@@ -154,29 +199,68 @@ namespace Quản_Lý_Yellow_Cab_Pizza.MVC_View
             }
             else
             {
-                if (xuatHangControl.sua_ChiTietXuatHang(txtSoHoaDon.Text, txtMaNL.Text, txtTenNL.Text, txtMaLoaiNL.Text, txtNhaCC.Text, Int32.Parse(txtSoLuong.Text), Int32.Parse(txtGiaTien.Text)))
-                {
-                    xuatHangControl.capnhat_SoLuong(Int32.Parse(txtSoLuong.Text),txtMaNL.Text,txtSoHoaDon.Text);
-                    xuatHangControl.sua_BaoCaoXuatHang(txtSoHoaDon.Text, txtMaNL.Text, txtTenNL.Text, txtMaLoaiNL.Text, txtNhaCC.Text, Int32.Parse(txtSoLuong.Text), Int32.Parse(txtGiaTien.Text));
-                    MessageBox.Show("Nguyên liệu đã được cập nhật");
+                try {
+                    //giá trị chênh lệch để chỉnh sửa cập nhật số lượng quản lý nguyên liệu
+                    int i;
+                    i = dgvNguyenLieuXuat.CurrentRow.Index;
+                    int soDu = Int32.Parse(dgvNguyenLieuXuat.Rows[i].Cells[5].Value.ToString()) - Int32.Parse(txtSoLuong.Text);
+                    MessageBox.Show("" + soDu);
+                    if (xuatHangControl.sua_ChiTietXuatHang(txtSoHoaDon.Text, txtMaNL.Text, txtTenNL.Text, txtMaLoaiNL.Text, txtNhaCC.Text, Int32.Parse(txtSoLuong.Text), Int32.Parse(txtGiaTien.Text)))
+                    {
+                        if (soDu > 0)
+                        //bớt sản phẩm
+                        {
+                            xuatHangControl.capnhat_SoLuongSuaThem(layDuong(soDu), txtMaNL.Text);
+                        }
+                        else
+                        // thêm sản phẩm 
+                        {
+                            xuatHangControl.capnhat_SoLuongSuaBot(layDuong(soDu), txtMaNL.Text);
+                        }
+
+                        xuatHangControl.sua_BaoCaoXuatHang(txtSoHoaDon.Text, txtMaNL.Text, txtTenNL.Text, txtMaLoaiNL.Text, txtNhaCC.Text, Int32.Parse(txtSoLuong.Text), Int32.Parse(txtGiaTien.Text));
+                        MessageBox.Show("Nguyên liệu đã được cập nhật");
+                    }
+
+                    else
+                    {
+                        MessageBox.Show("Nguyên liệu không được cập nhật");
+                    }
+                    frm_XuatHang_Load(sender, e);
                 }
-                else
+                
+                catch
                 {
-                    MessageBox.Show("Nguyên liệu không được cập nhật");
+
                 }
             }
-            frm_XuatHang_Load(sender, e);
+
         }
-
-        
-        
-
+        private int layDuong(int soDu)
+        {
+            int re;
+            if (soDu < 0)
+            {
+                re = soDu * -1;
+            }
+            else
+            {
+                re = soDu;
+            }
+            return re;
+        }
         private void btXoa_Click(object sender, EventArgs e)
         {
             if (xuatHangControl.xoa_ChiTietXuatHang(txtSoHoaDon.Text, txtMaNL.Text))
             {
+                int i;
+                i = dgvNguyenLieuXuat.CurrentRow.Index;
+                int soDu = Int32.Parse(dgvNguyenLieuXuat.Rows[i].Cells[5].Value.ToString());
 
                 xuatHangControl.xoa_BaoCaoXuatHang(txtSoHoaDon.Text, txtMaNL.Text);
+                xuatHangControl.capnhat_SoLuongSuaThem(layDuong(soDu), txtMaNL.Text);
+
+
                 MessageBox.Show("Nguyên liệu đã được xóa");
                 macDinh();
             }
@@ -186,42 +270,21 @@ namespace Quản_Lý_Yellow_Cab_Pizza.MVC_View
             }
             frm_XuatHang_Load(sender, e);
         }
-
-        private void dgvNguyenLieuXuat_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)
+        private void txtMaNL_KeyUp(object sender, KeyEventArgs e)
         {
-            int i;
-            txtMaNL.Enabled = false;
-            i = dgvNguyenLieuXuat.CurrentRow.Index;
-
-            txtSoHoaDon.Text = dgvNguyenLieuXuat.Rows[i].Cells[0].Value.ToString();
-            txtMaNL.Text = dgvNguyenLieuXuat.Rows[i].Cells[1].Value.ToString();
-            txtTenNL.Text = dgvNguyenLieuXuat.Rows[i].Cells[2].Value.ToString();
-            txtMaLoaiNL.Text= dgvNguyenLieuXuat.Rows[i].Cells[3].Value.ToString();
-            txtNhaCC.Text = dgvNguyenLieuXuat.Rows[i].Cells[4].Value.ToString();
-            txtSoLuong.Text = dgvNguyenLieuXuat.Rows[i].Cells[5].Value.ToString();
-            txtGiaTien.Text = dgvNguyenLieuXuat.Rows[i].Cells[6].Value.ToString();
-        }
-
-        private void btIn_Click(object sender, EventArgs e)
-        {
-            btTaoHD.Enabled = true;
-            btThem.Enabled = false;
-            btSua.Enabled = false;
-            btXoa.Enabled = false;
-
-            if (xuatHangControl.xoa_ChiTietXuatHang(txtSoHoaDon.Text))
+            try
             {
-                MessageBox.Show("Hóa đơn đang được xuất file exel");
+                DataTable dt = xuatHangModel.load_NguyenLieu(txtMaNL.Text);
+                txtTenNL.Text = dt.Rows[0][1].ToString();
+                txtMaLoaiNL.Text = dt.Rows[0][2].ToString();
+                txtNhaCC.Text = dt.Rows[0][3].ToString();
+                txtGiaTien.Text = dt.Rows[0][4].ToString();
+            }
+            catch
+            {
 
             }
-            else
-            {
-                MessageBox.Show("Xuất hóa đơn thất bại");
-            }
-
-            macDinh();
-            txtSoHoaDon.Text = "";
-            frm_XuatHang_Load(sender, e);
         }
+
     }
 }

@@ -23,6 +23,10 @@ namespace Quản_Lý_Yellow_Cab_Pizza.MVC_Control
         {
             return nguyenLieuModel.capNhat_BaoCaoNhapHang( maNguyenLieu,  tenNguyenLieu,  maLoaiNguyenLieu,  maNhaCungCap,  soLuong,  giaTien);
         }
+        public Boolean capNhat_SoLuong(string maNguyenLieu, int soLuong)
+        {
+            return nguyenLieuModel.capNhat_SoLuong(maNguyenLieu,soLuong);
+        }
         public Boolean xoa_BaoCaoNhapHang(string id)
         {
             return nguyenLieuModel.xoa_BaoCaoNhapHang(id);

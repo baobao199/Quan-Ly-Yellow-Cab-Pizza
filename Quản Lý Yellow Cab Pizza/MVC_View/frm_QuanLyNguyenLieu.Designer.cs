@@ -32,7 +32,8 @@
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.dgvNguyenLieu = new System.Windows.Forms.DataGridView();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.btSave = new System.Windows.Forms.Button();
+            this.txtGiaTien = new System.Windows.Forms.TextBox();
+            this.label3 = new System.Windows.Forms.Label();
             this.txtSoLuong = new System.Windows.Forms.TextBox();
             this.lbTinhTrang = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
@@ -53,13 +54,9 @@
             this.btTimKiem = new System.Windows.Forms.Button();
             this.btMacDinh = new System.Windows.Forms.Button();
             this.btThoat = new System.Windows.Forms.Button();
-            this.btXoa = new System.Windows.Forms.Button();
-            this.btSua = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.btn_capnhat = new System.Windows.Forms.Button();
             this.btn_xoa = new System.Windows.Forms.Button();
-            this.txtGiaTien = new System.Windows.Forms.TextBox();
-            this.label3 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvNguyenLieu)).BeginInit();
             this.groupBox2.SuspendLayout();
@@ -92,16 +89,16 @@
             this.dgvNguyenLieu.ReadOnly = true;
             this.dgvNguyenLieu.Size = new System.Drawing.Size(1450, 442);
             this.dgvNguyenLieu.TabIndex = 0;
-            this.dgvNguyenLieu.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvNguyenLieu_CellContentClick);
             this.dgvNguyenLieu.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgvNguyenLieu_CellMouseClick);
             // 
             // groupBox2
             // 
             this.groupBox2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.groupBox2.Controls.Add(this.btMacDinh);
             this.groupBox2.Controls.Add(this.txtGiaTien);
+            this.groupBox2.Controls.Add(this.btThoat);
             this.groupBox2.Controls.Add(this.label3);
-            this.groupBox2.Controls.Add(this.btSave);
             this.groupBox2.Controls.Add(this.txtSoLuong);
             this.groupBox2.Controls.Add(this.lbTinhTrang);
             this.groupBox2.Controls.Add(this.label6);
@@ -121,23 +118,22 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Thông tin nguyên liệu";
             // 
-            // btSave
+            // txtGiaTien
             // 
-            this.btSave.BackColor = System.Drawing.Color.White;
-            this.btSave.Cursor = System.Windows.Forms.Cursors.Default;
-            this.btSave.Enabled = false;
-            this.btSave.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btSave.Image = global::Quản_Lý_Yellow_Cab_Pizza.Properties.Resources.save;
-            this.btSave.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btSave.Location = new System.Drawing.Point(568, 112);
-            this.btSave.Margin = new System.Windows.Forms.Padding(6);
-            this.btSave.Name = "btSave";
-            this.btSave.Size = new System.Drawing.Size(71, 52);
-            this.btSave.TabIndex = 38;
-            this.btSave.Text = "Lưu";
-            this.btSave.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btSave.UseVisualStyleBackColor = false;
-            this.btSave.Click += new System.EventHandler(this.btSave_Click);
+            this.txtGiaTien.Location = new System.Drawing.Point(438, 61);
+            this.txtGiaTien.Name = "txtGiaTien";
+            this.txtGiaTien.Size = new System.Drawing.Size(164, 20);
+            this.txtGiaTien.TabIndex = 39;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(373, 64);
+            this.label3.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(46, 13);
+            this.label3.TabIndex = 40;
+            this.label3.Text = "Giá tiền:";
             // 
             // txtSoLuong
             // 
@@ -323,7 +319,7 @@
             this.btMacDinh.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btMacDinh.Image = global::Quản_Lý_Yellow_Cab_Pizza.Properties.Resources._default;
             this.btMacDinh.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btMacDinh.Location = new System.Drawing.Point(677, 116);
+            this.btMacDinh.Location = new System.Drawing.Point(739, 104);
             this.btMacDinh.Margin = new System.Windows.Forms.Padding(6);
             this.btMacDinh.Name = "btMacDinh";
             this.btMacDinh.Size = new System.Drawing.Size(90, 52);
@@ -340,7 +336,7 @@
             this.btThoat.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btThoat.Image = global::Quản_Lý_Yellow_Cab_Pizza.Properties.Resources.exit;
             this.btThoat.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btThoat.Location = new System.Drawing.Point(955, 116);
+            this.btThoat.Location = new System.Drawing.Point(851, 104);
             this.btThoat.Margin = new System.Windows.Forms.Padding(6);
             this.btThoat.Name = "btThoat";
             this.btThoat.Size = new System.Drawing.Size(90, 52);
@@ -349,40 +345,6 @@
             this.btThoat.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btThoat.UseVisualStyleBackColor = false;
             this.btThoat.Click += new System.EventHandler(this.btThoat_Click);
-            // 
-            // btXoa
-            // 
-            this.btXoa.BackColor = System.Drawing.Color.Gold;
-            this.btXoa.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btXoa.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btXoa.Image = global::Quản_Lý_Yellow_Cab_Pizza.Properties.Resources.delete1;
-            this.btXoa.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btXoa.Location = new System.Drawing.Point(862, 116);
-            this.btXoa.Margin = new System.Windows.Forms.Padding(6);
-            this.btXoa.Name = "btXoa";
-            this.btXoa.Size = new System.Drawing.Size(90, 52);
-            this.btXoa.TabIndex = 35;
-            this.btXoa.Text = "Xóa";
-            this.btXoa.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btXoa.UseVisualStyleBackColor = false;
-            this.btXoa.Click += new System.EventHandler(this.btXoa_Click);
-            // 
-            // btSua
-            // 
-            this.btSua.BackColor = System.Drawing.Color.Gold;
-            this.btSua.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btSua.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btSua.Image = global::Quản_Lý_Yellow_Cab_Pizza.Properties.Resources.edit;
-            this.btSua.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btSua.Location = new System.Drawing.Point(770, 116);
-            this.btSua.Margin = new System.Windows.Forms.Padding(6);
-            this.btSua.Name = "btSua";
-            this.btSua.Size = new System.Drawing.Size(90, 52);
-            this.btSua.TabIndex = 34;
-            this.btSua.Text = "Sửa";
-            this.btSua.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btSua.UseVisualStyleBackColor = false;
-            this.btSua.Click += new System.EventHandler(this.btSua_Click);
             // 
             // button2
             // 
@@ -435,33 +397,12 @@
             this.btn_xoa.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btn_xoa.UseVisualStyleBackColor = false;
             // 
-            // txtGiaTien
-            // 
-            this.txtGiaTien.Location = new System.Drawing.Point(438, 61);
-            this.txtGiaTien.Name = "txtGiaTien";
-            this.txtGiaTien.Size = new System.Drawing.Size(164, 20);
-            this.txtGiaTien.TabIndex = 39;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(373, 64);
-            this.label3.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(46, 13);
-            this.label3.TabIndex = 40;
-            this.label3.Text = "Giá tiền:";
-            // 
             // frm_NguyenLieu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.ClientSize = new System.Drawing.Size(1064, 541);
-            this.Controls.Add(this.btMacDinh);
-            this.Controls.Add(this.btThoat);
-            this.Controls.Add(this.btXoa);
-            this.Controls.Add(this.btSua);
             this.Controls.Add(this.groupBox4);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.groupBox3);
@@ -510,11 +451,8 @@
         private System.Windows.Forms.TextBox txtTimKiem;
         private System.Windows.Forms.GroupBox groupBox4;
         private System.Windows.Forms.Button btThoat;
-        private System.Windows.Forms.Button btXoa;
-        private System.Windows.Forms.Button btSua;
         private System.Windows.Forms.TextBox txtSoLuong;
         private System.Windows.Forms.Button btMacDinh;
-        private System.Windows.Forms.Button btSave;
         private System.Windows.Forms.TextBox txtNhaCC;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.TextBox txtGiaTien;

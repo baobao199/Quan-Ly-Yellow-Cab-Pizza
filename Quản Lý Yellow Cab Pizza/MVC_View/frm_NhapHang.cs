@@ -51,7 +51,7 @@ namespace Quản_Lý_Yellow_Cab_Pizza
 
         private void btTaoHD_Click(object sender, EventArgs e)
         {
-            btThem.Enabled = true;
+           
             txtMaNL.Focus();
             DataTable dt = nhapHangModel.load_NhapHang();
 
@@ -64,7 +64,7 @@ namespace Quản_Lý_Yellow_Cab_Pizza
                 if (nhapHangControl.them_HoaDon(txtSoHoaDon.Text))
                 {
                     MessageBox.Show("Hóa đơn mới được tạo");
-                    btTaoHD.Enabled = false;
+                    
                 }
                 else
                 {
@@ -103,11 +103,6 @@ namespace Quản_Lý_Yellow_Cab_Pizza
 
         private void btThem_Click(object sender, EventArgs e)
         {
-            btIn.Enabled = true;
-            btSua.Enabled = true;
-            btXoa.Enabled = true;
-            btTaoHD.Enabled = false;
-            txtMaNL.Enabled = true;
 
             try
             {
@@ -156,10 +151,6 @@ namespace Quản_Lý_Yellow_Cab_Pizza
 
         private void btIn_Click(object sender, EventArgs e)
         {
-            btTaoHD.Enabled = true;
-            btThem.Enabled = false;
-            btSua.Enabled = false;
-            btXoa.Enabled = false;
             
             if (nhapHangControl.xoa_ChiTietNguyenLieu(txtSoHoaDon.Text))
             {
@@ -169,6 +160,7 @@ namespace Quản_Lý_Yellow_Cab_Pizza
             else
             {
                 MessageBox.Show("Xuất hóa đơn thất bại");
+                nhapHangControl.xoa_NhapHang(txtSoHoaDon.Text);
             }
 
             macDinh();
@@ -179,7 +171,7 @@ namespace Quản_Lý_Yellow_Cab_Pizza
         private void dgvNguyenLieuNhap_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)
         {
             int i;
-            txtMaNL.Enabled = false;
+            
             i = dgvNguyenLieuNhap.CurrentRow.Index;
    
             txtSoHoaDon.Text = dgvNguyenLieuNhap.Rows[i].Cells[0].Value.ToString();
@@ -193,18 +185,34 @@ namespace Quản_Lý_Yellow_Cab_Pizza
 
         private void btSua_Click(object sender, EventArgs e)
         {
-            if(txtMaNL.Text == "" || txtTenNL.Text == "" || txtNhaCC.Text == "" || txtSoLuong.Text == "" || txtGiaTien.Text == "")
+            
+            if (txtMaNL.Text == "" || txtTenNL.Text == "" || txtNhaCC.Text == "" || txtSoLuong.Text == "" || txtGiaTien.Text == "")
             {
                 MessageBox.Show("Vui lòng nhập đầy đủ thông tin");
             }
             else
             {
-                if(nhapHangControl.sua_ChiTietNhapHang(txtSoHoaDon.Text, txtMaNL.Text, txtTenNL.Text, txtMaLoaiNL.Text, txtNhaCC.Text, Int32.Parse(txtSoLuong.Text), Int32.Parse(txtGiaTien.Text)))
+                //giá trị chênh lệch để chỉnh sửa cập nhật số lượng quản lý nguyên liệu
+                int i;
+                i = dgvNguyenLieuNhap.CurrentRow.Index;
+                int soDu = Int32.Parse(dgvNguyenLieuNhap.Rows[i].Cells[5].Value.ToString()) - Int32.Parse(txtSoLuong.Text);
+                if (nhapHangControl.sua_ChiTietNhapHang(txtSoHoaDon.Text, txtMaNL.Text, txtTenNL.Text, txtMaLoaiNL.Text, txtNhaCC.Text, Int32.Parse(txtSoLuong.Text), Int32.Parse(txtGiaTien.Text)))
                 {
-                    nhapHangControl.capnhat_SoLuong(Int32.Parse(txtSoLuong.Text),txtMaNL.Text,txtSoHoaDon.Text);
+                    if (soDu > 0)
+                        //bớt sản phẩm
+                    {
+                        nhapHangControl.capnhat_SoLuongSuaBot(layDuong(soDu),txtMaNL.Text);
+                    }
+                    else
+                        // thêm sản phẩm 
+                    {
+                        nhapHangControl.capnhat_SoLuongSuaThem(layDuong(soDu), txtMaNL.Text);
+                    }
+
                     nhapHangControl.sua_BaoCaoNhapHang(txtSoHoaDon.Text, txtMaNL.Text, txtTenNL.Text, txtMaLoaiNL.Text, txtNhaCC.Text, Int32.Parse(txtSoLuong.Text), Int32.Parse(txtGiaTien.Text));
                     MessageBox.Show("Nguyên liệu đã được cập nhật");
                 }
+
                 else
                 {
                     MessageBox.Show("Nguyên liệu không được cập nhật");
@@ -213,12 +221,32 @@ namespace Quản_Lý_Yellow_Cab_Pizza
             frm_NhapHang_Load(sender, e);
         }
 
+        private int layDuong(int soDu)
+        {
+            int re;
+            if(soDu < 0)
+            {
+                re = soDu * -1;
+            }
+            else
+            {
+                re = soDu;
+            }
+            return re;
+        }
+
         private void btXoa_Click(object sender, EventArgs e)
         {
             if (nhapHangControl.xoa_ChiTietNhapHang(txtSoHoaDon.Text,txtMaNL.Text))
             {
+                int i;
+                i = dgvNguyenLieuNhap.CurrentRow.Index;
+                int soDu = Int32.Parse(dgvNguyenLieuNhap.Rows[i].Cells[5].Value.ToString());
 
                 nhapHangControl.xoa_BaoCaoNhapHang(txtSoHoaDon.Text, txtMaNL.Text);
+                nhapHangControl.capnhat_SoLuongSuaBot(layDuong(soDu),txtMaNL.Text);
+                
+
                 MessageBox.Show("Nguyên liệu đã được xóa");
                 macDinh();
             }
@@ -227,6 +255,26 @@ namespace Quản_Lý_Yellow_Cab_Pizza
                 MessageBox.Show("Nguyên liệu không xóa được");
             }
             frm_NhapHang_Load(sender, e);
+        }
+        private void txtMaNL_KeyUp(object sender, KeyEventArgs e)
+        {
+            try
+            {
+                DataTable dt = nhapHangModel.load_NguyenLieu(txtMaNL.Text);
+                txtTenNL.Text = dt.Rows[0][1].ToString();
+                txtMaLoaiNL.Text = dt.Rows[0][2].ToString();
+                txtNhaCC.Text = dt.Rows[0][3].ToString();
+                txtGiaTien.Text = dt.Rows[0][4].ToString();
+            }
+            catch
+            {
+
+            }
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            macDinh();
         }
     }
 }

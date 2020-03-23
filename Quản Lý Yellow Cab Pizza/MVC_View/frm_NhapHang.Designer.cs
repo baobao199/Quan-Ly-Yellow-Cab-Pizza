@@ -32,9 +32,14 @@
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.txtMaLoaiNL = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
+            this.btIn = new System.Windows.Forms.Button();
             this.txtSoLuong = new System.Windows.Forms.TextBox();
+            this.btThoat = new System.Windows.Forms.Button();
+            this.btXoa = new System.Windows.Forms.Button();
             this.txtGiaTien = new System.Windows.Forms.TextBox();
+            this.btSua = new System.Windows.Forms.Button();
             this.txtNhaCC = new System.Windows.Forms.TextBox();
+            this.btThem = new System.Windows.Forms.Button();
             this.txtTenNL = new System.Windows.Forms.TextBox();
             this.txtMaNL = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
@@ -47,11 +52,7 @@
             this.label6 = new System.Windows.Forms.Label();
             this.txtSoHoaDon = new System.Windows.Forms.TextBox();
             this.btTaoHD = new System.Windows.Forms.Button();
-            this.btIn = new System.Windows.Forms.Button();
-            this.btThoat = new System.Windows.Forms.Button();
-            this.btXoa = new System.Windows.Forms.Button();
-            this.btSua = new System.Windows.Forms.Button();
-            this.btThem = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
             this.groupBox2.SuspendLayout();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvNguyenLieuNhap)).BeginInit();
@@ -61,6 +62,7 @@
             // 
             this.groupBox2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.groupBox2.Controls.Add(this.button1);
             this.groupBox2.Controls.Add(this.txtMaLoaiNL);
             this.groupBox2.Controls.Add(this.label4);
             this.groupBox2.Controls.Add(this.btIn);
@@ -87,6 +89,7 @@
             // 
             // txtMaLoaiNL
             // 
+            this.txtMaLoaiNL.Enabled = false;
             this.txtMaLoaiNL.Location = new System.Drawing.Point(144, 100);
             this.txtMaLoaiNL.Name = "txtMaLoaiNL";
             this.txtMaLoaiNL.Size = new System.Drawing.Size(164, 20);
@@ -102,12 +105,63 @@
             this.label4.TabIndex = 37;
             this.label4.Text = "Mã loại nguyên liệu:";
             // 
+            // btIn
+            // 
+            this.btIn.BackColor = System.Drawing.Color.Gold;
+            this.btIn.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btIn.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btIn.Image = global::Quản_Lý_Yellow_Cab_Pizza.Properties.Resources.print;
+            this.btIn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btIn.Location = new System.Drawing.Point(682, 11);
+            this.btIn.Margin = new System.Windows.Forms.Padding(6);
+            this.btIn.Name = "btIn";
+            this.btIn.Size = new System.Drawing.Size(90, 41);
+            this.btIn.TabIndex = 36;
+            this.btIn.Text = "In";
+            this.btIn.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btIn.UseVisualStyleBackColor = false;
+            this.btIn.Click += new System.EventHandler(this.btIn_Click);
+            // 
             // txtSoLuong
             // 
             this.txtSoLuong.Location = new System.Drawing.Point(438, 58);
             this.txtSoLuong.Name = "txtSoLuong";
             this.txtSoLuong.Size = new System.Drawing.Size(164, 20);
             this.txtSoLuong.TabIndex = 6;
+            // 
+            // btThoat
+            // 
+            this.btThoat.BackColor = System.Drawing.Color.Gold;
+            this.btThoat.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btThoat.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btThoat.Image = global::Quản_Lý_Yellow_Cab_Pizza.Properties.Resources.exit;
+            this.btThoat.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btThoat.Location = new System.Drawing.Point(682, 104);
+            this.btThoat.Margin = new System.Windows.Forms.Padding(6);
+            this.btThoat.Name = "btThoat";
+            this.btThoat.Size = new System.Drawing.Size(90, 52);
+            this.btThoat.TabIndex = 34;
+            this.btThoat.Text = "Thoát";
+            this.btThoat.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btThoat.UseVisualStyleBackColor = false;
+            this.btThoat.Click += new System.EventHandler(this.btThoat_Click);
+            // 
+            // btXoa
+            // 
+            this.btXoa.BackColor = System.Drawing.Color.Gold;
+            this.btXoa.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btXoa.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btXoa.Image = global::Quản_Lý_Yellow_Cab_Pizza.Properties.Resources.delete1;
+            this.btXoa.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btXoa.Location = new System.Drawing.Point(580, 104);
+            this.btXoa.Margin = new System.Windows.Forms.Padding(6);
+            this.btXoa.Name = "btXoa";
+            this.btXoa.Size = new System.Drawing.Size(90, 52);
+            this.btXoa.TabIndex = 33;
+            this.btXoa.Text = "Xóa";
+            this.btXoa.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btXoa.UseVisualStyleBackColor = false;
+            this.btXoa.Click += new System.EventHandler(this.btXoa_Click);
             // 
             // txtGiaTien
             // 
@@ -116,6 +170,23 @@
             this.txtGiaTien.Size = new System.Drawing.Size(164, 20);
             this.txtGiaTien.TabIndex = 5;
             // 
+            // btSua
+            // 
+            this.btSua.BackColor = System.Drawing.Color.Gold;
+            this.btSua.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btSua.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btSua.Image = global::Quản_Lý_Yellow_Cab_Pizza.Properties.Resources.edit;
+            this.btSua.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btSua.Location = new System.Drawing.Point(478, 104);
+            this.btSua.Margin = new System.Windows.Forms.Padding(6);
+            this.btSua.Name = "btSua";
+            this.btSua.Size = new System.Drawing.Size(90, 52);
+            this.btSua.TabIndex = 16;
+            this.btSua.Text = "Sửa";
+            this.btSua.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btSua.UseVisualStyleBackColor = false;
+            this.btSua.Click += new System.EventHandler(this.btSua_Click);
+            // 
             // txtNhaCC
             // 
             this.txtNhaCC.Location = new System.Drawing.Point(144, 136);
@@ -123,8 +194,26 @@
             this.txtNhaCC.Size = new System.Drawing.Size(164, 20);
             this.txtNhaCC.TabIndex = 4;
             // 
+            // btThem
+            // 
+            this.btThem.BackColor = System.Drawing.Color.Gold;
+            this.btThem.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btThem.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btThem.Image = global::Quản_Lý_Yellow_Cab_Pizza.Properties.Resources.add;
+            this.btThem.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btThem.Location = new System.Drawing.Point(376, 104);
+            this.btThem.Margin = new System.Windows.Forms.Padding(6);
+            this.btThem.Name = "btThem";
+            this.btThem.Size = new System.Drawing.Size(90, 52);
+            this.btThem.TabIndex = 7;
+            this.btThem.Text = "Thêm";
+            this.btThem.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btThem.UseVisualStyleBackColor = false;
+            this.btThem.Click += new System.EventHandler(this.btThem_Click);
+            // 
             // txtTenNL
             // 
+            this.txtTenNL.Enabled = false;
             this.txtTenNL.ForeColor = System.Drawing.SystemColors.WindowText;
             this.txtTenNL.Location = new System.Drawing.Point(144, 61);
             this.txtTenNL.Name = "txtTenNL";
@@ -137,6 +226,7 @@
             this.txtMaNL.Name = "txtMaNL";
             this.txtMaNL.Size = new System.Drawing.Size(164, 20);
             this.txtMaNL.TabIndex = 1;
+            this.txtMaNL.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txtMaNL_KeyUp);
             // 
             // label7
             // 
@@ -238,7 +328,7 @@
             this.btTaoHD.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btTaoHD.Image = global::Quản_Lý_Yellow_Cab_Pizza.Properties.Resources.nhap;
             this.btTaoHD.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btTaoHD.Location = new System.Drawing.Point(55, 80);
+            this.btTaoHD.Location = new System.Drawing.Point(66, 70);
             this.btTaoHD.Margin = new System.Windows.Forms.Padding(6);
             this.btTaoHD.Name = "btTaoHD";
             this.btTaoHD.Size = new System.Drawing.Size(132, 52);
@@ -248,94 +338,22 @@
             this.btTaoHD.UseVisualStyleBackColor = false;
             this.btTaoHD.Click += new System.EventHandler(this.btTaoHD_Click);
             // 
-            // btIn
+            // button1
             // 
-            this.btIn.BackColor = System.Drawing.Color.Gold;
-            this.btIn.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btIn.Enabled = false;
-            this.btIn.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btIn.Image = global::Quản_Lý_Yellow_Cab_Pizza.Properties.Resources.print;
-            this.btIn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btIn.Location = new System.Drawing.Point(682, 25);
-            this.btIn.Margin = new System.Windows.Forms.Padding(6);
-            this.btIn.Name = "btIn";
-            this.btIn.Size = new System.Drawing.Size(90, 52);
-            this.btIn.TabIndex = 36;
-            this.btIn.Text = "In";
-            this.btIn.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btIn.UseVisualStyleBackColor = false;
-            this.btIn.Click += new System.EventHandler(this.btIn_Click);
-            // 
-            // btThoat
-            // 
-            this.btThoat.BackColor = System.Drawing.Color.Gold;
-            this.btThoat.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btThoat.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btThoat.Image = global::Quản_Lý_Yellow_Cab_Pizza.Properties.Resources.exit;
-            this.btThoat.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btThoat.Location = new System.Drawing.Point(682, 104);
-            this.btThoat.Margin = new System.Windows.Forms.Padding(6);
-            this.btThoat.Name = "btThoat";
-            this.btThoat.Size = new System.Drawing.Size(90, 52);
-            this.btThoat.TabIndex = 34;
-            this.btThoat.Text = "Thoát";
-            this.btThoat.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btThoat.UseVisualStyleBackColor = false;
-            this.btThoat.Click += new System.EventHandler(this.btThoat_Click);
-            // 
-            // btXoa
-            // 
-            this.btXoa.BackColor = System.Drawing.Color.Gold;
-            this.btXoa.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btXoa.Enabled = false;
-            this.btXoa.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btXoa.Image = global::Quản_Lý_Yellow_Cab_Pizza.Properties.Resources.delete1;
-            this.btXoa.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btXoa.Location = new System.Drawing.Point(580, 104);
-            this.btXoa.Margin = new System.Windows.Forms.Padding(6);
-            this.btXoa.Name = "btXoa";
-            this.btXoa.Size = new System.Drawing.Size(90, 52);
-            this.btXoa.TabIndex = 33;
-            this.btXoa.Text = "Xóa";
-            this.btXoa.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btXoa.UseVisualStyleBackColor = false;
-            this.btXoa.Click += new System.EventHandler(this.btXoa_Click);
-            // 
-            // btSua
-            // 
-            this.btSua.BackColor = System.Drawing.Color.Gold;
-            this.btSua.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btSua.Enabled = false;
-            this.btSua.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btSua.Image = global::Quản_Lý_Yellow_Cab_Pizza.Properties.Resources.edit;
-            this.btSua.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btSua.Location = new System.Drawing.Point(478, 104);
-            this.btSua.Margin = new System.Windows.Forms.Padding(6);
-            this.btSua.Name = "btSua";
-            this.btSua.Size = new System.Drawing.Size(90, 52);
-            this.btSua.TabIndex = 16;
-            this.btSua.Text = "Sửa";
-            this.btSua.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btSua.UseVisualStyleBackColor = false;
-            this.btSua.Click += new System.EventHandler(this.btSua_Click);
-            // 
-            // btThem
-            // 
-            this.btThem.BackColor = System.Drawing.Color.Gold;
-            this.btThem.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btThem.Enabled = false;
-            this.btThem.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btThem.Image = global::Quản_Lý_Yellow_Cab_Pizza.Properties.Resources.add;
-            this.btThem.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btThem.Location = new System.Drawing.Point(376, 104);
-            this.btThem.Margin = new System.Windows.Forms.Padding(6);
-            this.btThem.Name = "btThem";
-            this.btThem.Size = new System.Drawing.Size(90, 52);
-            this.btThem.TabIndex = 7;
-            this.btThem.Text = "Thêm";
-            this.btThem.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btThem.UseVisualStyleBackColor = false;
-            this.btThem.Click += new System.EventHandler(this.btThem_Click);
+            this.button1.BackColor = System.Drawing.Color.Gold;
+            this.button1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.button1.Image = global::Quản_Lý_Yellow_Cab_Pizza.Properties.Resources._default;
+            this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button1.Location = new System.Drawing.Point(682, 55);
+            this.button1.Margin = new System.Windows.Forms.Padding(6);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(90, 37);
+            this.button1.TabIndex = 37;
+            this.button1.Text = "Mặc Định";
+            this.button1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // frm_NhapHang
             // 
@@ -387,5 +405,6 @@
         private System.Windows.Forms.Button btIn;
         private System.Windows.Forms.TextBox txtMaLoaiNL;
         private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Button button1;
     }
 }

@@ -7,15 +7,6 @@ create table LoaiNguyenLieu
 	TenLoaiNguyenLieu nvarchar(30) not null
 );
 
---NguyenLieu(MaNguyenLieu, TenNguyenLieu)
-create table NguyenLieu
-(
-	MaNguyenLieu varchar(30) primary key,
-	TenNguyenLieu nvarchar(50),
-	MaLoaiNguyenLieu varchar(30),
-	foreign key (MaLoaiNguyenLieu) references LoaiNguyenLieu(MaLoaiNguyenLieu)
-);
-
 --NhaCungCap(MaNhaCungCap, TenNhaCungCap, DiaChi, Email, SoDienThoai)
 create table NhaCungCap
 (
@@ -25,7 +16,17 @@ create table NhaCungCap
 	Email varchar(30),
 	SoDienThoai varchar(10) not null
 );
-
+--NguyenLieu(MaNguyenLieu, TenNguyenLieu)
+create table NguyenLieu
+(
+	MaNguyenLieu varchar(30) primary key,
+	TenNguyenLieu nvarchar(50),
+	MaLoaiNguyenLieu varchar(30),
+	MaNhaCungCap varchar(30),
+	GiaTien int,
+	foreign key (MaLoaiNguyenLieu) references LoaiNguyenLieu(MaLoaiNguyenLieu),
+	foreign key (MaNhaCungCap) references NhaCungCap(MaNhaCungCap)
+);
 --QuanLyNguyenLieu(MaNguyenLieu, TenNguyenLieu, MaLoaiNguyenLieu, SoLuong, GiaTien)
 create table QuanLyNguyenLieu
 (
@@ -84,7 +85,7 @@ create table BaoCaoNhapHang
 create table XuatHang
 (
 	SoHoaDon  varchar(30) primary key,
-	NgayNhap date default getdate(),
+	NgayXuat date default getdate(),
 );
 
 create table ChiTietXuatHang
@@ -110,7 +111,7 @@ create table BaoCaoXuatHang
 	TenNguyenLieu nvarchar(50),
 	MaLoaiNguyenLieu varchar(30),
 	MaNhaCungCap varchar(30),
-	NgayNhap date default getdate(),
+	NgayXuat date default getdate(),
 	SoLuong int,
 	GiaTien int,
 	constraint pk_ctbcxh primary key(SoHoaDon,MaNguyenLieu),
@@ -125,3 +126,10 @@ insert into BaoCaoXuatHang values ('YLCXH0001','H','HAM','MS','TT','',10,12000)
 
 
 
+update QuanLyNguyenLieu set SoLuong = SoLuong - 
+(select SoLuong from ChiTietNhapHang where MaNguyenLieu = 'H' and SoHoaDon = 'YLCNH0016') 
+where MaNguyenLieu = 'H'
+
+select * from NguyenLieu where MaNguyenLieu='h';
+
+delete NhapHang where SoHoaDon =

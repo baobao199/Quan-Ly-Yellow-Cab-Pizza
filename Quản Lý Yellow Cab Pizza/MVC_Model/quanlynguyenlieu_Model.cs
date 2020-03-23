@@ -61,6 +61,17 @@ namespace Quản_Lý_Yellow_Cab_Pizza.MVC_Model
             return re;
         }
 
+        public Boolean capNhat_SoLuong(string maNguyenLieu, int soLuong)
+        {
+            bool re = false;
+            string sql = "update QuanLyNguyenLieu set  SoLuong='" + soLuong + "' where MaNguyenLieu ='"+maNguyenLieu+"' ";
+            if (xuly.executeQuery(sql) > 0)
+            {
+                re = true;
+            }
+            return re;
+        }
+
         public DataTable timKiem_Load(string obj)
         {
             DataTable da;
