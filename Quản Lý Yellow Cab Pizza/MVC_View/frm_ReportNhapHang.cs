@@ -24,7 +24,6 @@ namespace Quản_Lý_Yellow_Cab_Pizza
 
         private void btnTimKiem_Click(object sender, EventArgs e)
         {
-            reportNhapHangControl.ThanhTien();
             dgvNhapExel.DataSource = reportNhapHangModel.load_ReportNhapHang(dpTuNgay.Value.ToString("yyyy-MM-dd"), dpDenNgay.Value.ToString("yyyy-MM-dd"));
             
         }
@@ -52,23 +51,24 @@ namespace Quản_Lý_Yellow_Cab_Pizza
             exApp.Range["D1:D1"].Font.Size = 16;
             
 
-            exApp.Range["A3:H3"].ColumnWidth = 15;//kích thướt dòng
-            exApp.Range["A3:H3"].Font.Bold = true;
+            exApp.Range["A3:I3"].ColumnWidth = 16;//kích thướt dòng
+            exApp.Range["A3:I3"].Font.Bold = true;
 
 
             workSheet.Cells[1, 4] = "BẢNG BÁO CÁO NHẬP HÀNG";
             workSheet.Cells[3, 1] = "Số Hóa Đơn";
             workSheet.Cells[3, 2] = "Mã Nguyên Liệu";
             workSheet.Cells[3, 3] = "Tên Nguyên Liệu";
-            workSheet.Cells[3, 4] = "Nhà Cung Cấp";
-            workSheet.Cells[3, 5] = "Ngày Nhập";
-            workSheet.Cells[3, 6] = "Số Lượng";
-            workSheet.Cells[3, 7] = "Giá Tiền";
-            workSheet.Cells[3, 8] = "Thành Tiền";
+            workSheet.Cells[3, 4] = "Mã Loại NL";
+            workSheet.Cells[3, 5] = "Nhà Cung Cấp";
+            workSheet.Cells[3, 6] = "Ngày Nhập";
+            workSheet.Cells[3, 7] = "Số Lượng";
+            workSheet.Cells[3, 8] = "Giá Tiền";
+            workSheet.Cells[3, 9] = "Thành Tiền";
             
             for (int i = 0; i< dgvNhapExel.RowCount ; i++)
             {
-                for(int j = 0; j < 8; j++)
+                for(int j = 0; j < 9; j++)
                 {
                     workSheet.Cells[i + 4, j+1] = dgvNhapExel.Rows[i].Cells[j].Value;
                 }

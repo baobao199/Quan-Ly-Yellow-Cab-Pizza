@@ -7,9 +7,7 @@ using System.Threading.Tasks;
 
 namespace Quản_Lý_Yellow_Cab_Pizza.MVC_Control
 {
-    
-    class reportNhapHang_Control
+    class reportXuatHang_Control
     {
-        reportNhapHang_Model reportNhapHangModel = new reportNhapHang_Model();
     }
 }

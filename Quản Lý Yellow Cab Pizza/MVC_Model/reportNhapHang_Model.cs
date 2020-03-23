@@ -13,19 +13,9 @@ namespace Quản_Lý_Yellow_Cab_Pizza.MVC_Model
         public DataTable load_ReportNhapHang(string ngayBatDau , string ngayKetThuc)
         {
             DataTable da;
-            string sql = "select * from BaoCaoNhapHang  where NgayNhap between  '"+ ngayBatDau + "' and '"+ ngayKetThuc + "'";
+            string sql = "select SoHoaDon,MaNguyenLieu,TenNguyenLieu,MaLoaiNguyenLieu,MaNhaCungCap,NgayNhap,SoLuong,GiaTien, SoLuong*GiaTien as ThanhTien from BaoCaoNhapHang  where NgayNhap between  '" + ngayBatDau + "' and '"+ ngayKetThuc + "'";
             da = xuly.creatTable(sql);
             return da;
-        }
-        public Boolean ThanhTien()
-        {
-            bool re = false;
-            string sql = "update BaoCaoNhapHang set ThanhTien =  SoLuong * GiaTien FROM BaoCaoNhapHang;";
-            if (xuly.executeQuery(sql) > 0)
-            {
-                re = true;
-            }
-            return re;
         }
     }
 }
