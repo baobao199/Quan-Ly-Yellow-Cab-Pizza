@@ -37,6 +37,9 @@ namespace Quản_Lý_Yellow_Cab_Pizza
             DataTable dt = taiKhoanModel.taiKhoan(txtTKNhanVien.Text);
 
             txtTenNhanVien.Text = dt.Rows[0][2].ToString();
+            this.MaximizeBox = false;
+
+           
 
         }
 
