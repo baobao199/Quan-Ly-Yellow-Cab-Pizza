@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Quản_Lý_Yellow_Cab_Pizza.MVC_View;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -16,7 +17,7 @@ namespace Quản_Lý_Yellow_Cab_Pizza
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new frm_Main());
+            Application.Run(new frm_DangNhap());
         }
     }
 }

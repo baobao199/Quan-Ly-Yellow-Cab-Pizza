@@ -1,4 +1,11 @@
 ﻿use QLYellowCabPizza
+create table TaiKhoanQuanLy
+(
+	TaiKhoan varchar(30) not null primary key,
+	MatKhau varchar(10) not null,
+	TenQuanLy nvarchar(30) not null,
+);
+
 
 --DanhMucNguyenLieu(MaNguyenLieu, TenDanhMuc)
 create table LoaiNguyenLieu
@@ -132,4 +139,4 @@ where MaNguyenLieu = 'H'
 
 select * from NguyenLieu where MaNguyenLieu='h';
 
-delete NhapHang where SoHoaDon =
+SELECT * FROM TaiKhoanQuanLy WHERE TaiKhoan ='tuankiet96' and MatKhau='12345'

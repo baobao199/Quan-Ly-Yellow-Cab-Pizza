@@ -172,7 +172,8 @@ namespace Quản_Lý_Yellow_Cab_Pizza
         private void đăngXuấtToolStripMenuItem_Click(object sender, EventArgs e)
         {
             this.Close();
-            Dispose();
+            frm_DangNhap frm_dangNhap = new frm_DangNhap();
+            frm_dangNhap.Show();
         }
 
         private void nguyênLiêuToolStripMenuItem_Click(object sender, EventArgs e)
