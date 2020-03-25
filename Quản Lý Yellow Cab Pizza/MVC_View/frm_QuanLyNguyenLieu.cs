@@ -12,9 +12,9 @@ using Quản_Lý_Yellow_Cab_Pizza.MVC_Control;
 
 namespace Quản_Lý_Yellow_Cab_Pizza
 {
-    public partial class frm_NguyenLieu : Form
+    public partial class frm_QuanLyNguyenLieu : Form
     {
-        public frm_NguyenLieu()
+        public frm_QuanLyNguyenLieu()
         {
             InitializeComponent();
         }

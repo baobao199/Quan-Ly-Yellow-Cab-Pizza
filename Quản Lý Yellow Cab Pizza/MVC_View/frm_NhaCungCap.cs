@@ -71,11 +71,11 @@ namespace Quản_Lý_Yellow_Cab_Pizza
                 string id = dgvDanhSachNCC.Rows[i].Cells[0].Value.ToString();
                 if (nhaCungCapControl.xoa_NhaCungCap(id))
                 {
-                    MessageBox.Show("Nguyên liệu đã được xóa");
+                    MessageBox.Show("Nhà cung cấp đã được xóa");
                 }
                 else
                 {
-                    MessageBox.Show("Nguyên liệu chưa được xóa");
+                    MessageBox.Show("Nhà cung cấp chưa được xóa");
                 }
                 frm_NhaCungCap_Load(sender, e);
                 macDinh();

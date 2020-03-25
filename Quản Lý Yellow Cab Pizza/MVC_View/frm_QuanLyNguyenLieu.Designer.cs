@@ -1,6 +1,6 @@
 ﻿namespace Quản_Lý_Yellow_Cab_Pizza
 {
-    partial class frm_NguyenLieu
+    partial class frm_QuanLyNguyenLieu
     {
         /// <summary>
         /// Required designer variable.
@@ -28,11 +28,13 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frm_NguyenLieu));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frm_QuanLyNguyenLieu));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.dgvNguyenLieu = new System.Windows.Forms.DataGridView();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.btMacDinh = new System.Windows.Forms.Button();
             this.txtGiaTien = new System.Windows.Forms.TextBox();
+            this.btThoat = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
             this.txtSoLuong = new System.Windows.Forms.TextBox();
             this.lbTinhTrang = new System.Windows.Forms.Label();
@@ -52,8 +54,6 @@
             this.txtTimKiem = new System.Windows.Forms.TextBox();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.btTimKiem = new System.Windows.Forms.Button();
-            this.btMacDinh = new System.Windows.Forms.Button();
-            this.btThoat = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.btn_capnhat = new System.Windows.Forms.Button();
             this.btn_xoa = new System.Windows.Forms.Button();
@@ -113,10 +113,27 @@
             this.groupBox2.Controls.Add(this.label4);
             this.groupBox2.Location = new System.Drawing.Point(12, 12);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(1070, 179);
+            this.groupBox2.Size = new System.Drawing.Size(1053, 179);
             this.groupBox2.TabIndex = 12;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Thông tin nguyên liệu";
+            // 
+            // btMacDinh
+            // 
+            this.btMacDinh.BackColor = System.Drawing.Color.Gold;
+            this.btMacDinh.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btMacDinh.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btMacDinh.Image = global::Quản_Lý_Yellow_Cab_Pizza.Properties.Resources._default;
+            this.btMacDinh.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btMacDinh.Location = new System.Drawing.Point(739, 104);
+            this.btMacDinh.Margin = new System.Windows.Forms.Padding(6);
+            this.btMacDinh.Name = "btMacDinh";
+            this.btMacDinh.Size = new System.Drawing.Size(90, 52);
+            this.btMacDinh.TabIndex = 37;
+            this.btMacDinh.Text = "Mặc Định";
+            this.btMacDinh.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btMacDinh.UseVisualStyleBackColor = false;
+            this.btMacDinh.Click += new System.EventHandler(this.btMacDinh_Click);
             // 
             // txtGiaTien
             // 
@@ -124,6 +141,23 @@
             this.txtGiaTien.Name = "txtGiaTien";
             this.txtGiaTien.Size = new System.Drawing.Size(164, 20);
             this.txtGiaTien.TabIndex = 39;
+            // 
+            // btThoat
+            // 
+            this.btThoat.BackColor = System.Drawing.Color.Gold;
+            this.btThoat.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btThoat.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btThoat.Image = global::Quản_Lý_Yellow_Cab_Pizza.Properties.Resources.exit;
+            this.btThoat.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btThoat.Location = new System.Drawing.Point(851, 104);
+            this.btThoat.Margin = new System.Windows.Forms.Padding(6);
+            this.btThoat.Name = "btThoat";
+            this.btThoat.Size = new System.Drawing.Size(90, 52);
+            this.btThoat.TabIndex = 36;
+            this.btThoat.Text = "Thoát";
+            this.btThoat.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btThoat.UseVisualStyleBackColor = false;
+            this.btThoat.Click += new System.EventHandler(this.btThoat_Click);
             // 
             // label3
             // 
@@ -312,40 +346,6 @@
             this.btTimKiem.UseVisualStyleBackColor = false;
             this.btTimKiem.Click += new System.EventHandler(this.btTimKiem_Click);
             // 
-            // btMacDinh
-            // 
-            this.btMacDinh.BackColor = System.Drawing.Color.Gold;
-            this.btMacDinh.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btMacDinh.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btMacDinh.Image = global::Quản_Lý_Yellow_Cab_Pizza.Properties.Resources._default;
-            this.btMacDinh.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btMacDinh.Location = new System.Drawing.Point(739, 104);
-            this.btMacDinh.Margin = new System.Windows.Forms.Padding(6);
-            this.btMacDinh.Name = "btMacDinh";
-            this.btMacDinh.Size = new System.Drawing.Size(90, 52);
-            this.btMacDinh.TabIndex = 37;
-            this.btMacDinh.Text = "Mặc Định";
-            this.btMacDinh.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btMacDinh.UseVisualStyleBackColor = false;
-            this.btMacDinh.Click += new System.EventHandler(this.btMacDinh_Click);
-            // 
-            // btThoat
-            // 
-            this.btThoat.BackColor = System.Drawing.Color.Gold;
-            this.btThoat.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btThoat.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btThoat.Image = global::Quản_Lý_Yellow_Cab_Pizza.Properties.Resources.exit;
-            this.btThoat.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btThoat.Location = new System.Drawing.Point(851, 104);
-            this.btThoat.Margin = new System.Windows.Forms.Padding(6);
-            this.btThoat.Name = "btThoat";
-            this.btThoat.Size = new System.Drawing.Size(90, 52);
-            this.btThoat.TabIndex = 36;
-            this.btThoat.Text = "Thoát";
-            this.btThoat.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btThoat.UseVisualStyleBackColor = false;
-            this.btThoat.Click += new System.EventHandler(this.btThoat_Click);
-            // 
             // button2
             // 
             this.button2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
@@ -397,7 +397,7 @@
             this.btn_xoa.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btn_xoa.UseVisualStyleBackColor = false;
             // 
-            // frm_NguyenLieu
+            // frm_QuanLyNguyenLieu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -412,7 +412,7 @@
             this.Controls.Add(this.groupBox1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MinimumSize = new System.Drawing.Size(1080, 580);
-            this.Name = "frm_NguyenLieu";
+            this.Name = "frm_QuanLyNguyenLieu";
             this.Text = "Quản lý nguyên liệu";
             this.Load += new System.EventHandler(this.frm_NguyenLieu_Load);
             this.groupBox1.ResumeLayout(false);

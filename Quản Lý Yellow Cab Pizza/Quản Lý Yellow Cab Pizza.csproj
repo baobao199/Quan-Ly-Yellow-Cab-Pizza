@@ -52,6 +52,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="MVC_Control\loaiNguyenLieu_Control.cs" />
+    <Compile Include="MVC_Control\nguyenLieu_Control.cs" />
     <Compile Include="MVC_Control\quanlynguyenlieu_Control.cs" />
     <Compile Include="MVC_Control\nhaCungCap_Control.cs" />
     <Compile Include="MVC_Control\nhapHang_Control.cs" />
@@ -59,6 +60,7 @@
     <Compile Include="MVC_Control\reportXuatHang_Control.cs" />
     <Compile Include="MVC_Control\xuatHang_Control.cs" />
     <Compile Include="MVC_Model\loaiNguyenLieu_Model.cs" />
+    <Compile Include="MVC_Model\nguyenLieu_Model.cs" />
     <Compile Include="MVC_Model\quanlynguyenlieu_Model.cs" />
     <Compile Include="MVC_Model\nhaCungCap_Model.cs" />
     <Compile Include="MVC_Model\nhapHang_Model.cs" />
@@ -77,6 +79,12 @@
     </Compile>
     <Compile Include="MVC_View\frm_Main.Designer.cs">
       <DependentUpon>frm_Main.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MVC_View\frm_NguyenLieu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MVC_View\frm_NguyenLieu.Designer.cs">
+      <DependentUpon>frm_NguyenLieu.cs</DependentUpon>
     </Compile>
     <Compile Include="MVC_View\frm_QuanLyNguyenLieu.cs">
       <SubType>Form</SubType>
@@ -133,6 +141,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="MVC_View\frm_Main.resx">
       <DependentUpon>frm_Main.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MVC_View\frm_NguyenLieu.resx">
+      <DependentUpon>frm_NguyenLieu.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MVC_View\frm_QuanLyNguyenLieu.resx">
       <DependentUpon>frm_QuanLyNguyenLieu.cs</DependentUpon>

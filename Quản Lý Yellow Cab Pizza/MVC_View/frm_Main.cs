@@ -23,15 +23,15 @@ namespace Quản_Lý_Yellow_Cab_Pizza
         }
         private void quảnLýNguyênLiệuToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            if (!CheckExistForm("frm_NguyenLieu"))
+            if (!CheckExistForm("frm_QuanLyNguyenLieu"))
             {
-                frm_NguyenLieu frm_NL = new frm_NguyenLieu();
-                frm_NL.MdiParent = this;
-                frm_NL.Show();
+                frm_QuanLyNguyenLieu frm_QLNL = new frm_QuanLyNguyenLieu();
+                frm_QLNL.MdiParent = this;
+                frm_QLNL.Show();
             }
             else
             {
-                ActiveChildForm("frm_NguyenLieu");
+                ActiveChildForm("frm_QuanLyNguyenLieu");
             }
         }
         private bool CheckExistForm(string name)
@@ -175,6 +175,18 @@ namespace Quản_Lý_Yellow_Cab_Pizza
             Dispose();
         }
 
-
+        private void nguyênLiêuToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (!CheckExistForm("frm_NguyenLieu"))
+            {
+                frm_NguyenLieu frm_NL = new frm_NguyenLieu();
+                frm_NL.MdiParent = this;
+                frm_NL.Show();
+            }
+            else
+            {
+                ActiveChildForm("frm_NguyenLieu");
+            }
+        }
     }
 }
