@@ -147,18 +147,16 @@ namespace Quản_Lý_Yellow_Cab_Pizza
             Dispose();
         }
 
-
-        private void btTimKiem_Click(object sender, EventArgs e)
+        private void txtTimKiem_KeyUp(object sender, KeyEventArgs e)
         {
-            if(txtTimKiem.Text == "")
+            if (txtTimKiem.Text == "")
             {
-                MessageBox.Show("Bạn chưa nhập thông tin cần tìm");
+                frm_NguyenLieu_Load(sender, e);
             }
             else
             {
                 dgvNguyenLieu.DataSource = nguyenLieuModel.timKiem_Load(txtTimKiem.Text.Trim());
             }
         }
-
     }
 }

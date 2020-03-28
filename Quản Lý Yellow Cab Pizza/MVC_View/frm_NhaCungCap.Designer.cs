@@ -46,7 +46,6 @@
             this.txtTimKiem = new System.Windows.Forms.TextBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.dgvDanhSachNCC = new System.Windows.Forms.DataGridView();
-            this.btTimKiem = new System.Windows.Forms.Button();
             this.btThoat = new System.Windows.Forms.Button();
             this.btXoa = new System.Windows.Forms.Button();
             this.btSua = new System.Windows.Forms.Button();
@@ -200,7 +199,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(91, 260);
+            this.label6.Location = new System.Drawing.Point(131, 260);
             this.label6.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(118, 13);
@@ -209,10 +208,11 @@
             // 
             // txtTimKiem
             // 
-            this.txtTimKiem.Location = new System.Drawing.Point(225, 257);
+            this.txtTimKiem.Location = new System.Drawing.Point(265, 257);
             this.txtTimKiem.Name = "txtTimKiem";
             this.txtTimKiem.Size = new System.Drawing.Size(145, 20);
             this.txtTimKiem.TabIndex = 7;
+            this.txtTimKiem.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txtTimKiem_KeyUp);
             // 
             // groupBox2
             // 
@@ -232,23 +232,6 @@
             this.dgvDanhSachNCC.Size = new System.Drawing.Size(554, 221);
             this.dgvDanhSachNCC.TabIndex = 50;
             this.dgvDanhSachNCC.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgvDanhSachNCC_CellMouseClick);
-            // 
-            // btTimKiem
-            // 
-            this.btTimKiem.BackColor = System.Drawing.Color.Gold;
-            this.btTimKiem.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btTimKiem.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btTimKiem.Image = global::Quản_Lý_Yellow_Cab_Pizza.Properties.Resources.find;
-            this.btTimKiem.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btTimKiem.Location = new System.Drawing.Point(382, 249);
-            this.btTimKiem.Margin = new System.Windows.Forms.Padding(6);
-            this.btTimKiem.Name = "btTimKiem";
-            this.btTimKiem.Size = new System.Drawing.Size(90, 34);
-            this.btTimKiem.TabIndex = 8;
-            this.btTimKiem.Text = "Tìm kiếm";
-            this.btTimKiem.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btTimKiem.UseVisualStyleBackColor = false;
-            this.btTimKiem.Click += new System.EventHandler(this.btTimKiem_Click);
             // 
             // btThoat
             // 
@@ -325,7 +308,6 @@
             this.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.ClientSize = new System.Drawing.Size(584, 541);
             this.Controls.Add(this.groupBox2);
-            this.Controls.Add(this.btTimKiem);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.txtTimKiem);
             this.Controls.Add(this.groupBox1);
@@ -364,7 +346,6 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox txtMaNCC;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button btTimKiem;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.TextBox txtTimKiem;
         private System.Windows.Forms.GroupBox groupBox2;

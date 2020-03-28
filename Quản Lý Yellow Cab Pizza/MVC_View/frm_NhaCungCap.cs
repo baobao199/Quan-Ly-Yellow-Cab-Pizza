@@ -130,23 +130,22 @@ namespace Quản_Lý_Yellow_Cab_Pizza
             }
         }
 
-        private void btTimKiem_Click(object sender, EventArgs e)
+        private void btMacDinh_Click(object sender, EventArgs e)
+        {
+            macDinh();
+            frm_NhaCungCap_Load(sender, e);
+        }
+
+        private void txtTimKiem_KeyUp(object sender, KeyEventArgs e)
         {
             if (txtTimKiem.Text == "")
             {
-                MessageBox.Show("Bạn chưa nhập thông tin cần tìm");
+                frm_NhaCungCap_Load(sender, e);
             }
             else
             {
                 dgvDanhSachNCC.DataSource = nhaCungCapModel.timKiem_Load(txtTimKiem.Text.Trim());
             }
-
-        }
-
-        private void btMacDinh_Click(object sender, EventArgs e)
-        {
-            macDinh();
-            frm_NhaCungCap_Load(sender, e);
         }
     }
 }

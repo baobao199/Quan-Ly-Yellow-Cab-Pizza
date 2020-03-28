@@ -30,6 +30,8 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frm_NguyenLieu));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.txtNCC = new System.Windows.Forms.TextBox();
+            this.label5 = new System.Windows.Forms.Label();
             this.btMacDinh = new System.Windows.Forms.Button();
             this.btSave = new System.Windows.Forms.Button();
             this.txtGiaTien = new System.Windows.Forms.TextBox();
@@ -40,9 +42,6 @@
             this.label2 = new System.Windows.Forms.Label();
             this.txtMaNL = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.txtNCC = new System.Windows.Forms.TextBox();
-            this.label5 = new System.Windows.Forms.Label();
-            this.btTimKiem = new System.Windows.Forms.Button();
             this.label6 = new System.Windows.Forms.Label();
             this.txtTimKiem = new System.Windows.Forms.TextBox();
             this.btThoat = new System.Windows.Forms.Button();
@@ -76,6 +75,23 @@
             this.groupBox1.TabIndex = 11;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Thông tin nguyên liệu";
+            // 
+            // txtNCC
+            // 
+            this.txtNCC.Location = new System.Drawing.Point(413, 31);
+            this.txtNCC.Name = "txtNCC";
+            this.txtNCC.Size = new System.Drawing.Size(146, 20);
+            this.txtNCC.TabIndex = 39;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(299, 34);
+            this.label5.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(81, 13);
+            this.label5.TabIndex = 40;
+            this.label5.Text = "Nhà cung cấp: ";
             // 
             // btMacDinh
             // 
@@ -180,40 +196,6 @@
             this.label1.TabIndex = 24;
             this.label1.Text = "Mã nguyên liệu:";
             // 
-            // txtNCC
-            // 
-            this.txtNCC.Location = new System.Drawing.Point(413, 31);
-            this.txtNCC.Name = "txtNCC";
-            this.txtNCC.Size = new System.Drawing.Size(146, 20);
-            this.txtNCC.TabIndex = 39;
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(299, 34);
-            this.label5.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(81, 13);
-            this.label5.TabIndex = 40;
-            this.label5.Text = "Nhà cung cấp: ";
-            // 
-            // btTimKiem
-            // 
-            this.btTimKiem.BackColor = System.Drawing.Color.Gold;
-            this.btTimKiem.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btTimKiem.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btTimKiem.Image = global::Quản_Lý_Yellow_Cab_Pizza.Properties.Resources.find;
-            this.btTimKiem.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btTimKiem.Location = new System.Drawing.Point(425, 253);
-            this.btTimKiem.Margin = new System.Windows.Forms.Padding(6);
-            this.btTimKiem.Name = "btTimKiem";
-            this.btTimKiem.Size = new System.Drawing.Size(90, 34);
-            this.btTimKiem.TabIndex = 31;
-            this.btTimKiem.Text = "Tìm kiếm";
-            this.btTimKiem.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btTimKiem.UseVisualStyleBackColor = false;
-            this.btTimKiem.Click += new System.EventHandler(this.btTimKiem_Click);
-            // 
             // label6
             // 
             this.label6.AutoSize = true;
@@ -230,6 +212,7 @@
             this.txtTimKiem.Name = "txtTimKiem";
             this.txtTimKiem.Size = new System.Drawing.Size(145, 20);
             this.txtTimKiem.TabIndex = 30;
+            this.txtTimKiem.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txtTimKiem_KeyUp);
             // 
             // btThoat
             // 
@@ -323,7 +306,6 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(655, 561);
             this.Controls.Add(this.groupBox2);
-            this.Controls.Add(this.btTimKiem);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.txtTimKiem);
             this.Controls.Add(this.btThoat);
@@ -360,7 +342,6 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox txtMaNL;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button btTimKiem;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.TextBox txtTimKiem;
         private System.Windows.Forms.Button btThoat;

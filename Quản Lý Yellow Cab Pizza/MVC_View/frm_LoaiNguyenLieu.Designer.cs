@@ -30,6 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frm_LoaiNguyenLieu));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.btMacDinh = new System.Windows.Forms.Button();
             this.btSave = new System.Windows.Forms.Button();
             this.txtTenLoaiNL = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
@@ -43,8 +44,6 @@
             this.dgvLoaiNL = new System.Windows.Forms.DataGridView();
             this.txtTimKiem = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.btTimKiem = new System.Windows.Forms.Button();
-            this.btMacDinh = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvLoaiNL)).BeginInit();
@@ -64,6 +63,23 @@
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Thông tin loại nguyên liệu";
+            // 
+            // btMacDinh
+            // 
+            this.btMacDinh.BackColor = System.Drawing.Color.Transparent;
+            this.btMacDinh.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btMacDinh.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btMacDinh.Image = global::Quản_Lý_Yellow_Cab_Pizza.Properties.Resources._default;
+            this.btMacDinh.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btMacDinh.Location = new System.Drawing.Point(244, 101);
+            this.btMacDinh.Margin = new System.Windows.Forms.Padding(6);
+            this.btMacDinh.Name = "btMacDinh";
+            this.btMacDinh.Size = new System.Drawing.Size(95, 45);
+            this.btMacDinh.TabIndex = 39;
+            this.btMacDinh.Text = "Mặc Định";
+            this.btMacDinh.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btMacDinh.UseVisualStyleBackColor = false;
+            this.btMacDinh.Click += new System.EventHandler(this.btMacDinh_Click);
             // 
             // btSave
             // 
@@ -206,54 +222,21 @@
             // 
             // txtTimKiem
             // 
-            this.txtTimKiem.Location = new System.Drawing.Point(170, 243);
+            this.txtTimKiem.Location = new System.Drawing.Point(206, 243);
             this.txtTimKiem.Name = "txtTimKiem";
             this.txtTimKiem.Size = new System.Drawing.Size(145, 20);
             this.txtTimKiem.TabIndex = 26;
+            this.txtTimKiem.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txtTimKiem_KeyUp);
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(36, 246);
+            this.label3.Location = new System.Drawing.Point(72, 246);
             this.label3.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(125, 13);
             this.label3.TabIndex = 26;
             this.label3.Text = "Tìm kiếm loại nguyên liệu";
-            // 
-            // btTimKiem
-            // 
-            this.btTimKiem.BackColor = System.Drawing.Color.Gold;
-            this.btTimKiem.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btTimKiem.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btTimKiem.Image = global::Quản_Lý_Yellow_Cab_Pizza.Properties.Resources.find;
-            this.btTimKiem.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btTimKiem.Location = new System.Drawing.Point(327, 235);
-            this.btTimKiem.Margin = new System.Windows.Forms.Padding(6);
-            this.btTimKiem.Name = "btTimKiem";
-            this.btTimKiem.Size = new System.Drawing.Size(90, 34);
-            this.btTimKiem.TabIndex = 26;
-            this.btTimKiem.Text = "Tìm kiếm";
-            this.btTimKiem.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btTimKiem.UseVisualStyleBackColor = false;
-            this.btTimKiem.Click += new System.EventHandler(this.btTimKiem_Click);
-            // 
-            // btMacDinh
-            // 
-            this.btMacDinh.BackColor = System.Drawing.Color.Transparent;
-            this.btMacDinh.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btMacDinh.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btMacDinh.Image = global::Quản_Lý_Yellow_Cab_Pizza.Properties.Resources._default;
-            this.btMacDinh.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btMacDinh.Location = new System.Drawing.Point(244, 101);
-            this.btMacDinh.Margin = new System.Windows.Forms.Padding(6);
-            this.btMacDinh.Name = "btMacDinh";
-            this.btMacDinh.Size = new System.Drawing.Size(95, 45);
-            this.btMacDinh.TabIndex = 39;
-            this.btMacDinh.Text = "Mặc Định";
-            this.btMacDinh.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btMacDinh.UseVisualStyleBackColor = false;
-            this.btMacDinh.Click += new System.EventHandler(this.btMacDinh_Click);
             // 
             // frm_LoaiNguyenLieu
             // 
@@ -261,7 +244,6 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.ClientSize = new System.Drawing.Size(441, 519);
-            this.Controls.Add(this.btTimKiem);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.txtTimKiem);
             this.Controls.Add(this.groupBox2);
@@ -298,7 +280,6 @@
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.TextBox txtTimKiem;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Button btTimKiem;
         private System.Windows.Forms.Button btSave;
         private System.Windows.Forms.DataGridView dgvLoaiNL;
         private System.Windows.Forms.Button btMacDinh;

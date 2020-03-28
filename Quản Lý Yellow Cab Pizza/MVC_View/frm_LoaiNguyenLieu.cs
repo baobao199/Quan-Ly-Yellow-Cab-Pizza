@@ -121,22 +121,22 @@ namespace Quản_Lý_Yellow_Cab_Pizza
             }
         }
 
-        private void btTimKiem_Click(object sender, EventArgs e)
+        private void btMacDinh_Click(object sender, EventArgs e)
         {
-            if (txtTimKiem.Text == "")
+            frm_LoaiNguyenLieu_Load(sender, e);
+            macDinh();
+        }
+
+        private void txtTimKiem_KeyUp(object sender, KeyEventArgs e)
+        {
+            if(txtTimKiem.Text == "")
             {
-                MessageBox.Show("Bạn chưa nhập thông tin cần tìm");
+                frm_LoaiNguyenLieu_Load(sender, e);
             }
             else
             {
                 dgvLoaiNL.DataSource = loaiNguyenLieuModel.timKiem_Load(txtTimKiem.Text.Trim());
             }
-        }
-
-        private void btMacDinh_Click(object sender, EventArgs e)
-        {
-            frm_LoaiNguyenLieu_Load(sender, e);
-            macDinh();
         }
     }
 }

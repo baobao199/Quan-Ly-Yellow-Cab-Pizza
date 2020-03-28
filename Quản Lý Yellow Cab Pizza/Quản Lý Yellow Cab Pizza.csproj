@@ -77,6 +77,12 @@
     <Compile Include="MVC_View\frm_DangNhap.Designer.cs">
       <DependentUpon>frm_DangNhap.cs</DependentUpon>
     </Compile>
+    <Compile Include="MVC_View\frm_GioLamViec.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MVC_View\frm_GioLamViec.Designer.cs">
+      <DependentUpon>frm_GioLamViec.cs</DependentUpon>
+    </Compile>
     <Compile Include="MVC_View\frm_LoaiNguyenLieu.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -107,11 +113,11 @@
     <Compile Include="MVC_View\frm_NhaCungCap.Designer.cs">
       <DependentUpon>frm_NhaCungCap.cs</DependentUpon>
     </Compile>
-    <Compile Include="MVC_View\frm_NhanVien.cs">
+    <Compile Include="MVC_View\frm_QuanLyNhanVien.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="MVC_View\frm_NhanVien.Designer.cs">
-      <DependentUpon>frm_NhanVien.cs</DependentUpon>
+    <Compile Include="MVC_View\frm_QuanLyNhanVien.Designer.cs">
+      <DependentUpon>frm_QuanLyNhanVien.cs</DependentUpon>
     </Compile>
     <Compile Include="MVC_View\frm_NhapHang.cs">
       <SubType>Form</SubType>
@@ -148,6 +154,9 @@
     <EmbeddedResource Include="MVC_View\frm_DangNhap.resx">
       <DependentUpon>frm_DangNhap.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="MVC_View\frm_GioLamViec.resx">
+      <DependentUpon>frm_GioLamViec.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="MVC_View\frm_LoaiNguyenLieu.resx">
       <DependentUpon>frm_LoaiNguyenLieu.cs</DependentUpon>
     </EmbeddedResource>
@@ -163,8 +172,8 @@
     <EmbeddedResource Include="MVC_View\frm_NhaCungCap.resx">
       <DependentUpon>frm_NhaCungCap.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="MVC_View\frm_NhanVien.resx">
-      <DependentUpon>frm_NhanVien.cs</DependentUpon>
+    <EmbeddedResource Include="MVC_View\frm_QuanLyNhanVien.resx">
+      <DependentUpon>frm_QuanLyNhanVien.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MVC_View\frm_NhapHang.resx">
       <DependentUpon>frm_NhapHang.cs</DependentUpon>

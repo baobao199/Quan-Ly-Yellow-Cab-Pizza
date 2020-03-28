@@ -112,18 +112,6 @@ namespace Quản_Lý_Yellow_Cab_Pizza.MVC_View
             frm_NguyenLieu_Load(sender, e);
         }
 
-        private void btTimKiem_Click(object sender, EventArgs e)
-        {
-            if (txtTimKiem.Text == "")
-            {
-                MessageBox.Show("Bạn chưa nhập thông tin cần tìm");
-            }
-            else
-            {
-                dgvNguyenLieu.DataSource = nguyenLieuModel.timKiem_Load(txtTimKiem.Text.Trim());
-            }
-        }
-
         private void btSave_Click(object sender, EventArgs e)
         {
             if (txtMaNL.Text == "" || txtTenNL.Text == "" || txtMaLoaiNL.Text == "" || txtNCC.Text == "" || txtGiaTien.Text == "")
@@ -143,6 +131,18 @@ namespace Quản_Lý_Yellow_Cab_Pizza.MVC_View
                 {
                     MessageBox.Show("Nguyên liệu chưa được cập nhật");
                 }
+            }
+        }
+
+        private void txtTimKiem_KeyUp(object sender, KeyEventArgs e)
+        {
+            if (txtTimKiem.Text == "")
+            {
+                frm_NguyenLieu_Load(sender, e);
+            }
+            else
+            {
+                dgvNguyenLieu.DataSource = nguyenLieuModel.timKiem_Load(txtTimKiem.Text.Trim());
             }
         }
     }
