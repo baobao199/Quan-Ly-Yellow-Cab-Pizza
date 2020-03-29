@@ -189,19 +189,5 @@ namespace Quản_Lý_Yellow_Cab_Pizza
                 ActiveChildForm("frm_NguyenLieu");
             }
         }
-
-        private void sôGiơLamViêcToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            if (!CheckExistForm("frm_GioLamViec"))
-            {
-                frm_GioLamViec frm_GLV = new frm_GioLamViec();
-                frm_GLV.MdiParent = this;
-                frm_GLV.Show();
-            }
-            else
-            {
-                ActiveChildForm("frm_GioLamViec");
-            }
-        }
     }
 }

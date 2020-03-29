@@ -77,12 +77,6 @@
     <Compile Include="MVC_View\frm_DangNhap.Designer.cs">
       <DependentUpon>frm_DangNhap.cs</DependentUpon>
     </Compile>
-    <Compile Include="MVC_View\frm_GioLamViec.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="MVC_View\frm_GioLamViec.Designer.cs">
-      <DependentUpon>frm_GioLamViec.cs</DependentUpon>
-    </Compile>
     <Compile Include="MVC_View\frm_LoaiNguyenLieu.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -153,9 +147,6 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="MVC_View\frm_DangNhap.resx">
       <DependentUpon>frm_DangNhap.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="MVC_View\frm_GioLamViec.resx">
-      <DependentUpon>frm_GioLamViec.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MVC_View\frm_LoaiNguyenLieu.resx">
       <DependentUpon>frm_LoaiNguyenLieu.cs</DependentUpon>
