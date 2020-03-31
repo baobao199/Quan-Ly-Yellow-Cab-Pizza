@@ -18,10 +18,6 @@ namespace Quản_Lý_Yellow_Cab_Pizza.MVC_Control
         {
             return nhapHangModel.them_HoaDon(soHoaDon);
         }
-        public Boolean xoa_ChiTietNguyenLieu(string soHoaDon)
-        {
-            return nhapHangModel.xoa_ChiTietNguyenLieu(soHoaDon);
-        }
         public Boolean them_BaoCaoNhapHang(string soHoaDon, string maNguyenLieu, string tenNguyenLieu, string maLoaiNguyenLieu, string maNhaCungCap, DateTime ngayNhap, int SoLuong, int giaTien)
         {
             return nhapHangModel.them_BaoCaoNhapHang(soHoaDon, maNguyenLieu, tenNguyenLieu, maLoaiNguyenLieu, maNhaCungCap, ngayNhap, SoLuong, giaTien);
@@ -33,6 +29,10 @@ namespace Quản_Lý_Yellow_Cab_Pizza.MVC_Control
         public Boolean sua_ChiTietNhapHang(string soHoaDon, string maNguyenLieu, string tenNguyenLieu, string maLoaiNguyenLieu, string maNhaCungCap, int SoLuong, int giaTien)
         {
             return nhapHangModel.sua_ChiTietNhapHang(soHoaDon, maNguyenLieu, tenNguyenLieu, maLoaiNguyenLieu, maNhaCungCap, SoLuong, giaTien);
+        }
+        public Boolean xoa_ChiTietNguyenLieu(string soHoaDon)
+        {
+            return nhapHangModel.xoa_ChiTietNguyenLieu(soHoaDon);
         }
         public Boolean xoa_ChiTietNhapHang(string soHoaDon, string maNguyenLieu)
         {

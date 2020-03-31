@@ -30,6 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frm_NhapHang));
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.button1 = new System.Windows.Forms.Button();
             this.txtMaLoaiNL = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.btIn = new System.Windows.Forms.Button();
@@ -52,7 +53,6 @@
             this.label6 = new System.Windows.Forms.Label();
             this.txtSoHoaDon = new System.Windows.Forms.TextBox();
             this.btTaoHD = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
             this.groupBox2.SuspendLayout();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvNguyenLieuNhap)).BeginInit();
@@ -86,6 +86,23 @@
             this.groupBox2.TabIndex = 13;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Thông tin nguyên liệu";
+            // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.Color.Gold;
+            this.button1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.button1.Image = global::Quản_Lý_Yellow_Cab_Pizza.Properties.Resources._default;
+            this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button1.Location = new System.Drawing.Point(682, 55);
+            this.button1.Margin = new System.Windows.Forms.Padding(6);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(90, 37);
+            this.button1.TabIndex = 37;
+            this.button1.Text = "Mặc Định";
+            this.button1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // txtMaLoaiNL
             // 
@@ -338,23 +355,6 @@
             this.btTaoHD.UseVisualStyleBackColor = false;
             this.btTaoHD.Click += new System.EventHandler(this.btTaoHD_Click);
             // 
-            // button1
-            // 
-            this.button1.BackColor = System.Drawing.Color.Gold;
-            this.button1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.button1.Image = global::Quản_Lý_Yellow_Cab_Pizza.Properties.Resources._default;
-            this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button1.Location = new System.Drawing.Point(682, 55);
-            this.button1.Margin = new System.Windows.Forms.Padding(6);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(90, 37);
-            this.button1.TabIndex = 37;
-            this.button1.Text = "Mặc Định";
-            this.button1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.button1.UseVisualStyleBackColor = false;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
             // frm_NhapHang
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -393,7 +393,6 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.DataGridView dgvNguyenLieuNhap;
         private System.Windows.Forms.Button btSua;
         private System.Windows.Forms.Button btThem;
         private System.Windows.Forms.Label label6;
@@ -406,5 +405,6 @@
         private System.Windows.Forms.TextBox txtMaLoaiNL;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Button button1;
+        public System.Windows.Forms.DataGridView dgvNguyenLieuNhap;
     }
 }

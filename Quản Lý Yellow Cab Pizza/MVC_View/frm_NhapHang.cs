@@ -1,5 +1,6 @@
 ﻿using Quản_Lý_Yellow_Cab_Pizza.MVC_Control;
 using Quản_Lý_Yellow_Cab_Pizza.MVC_Model;
+using Quản_Lý_Yellow_Cab_Pizza.MVC_View;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -151,21 +152,11 @@ namespace Quản_Lý_Yellow_Cab_Pizza
 
         private void btIn_Click(object sender, EventArgs e)
         {
-            
-            if (nhapHangControl.xoa_ChiTietNguyenLieu(txtSoHoaDon.Text))
-            {
-                MessageBox.Show("Hóa đơn đang được xuất file exel");
-                
-            }
-            else
-            {
-                MessageBox.Show("Xuất hóa đơn thất bại");
-                nhapHangControl.xoa_NhapHang(txtSoHoaDon.Text);
-            }
-
             macDinh();
             txtSoHoaDon.Text = "";
-            frm_NhapHang_Load(sender, e);
+            frm_InHoaDon inHoaDon = new frm_InHoaDon();
+            inHoaDon.Show();
+            this.Close();
         }
 
         private void dgvNguyenLieuNhap_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)

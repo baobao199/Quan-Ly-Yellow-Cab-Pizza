@@ -59,9 +59,8 @@ namespace Quản_Lý_Yellow_Cab_Pizza.MVC_Model
             return re;
         }
 
-
         public Boolean xoa_ChiTietNguyenLieu(string soHoaDon)
-            // xóa hóa đơn để tạo hóa đơn mới
+        // xóa hóa đơn để tạo hóa đơn mới
         {
             bool re = false;
             string sql = "delete ChiTietNhapHang where SoHoaDon = '" + soHoaDon + "' ";
@@ -71,6 +70,7 @@ namespace Quản_Lý_Yellow_Cab_Pizza.MVC_Model
             }
             return re;
         }
+
         public Boolean xoa_ChiTietNhapHang(string soHoaDon, string maNguyenLieu)
         //xóa 1 nguyên liệu trong chi tiết nhập hàng
         {
