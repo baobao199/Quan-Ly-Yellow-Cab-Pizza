@@ -50,7 +50,8 @@ namespace Quản_Lý_Yellow_Cab_Pizza
                 if (Int32.Parse(dgvNguyenLieu.Rows[i].Cells[4].Value.ToString()) < 0)
                 {
                     string mgl = dgvNguyenLieu.Rows[0].Cells[0].Value.ToString();
-                    string sl = dgvNguyenLieu.Rows[i].Cells[4].Value.ToString(); sl = "0";
+                    string sl = dgvNguyenLieu.Rows[i].Cells[4].Value.ToString();
+                    sl = "0";
                     nguyenlieuControl.capNhat_SoLuong(mgl, Int32.Parse(sl));
                 }
                 continue;
@@ -67,6 +68,7 @@ namespace Quản_Lý_Yellow_Cab_Pizza
             lbTinhTrang.Text = "";
             txtTimKiem.Text = "";
             txtGiaTien.Text = "";
+
         }
 
         private void dgvNguyenLieu_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)
@@ -112,33 +114,6 @@ namespace Quản_Lý_Yellow_Cab_Pizza
             macDinh();
             frm_NguyenLieu_Load(sender, e);
 
-        }
-
-
-        private void btSave_Click(object sender, EventArgs e)
-        {
-            if(txtTenNL.Text =="" ||txtMaNL.Text == "" || txtNhaCC.Text == "" || txtSoLuong.Text == "")
-            {
-                MessageBox.Show("Vui lòng nhập đầy đủ thông tin");
-            }
-            else if (Int32.Parse(txtSoLuong.Text) < 0)
-            {
-                MessageBox.Show("Số lượng không thể âm");
-            }
-            else
-            {
-                if (nguyenlieuControl.capnhat_NguyenLieu(txtMaNL.Text,txtTenNL.Text, txtLoaiNL.Text, txtNhaCC.Text, Int32.Parse(txtSoLuong.Text), Int32.Parse(txtGiaTien.Text)))
-                {
-                    nguyenlieuControl.capNhat_BaoCaoNhapHang(txtMaNL.Text, txtTenNL.Text, txtLoaiNL.Text, txtNhaCC.Text, Int32.Parse(txtSoLuong.Text), Int32.Parse(txtGiaTien.Text));
-                    MessageBox.Show("Nguyên liệu đã được cập nhật");
-                    frm_NguyenLieu_Load(sender, e);
-                    macDinh();
-                }
-                else
-                {
-                    MessageBox.Show("Nguyên liệu chưa được cập nhật");
-                }
-            }
         }
 
         private void btThoat_Click(object sender, EventArgs e)

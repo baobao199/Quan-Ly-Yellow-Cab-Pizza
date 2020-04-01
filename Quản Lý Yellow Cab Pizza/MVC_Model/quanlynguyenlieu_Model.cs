@@ -10,6 +10,7 @@ namespace Quản_Lý_Yellow_Cab_Pizza.MVC_Model
 {
     class quanlynguyenlieu_Model
     {
+        //load dữ liệu
         public DataTable load_Data()
         {
             DataTable re;
@@ -18,49 +19,51 @@ namespace Quản_Lý_Yellow_Cab_Pizza.MVC_Model
             return re;
    
         }
-        public Boolean xoa_NguyenLieu(string id)
-        {
-            bool re=false;
-            string sql = "delete  from QuanLyNguyenLieu where MaNguyenLieu='" + id+"'";
-            if (xuly.executeQuery(sql) > 0)
-            {
-                re = true;
-            }
-            return re;
-        }
-        public Boolean xoa_BaoCaoNhapHang(string id)
-        {
-            bool re = false;
-            string sql = "delete  from BaoCaoNhapHang where MaNguyenLieu='" + id + "'";
-            if (xuly.executeQuery(sql) > 0)
-            {
-                re = true;
-            }
-            return re;
-        }
 
-        public Boolean capNhat_NguyenLieu(string maNguyenLieu, string tenNguyenLieu, string maLoaiNguyenLieu, string maNhaCungCap, int soLuong,int giaTien)
-        {
-            bool re = false;
-            string sql = "update QuanLyNguyenLieu set TenNguyenLieu ='" + tenNguyenLieu+"', MaLoaiNguyenLieu = '"+maLoaiNguyenLieu+"', MaNhaCungCap ='"+maNhaCungCap+"', SoLuong='"+soLuong+"' , GiaTien='"+giaTien+"' where MaNguyenLieu = '"+maNguyenLieu+"'" ;
-            if (xuly.executeQuery(sql) > 0)
-            {
-                re = true;
-            }
-            return re;
-        }
+        //public Boolean xoa_NguyenLieu(string id)
+        //{
+        //    bool re=false;
+        //    string sql = "delete  from QuanLyNguyenLieu where MaNguyenLieu='" + id+"'";
+        //    if (xuly.executeQuery(sql) > 0)
+        //    {
+        //        re = true;
+        //    }
+        //    return re;
+        //}
+        //public Boolean xoa_BaoCaoNhapHang(string id)
+        //{
+        //    bool re = false;
+        //    string sql = "delete  from BaoCaoNhapHang where MaNguyenLieu='" + id + "'";
+        //    if (xuly.executeQuery(sql) > 0)
+        //    {
+        //        re = true;
+        //    }
+        //    return re;
+        //}
 
-        public Boolean capNhat_BaoCaoNhapHang(string maNguyenLieu, string tenNguyenLieu, string maLoaiNguyenLieu, string maNhaCungCap, int soLuong, int giaTien)
-        {
-            bool re = false;
-            string sql = "update BaoCaoNhapHang set TenNguyenLieu ='" + tenNguyenLieu + "', MaLoaiNguyenLieu = '" + maLoaiNguyenLieu + "', MaNhaCungCap ='" + maNhaCungCap + "', SoLuong='" + soLuong + "' , GiaTien='" + giaTien + "' where MaNguyenLieu = '" + maNguyenLieu + "' ";
-            if (xuly.executeQuery(sql) > 0)
-            {
-                re = true;
-            }
-            return re;
-        }
+        //public Boolean capNhat_NguyenLieu(string maNguyenLieu, string tenNguyenLieu, string maLoaiNguyenLieu, string maNhaCungCap, int soLuong,int giaTien)
+        //{
+        //    bool re = false;
+        //    string sql = "update QuanLyNguyenLieu set TenNguyenLieu ='" + tenNguyenLieu+"', MaLoaiNguyenLieu = '"+maLoaiNguyenLieu+"', MaNhaCungCap ='"+maNhaCungCap+"', SoLuong='"+soLuong+"' , GiaTien='"+giaTien+"' where MaNguyenLieu = '"+maNguyenLieu+"'" ;
+        //    if (xuly.executeQuery(sql) > 0)
+        //    {
+        //        re = true;
+        //    }
+        //    return re;
+        //}
 
+        //public Boolean capNhat_BaoCaoNhapHang(string maNguyenLieu, string tenNguyenLieu, string maLoaiNguyenLieu, string maNhaCungCap, int soLuong, int giaTien)
+        //{
+        //    bool re = false;
+        //    string sql = "update BaoCaoNhapHang set TenNguyenLieu ='" + tenNguyenLieu + "', MaLoaiNguyenLieu = '" + maLoaiNguyenLieu + "', MaNhaCungCap ='" + maNhaCungCap + "', SoLuong='" + soLuong + "' , GiaTien='" + giaTien + "' where MaNguyenLieu = '" + maNguyenLieu + "' ";
+        //    if (xuly.executeQuery(sql) > 0)
+        //    {
+        //        re = true;
+        //    }
+        //    return re;
+        //}
+
+        //cập nhật số lượng
         public Boolean capNhat_SoLuong(string maNguyenLieu, int soLuong)
         {
             bool re = false;
@@ -71,7 +74,7 @@ namespace Quản_Lý_Yellow_Cab_Pizza.MVC_Model
             }
             return re;
         }
-
+        //tìm kiếm
         public DataTable timKiem_Load(string obj)
         {
             DataTable da;

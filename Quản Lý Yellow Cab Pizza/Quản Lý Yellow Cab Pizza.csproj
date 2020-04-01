@@ -65,6 +65,7 @@
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="MVC_Control\inHoaDon_Control.cs" />
+    <Compile Include="MVC_Control\quanLyNhanVien_Control.cs" />
     <Compile Include="MVC_Control\taiKhoan_Control.cs" />
     <Compile Include="MVC_Model\dangNhap_Model.cs" />
     <Compile Include="MVC_Control\loaiNguyenLieu_Control.cs" />
@@ -81,6 +82,7 @@
     <Compile Include="MVC_Model\quanlynguyenlieu_Model.cs" />
     <Compile Include="MVC_Model\nhaCungCap_Model.cs" />
     <Compile Include="MVC_Model\nhapHang_Model.cs" />
+    <Compile Include="MVC_Model\quanLyNhanVien_Model.cs" />
     <Compile Include="MVC_Model\reportNhapHang_Model.cs" />
     <Compile Include="MVC_Model\reportXuatHang_Model.cs" />
     <Compile Include="MVC_Model\taiKhoan_Model.cs" />
