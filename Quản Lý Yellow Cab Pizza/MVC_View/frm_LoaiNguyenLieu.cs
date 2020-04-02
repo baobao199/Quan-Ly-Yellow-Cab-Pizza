@@ -30,7 +30,7 @@ namespace Quản_Lý_Yellow_Cab_Pizza
             dgvLoaiNL.Columns["MaLoaiNguyenLieu"].Width = 187;
             dgvLoaiNL.Columns["TenLoaiNguyenLieu"].Width = 187;
             dgvLoaiNL.Columns[0].HeaderText = "Mã Loại Nguyên Liệu";
-            dgvLoaiNL.Columns[0].HeaderText = "Tên Loại Nguyên Liệu";
+            dgvLoaiNL.Columns[1].HeaderText = "Tên Loại Nguyên Liệu";
         }
 
         private void btThoat_Click(object sender, EventArgs e)
@@ -43,6 +43,7 @@ namespace Quản_Lý_Yellow_Cab_Pizza
         {
             txtMaLoaiNL.Text = "";
             txtTenLoaiNL.Text = "";
+            txtTimKiem.Text = "";
         }
 
         private void dgvLoaiNL_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)

@@ -52,6 +52,7 @@
             this.label6 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.dgvNguyenLieuXuat = new System.Windows.Forms.DataGridView();
+            this.button1 = new System.Windows.Forms.Button();
             this.groupBox2.SuspendLayout();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvNguyenLieuXuat)).BeginInit();
@@ -61,6 +62,7 @@
             // 
             this.groupBox2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.groupBox2.Controls.Add(this.button1);
             this.groupBox2.Controls.Add(this.txtMaLoaiNL);
             this.groupBox2.Controls.Add(this.label4);
             this.groupBox2.Controls.Add(this.btIn);
@@ -89,6 +91,7 @@
             // 
             this.txtMaLoaiNL.Location = new System.Drawing.Point(144, 100);
             this.txtMaLoaiNL.Name = "txtMaLoaiNL";
+            this.txtMaLoaiNL.ReadOnly = true;
             this.txtMaLoaiNL.Size = new System.Drawing.Size(164, 20);
             this.txtMaLoaiNL.TabIndex = 3;
             // 
@@ -106,13 +109,14 @@
             // 
             this.btIn.BackColor = System.Drawing.Color.Gold;
             this.btIn.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btIn.Enabled = false;
             this.btIn.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btIn.Image = global::Quản_Lý_Yellow_Cab_Pizza.Properties.Resources.print;
             this.btIn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btIn.Location = new System.Drawing.Point(682, 25);
+            this.btIn.Location = new System.Drawing.Point(682, 12);
             this.btIn.Margin = new System.Windows.Forms.Padding(6);
             this.btIn.Name = "btIn";
-            this.btIn.Size = new System.Drawing.Size(90, 52);
+            this.btIn.Size = new System.Drawing.Size(90, 37);
             this.btIn.TabIndex = 36;
             this.btIn.Text = "In";
             this.btIn.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -147,6 +151,7 @@
             // 
             this.btXoa.BackColor = System.Drawing.Color.Gold;
             this.btXoa.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btXoa.Enabled = false;
             this.btXoa.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btXoa.Image = global::Quản_Lý_Yellow_Cab_Pizza.Properties.Resources.delete1;
             this.btXoa.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -164,6 +169,7 @@
             // 
             this.txtGiaTien.Location = new System.Drawing.Point(438, 19);
             this.txtGiaTien.Name = "txtGiaTien";
+            this.txtGiaTien.ReadOnly = true;
             this.txtGiaTien.Size = new System.Drawing.Size(164, 20);
             this.txtGiaTien.TabIndex = 5;
             // 
@@ -171,6 +177,7 @@
             // 
             this.btSua.BackColor = System.Drawing.Color.Gold;
             this.btSua.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btSua.Enabled = false;
             this.btSua.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btSua.Image = global::Quản_Lý_Yellow_Cab_Pizza.Properties.Resources.edit;
             this.btSua.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -188,6 +195,7 @@
             // 
             this.txtNhaCC.Location = new System.Drawing.Point(144, 136);
             this.txtNhaCC.Name = "txtNhaCC";
+            this.txtNhaCC.ReadOnly = true;
             this.txtNhaCC.Size = new System.Drawing.Size(164, 20);
             this.txtNhaCC.TabIndex = 4;
             // 
@@ -195,6 +203,7 @@
             // 
             this.btThem.BackColor = System.Drawing.Color.Gold;
             this.btThem.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btThem.Enabled = false;
             this.btThem.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btThem.Image = global::Quản_Lý_Yellow_Cab_Pizza.Properties.Resources.add;
             this.btThem.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -213,6 +222,7 @@
             this.txtTenNL.ForeColor = System.Drawing.SystemColors.WindowText;
             this.txtTenNL.Location = new System.Drawing.Point(144, 61);
             this.txtTenNL.Name = "txtTenNL";
+            this.txtTenNL.ReadOnly = true;
             this.txtTenNL.Size = new System.Drawing.Size(164, 20);
             this.txtTenNL.TabIndex = 2;
             // 
@@ -334,6 +344,23 @@
             this.dgvNguyenLieuXuat.TabIndex = 0;
             this.dgvNguyenLieuXuat.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgvNguyenLieuXuat_CellMouseClick);
             // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.Color.Gold;
+            this.button1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.button1.Image = global::Quản_Lý_Yellow_Cab_Pizza.Properties.Resources._default;
+            this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button1.Location = new System.Drawing.Point(682, 58);
+            this.button1.Margin = new System.Windows.Forms.Padding(6);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(90, 37);
+            this.button1.TabIndex = 41;
+            this.button1.Text = "Mặc Định";
+            this.button1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
             // frm_XuatHang
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -382,5 +409,6 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.DataGridView dgvNguyenLieuXuat;
+        private System.Windows.Forms.Button button1;
     }
 }

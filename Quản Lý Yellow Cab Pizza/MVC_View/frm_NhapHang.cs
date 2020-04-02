@@ -55,7 +55,10 @@ namespace Quản_Lý_Yellow_Cab_Pizza
            
             txtMaNL.Focus();
             DataTable dt = nhapHangModel.load_NhapHang();
-
+            btThem.Enabled = true;
+            btXoa.Enabled = true;
+            btIn.Enabled = true;
+            btSua.Enabled = true;
 
             if (dt.Rows.Count > 0)
             {

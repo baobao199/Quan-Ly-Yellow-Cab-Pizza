@@ -126,6 +126,7 @@
             // 
             this.btIn.BackColor = System.Drawing.Color.Gold;
             this.btIn.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btIn.Enabled = false;
             this.btIn.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btIn.Image = global::Quản_Lý_Yellow_Cab_Pizza.Properties.Resources.print;
             this.btIn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -167,6 +168,7 @@
             // 
             this.btXoa.BackColor = System.Drawing.Color.Gold;
             this.btXoa.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btXoa.Enabled = false;
             this.btXoa.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btXoa.Image = global::Quản_Lý_Yellow_Cab_Pizza.Properties.Resources.delete1;
             this.btXoa.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -191,6 +193,7 @@
             // 
             this.btSua.BackColor = System.Drawing.Color.Gold;
             this.btSua.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btSua.Enabled = false;
             this.btSua.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btSua.Image = global::Quản_Lý_Yellow_Cab_Pizza.Properties.Resources.edit;
             this.btSua.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -215,6 +218,7 @@
             // 
             this.btThem.BackColor = System.Drawing.Color.Gold;
             this.btThem.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btThem.Enabled = false;
             this.btThem.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btThem.Image = global::Quản_Lý_Yellow_Cab_Pizza.Properties.Resources.add;
             this.btThem.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;

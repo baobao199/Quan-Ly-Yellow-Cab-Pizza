@@ -178,7 +178,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MinimumSize = new System.Drawing.Size(995, 600);
             this.Name = "frm_ReportNhapHang";
-            this.Text = "frm_ReportNhapHang";
+            this.Text = "Báo cáo nhập hàng";
             this.Load += new System.EventHandler(this.frm_ReportNhapHang_Load);
             this.groupBox2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvNhapExel)).EndInit();

@@ -11,6 +11,7 @@ namespace Quản_Lý_Yellow_Cab_Pizza.MVC_Model
     class reportNhapHang_Model
     {
         public DataTable load_ReportNhapHang(string ngayBatDau , string ngayKetThuc)
+            //load du lieu
         {
             DataTable da;
             string sql = "select SoHoaDon,MaNguyenLieu,TenNguyenLieu,MaLoaiNguyenLieu,MaNhaCungCap,NgayNhap,SoLuong,GiaTien, SoLuong*GiaTien as ThanhTien from BaoCaoNhapHang  where NgayNhap between  '" + ngayBatDau + "' and '"+ ngayKetThuc + "'";

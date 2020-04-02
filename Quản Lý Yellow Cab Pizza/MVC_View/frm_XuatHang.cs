@@ -56,7 +56,10 @@ namespace Quản_Lý_Yellow_Cab_Pizza.MVC_View
         {
             txtMaNL.Focus();
             DataTable dt = xuatHangModel.load_XuatHang();
-
+            btThem.Enabled = true;
+            btXoa.Enabled = true;
+            btIn.Enabled = true;
+            btSua.Enabled = true;
 
             if (dt.Rows.Count > 0)
             {
@@ -160,7 +163,10 @@ namespace Quản_Lý_Yellow_Cab_Pizza.MVC_View
 
         private void btIn_Click(object sender, EventArgs e)
         {
-
+            btThem.Enabled = false;
+            btXoa.Enabled = false;
+            btIn.Enabled = false;
+            btSua.Enabled = false;
             if (xuatHangControl.xoa_ChiTietXuatNguyenLieu(txtSoHoaDon.Text))
             {
                 MessageBox.Show("Hóa đơn đang được xuất file exel");
@@ -204,7 +210,6 @@ namespace Quản_Lý_Yellow_Cab_Pizza.MVC_View
                     int i;
                     i = dgvNguyenLieuXuat.CurrentRow.Index;
                     int soDu = Int32.Parse(dgvNguyenLieuXuat.Rows[i].Cells[5].Value.ToString()) - Int32.Parse(txtSoLuong.Text);
-                    MessageBox.Show("" + soDu);
                     if (xuatHangControl.sua_ChiTietXuatHang(txtSoHoaDon.Text, txtMaNL.Text, txtTenNL.Text, txtMaLoaiNL.Text, txtNhaCC.Text, Int32.Parse(txtSoLuong.Text), Int32.Parse(txtGiaTien.Text)))
                     {
                         if (soDu > 0)
@@ -286,5 +291,9 @@ namespace Quản_Lý_Yellow_Cab_Pizza.MVC_View
             }
         }
 
+        private void button1_Click(object sender, EventArgs e)
+        {
+            macDinh();
+        }
     }
 }

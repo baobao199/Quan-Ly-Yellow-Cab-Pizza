@@ -263,6 +263,7 @@
             this.btSua.Text = "Sửa";
             this.btSua.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btSua.UseVisualStyleBackColor = false;
+            this.btSua.Click += new System.EventHandler(this.btSua_Click);
             // 
             // btThem
             // 

@@ -11,6 +11,7 @@ namespace Quản_Lý_Yellow_Cab_Pizza.MVC_Model
     class inHoaDon_Model
     {
         public DataTable load_ChiTietNhapHang()
+            //load chi tiết hóa đơn lên phần mềm
         {
             DataTable da;
             string sql = "select * from ChiTietNhapHang";

@@ -130,7 +130,14 @@ create table BaoCaoXuatHang
 
 insert into BaoCaoXuatHang values ('YLCXH0001','H','HAM','MS','TT','',10,12000)
 
-
+create table NhanVien
+(
+	MaNhanVien varchar(30) primary key,
+	TenNhanVien nvarchar(100),
+	NamSinh int,
+	DiaChi nvarchar(100),
+	SoDienThoai varchar(10)
+);
 
 
 update QuanLyNguyenLieu set SoLuong = SoLuong - 

@@ -30,6 +30,10 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frm_NhanVien));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.btMacDinh = new System.Windows.Forms.Button();
+            this.btSave = new System.Windows.Forms.Button();
+            this.txtDiaChi = new System.Windows.Forms.TextBox();
+            this.label5 = new System.Windows.Forms.Label();
             this.txtSDT = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.txtNamSinh = new System.Windows.Forms.TextBox();
@@ -42,15 +46,10 @@
             this.txtTimKiem = new System.Windows.Forms.TextBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.dgvDanhSachNV = new System.Windows.Forms.DataGridView();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.label5 = new System.Windows.Forms.Label();
-            this.btTimKiem = new System.Windows.Forms.Button();
             this.btThoat = new System.Windows.Forms.Button();
             this.btXoa = new System.Windows.Forms.Button();
             this.btSua = new System.Windows.Forms.Button();
             this.btThem = new System.Windows.Forms.Button();
-            this.btMacDinh = new System.Windows.Forms.Button();
-            this.btSave = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDanhSachNV)).BeginInit();
@@ -60,7 +59,7 @@
             // 
             this.groupBox1.Controls.Add(this.btMacDinh);
             this.groupBox1.Controls.Add(this.btSave);
-            this.groupBox1.Controls.Add(this.textBox1);
+            this.groupBox1.Controls.Add(this.txtDiaChi);
             this.groupBox1.Controls.Add(this.label5);
             this.groupBox1.Controls.Add(this.txtSDT);
             this.groupBox1.Controls.Add(this.label4);
@@ -77,13 +76,66 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Thông tin nhân viên";
             // 
+            // btMacDinh
+            // 
+            this.btMacDinh.BackColor = System.Drawing.Color.Transparent;
+            this.btMacDinh.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btMacDinh.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btMacDinh.Image = global::Quản_Lý_Yellow_Cab_Pizza.Properties.Resources._default;
+            this.btMacDinh.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btMacDinh.Location = new System.Drawing.Point(393, 99);
+            this.btMacDinh.Margin = new System.Windows.Forms.Padding(6);
+            this.btMacDinh.Name = "btMacDinh";
+            this.btMacDinh.Size = new System.Drawing.Size(95, 45);
+            this.btMacDinh.TabIndex = 40;
+            this.btMacDinh.Text = "Mặc Định";
+            this.btMacDinh.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btMacDinh.UseVisualStyleBackColor = false;
+            this.btMacDinh.Click += new System.EventHandler(this.btMacDinh_Click);
+            // 
+            // btSave
+            // 
+            this.btSave.BackColor = System.Drawing.Color.White;
+            this.btSave.Cursor = System.Windows.Forms.Cursors.Default;
+            this.btSave.Enabled = false;
+            this.btSave.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btSave.Image = global::Quản_Lý_Yellow_Cab_Pizza.Properties.Resources.save;
+            this.btSave.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btSave.Location = new System.Drawing.Point(500, 100);
+            this.btSave.Margin = new System.Windows.Forms.Padding(6);
+            this.btSave.Name = "btSave";
+            this.btSave.Size = new System.Drawing.Size(71, 44);
+            this.btSave.TabIndex = 39;
+            this.btSave.Text = "Lưu";
+            this.btSave.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btSave.UseVisualStyleBackColor = false;
+            this.btSave.Click += new System.EventHandler(this.btSave_Click);
+            // 
+            // txtDiaChi
+            // 
+            this.txtDiaChi.ForeColor = System.Drawing.SystemColors.WindowText;
+            this.txtDiaChi.Location = new System.Drawing.Point(407, 26);
+            this.txtDiaChi.Name = "txtDiaChi";
+            this.txtDiaChi.Size = new System.Drawing.Size(164, 20);
+            this.txtDiaChi.TabIndex = 4;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(308, 26);
+            this.label5.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(43, 13);
+            this.label5.TabIndex = 31;
+            this.label5.Text = "Địa chỉ:";
+            // 
             // txtSDT
             // 
             this.txtSDT.ForeColor = System.Drawing.SystemColors.WindowText;
             this.txtSDT.Location = new System.Drawing.Point(407, 62);
             this.txtSDT.Name = "txtSDT";
             this.txtSDT.Size = new System.Drawing.Size(164, 20);
-            this.txtSDT.TabIndex = 30;
+            this.txtSDT.TabIndex = 5;
             // 
             // label4
             // 
@@ -101,7 +153,7 @@
             this.txtNamSinh.Location = new System.Drawing.Point(109, 100);
             this.txtNamSinh.Name = "txtNamSinh";
             this.txtNamSinh.Size = new System.Drawing.Size(164, 20);
-            this.txtNamSinh.TabIndex = 28;
+            this.txtNamSinh.TabIndex = 3;
             // 
             // label3
             // 
@@ -119,14 +171,14 @@
             this.txtTenNV.Location = new System.Drawing.Point(109, 62);
             this.txtTenNV.Name = "txtTenNV";
             this.txtTenNV.Size = new System.Drawing.Size(164, 20);
-            this.txtTenNV.TabIndex = 26;
+            this.txtTenNV.TabIndex = 2;
             // 
             // txtMaNV
             // 
             this.txtMaNV.Location = new System.Drawing.Point(109, 26);
             this.txtMaNV.Name = "txtMaNV";
             this.txtMaNV.Size = new System.Drawing.Size(164, 20);
-            this.txtMaNV.TabIndex = 25;
+            this.txtMaNV.TabIndex = 1;
             // 
             // label1
             // 
@@ -151,7 +203,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(128, 259);
+            this.label6.Location = new System.Drawing.Point(162, 259);
             this.label6.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(77, 13);
@@ -160,10 +212,11 @@
             // 
             // txtTimKiem
             // 
-            this.txtTimKiem.Location = new System.Drawing.Point(262, 256);
+            this.txtTimKiem.Location = new System.Drawing.Point(271, 256);
             this.txtTimKiem.Name = "txtTimKiem";
             this.txtTimKiem.Size = new System.Drawing.Size(145, 20);
             this.txtTimKiem.TabIndex = 36;
+            this.txtTimKiem.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txtTimKiem_KeyUp);
             // 
             // groupBox2
             // 
@@ -182,40 +235,7 @@
             this.dgvDanhSachNV.Name = "dgvDanhSachNV";
             this.dgvDanhSachNV.Size = new System.Drawing.Size(617, 221);
             this.dgvDanhSachNV.TabIndex = 0;
-            // 
-            // textBox1
-            // 
-            this.textBox1.ForeColor = System.Drawing.SystemColors.WindowText;
-            this.textBox1.Location = new System.Drawing.Point(407, 26);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(164, 20);
-            this.textBox1.TabIndex = 32;
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(308, 26);
-            this.label5.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(49, 13);
-            this.label5.TabIndex = 31;
-            this.label5.Text = "Địan chỉ:";
-            // 
-            // btTimKiem
-            // 
-            this.btTimKiem.BackColor = System.Drawing.Color.Gold;
-            this.btTimKiem.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btTimKiem.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btTimKiem.Image = global::Quản_Lý_Yellow_Cab_Pizza.Properties.Resources.find;
-            this.btTimKiem.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btTimKiem.Location = new System.Drawing.Point(419, 248);
-            this.btTimKiem.Margin = new System.Windows.Forms.Padding(6);
-            this.btTimKiem.Name = "btTimKiem";
-            this.btTimKiem.Size = new System.Drawing.Size(90, 34);
-            this.btTimKiem.TabIndex = 34;
-            this.btTimKiem.Text = "Tìm kiếm";
-            this.btTimKiem.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btTimKiem.UseVisualStyleBackColor = false;
+            this.dgvDanhSachNV.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgvDanhSachNV_CellMouseClick);
             // 
             // btThoat
             // 
@@ -249,6 +269,7 @@
             this.btXoa.Text = "Xóa";
             this.btXoa.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btXoa.UseVisualStyleBackColor = false;
+            this.btXoa.Click += new System.EventHandler(this.btXoa_Click);
             // 
             // btSua
             // 
@@ -265,6 +286,7 @@
             this.btSua.Text = "Sửa";
             this.btSua.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btSua.UseVisualStyleBackColor = false;
+            this.btSua.Click += new System.EventHandler(this.btSua_Click);
             // 
             // btThem
             // 
@@ -277,43 +299,11 @@
             this.btThem.Margin = new System.Windows.Forms.Padding(6);
             this.btThem.Name = "btThem";
             this.btThem.Size = new System.Drawing.Size(90, 52);
-            this.btThem.TabIndex = 30;
+            this.btThem.TabIndex = 6;
             this.btThem.Text = "Thêm";
             this.btThem.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btThem.UseVisualStyleBackColor = false;
-            // 
-            // btMacDinh
-            // 
-            this.btMacDinh.BackColor = System.Drawing.Color.Transparent;
-            this.btMacDinh.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btMacDinh.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btMacDinh.Image = global::Quản_Lý_Yellow_Cab_Pizza.Properties.Resources._default;
-            this.btMacDinh.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btMacDinh.Location = new System.Drawing.Point(393, 99);
-            this.btMacDinh.Margin = new System.Windows.Forms.Padding(6);
-            this.btMacDinh.Name = "btMacDinh";
-            this.btMacDinh.Size = new System.Drawing.Size(95, 45);
-            this.btMacDinh.TabIndex = 40;
-            this.btMacDinh.Text = "Mặc Định";
-            this.btMacDinh.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btMacDinh.UseVisualStyleBackColor = false;
-            // 
-            // btSave
-            // 
-            this.btSave.BackColor = System.Drawing.Color.White;
-            this.btSave.Cursor = System.Windows.Forms.Cursors.Default;
-            this.btSave.Enabled = false;
-            this.btSave.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btSave.Image = global::Quản_Lý_Yellow_Cab_Pizza.Properties.Resources.save;
-            this.btSave.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btSave.Location = new System.Drawing.Point(500, 100);
-            this.btSave.Margin = new System.Windows.Forms.Padding(6);
-            this.btSave.Name = "btSave";
-            this.btSave.Size = new System.Drawing.Size(71, 44);
-            this.btSave.TabIndex = 39;
-            this.btSave.Text = "Lưu";
-            this.btSave.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btSave.UseVisualStyleBackColor = false;
+            this.btThem.Click += new System.EventHandler(this.btThem_Click);
             // 
             // frm_NhanVien
             // 
@@ -322,7 +312,6 @@
             this.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.ClientSize = new System.Drawing.Size(641, 541);
             this.Controls.Add(this.groupBox2);
-            this.Controls.Add(this.btTimKiem);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.txtTimKiem);
             this.Controls.Add(this.btThoat);
@@ -354,7 +343,6 @@
         private System.Windows.Forms.TextBox txtMaNV;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Button btTimKiem;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.TextBox txtTimKiem;
         private System.Windows.Forms.Button btThoat;
@@ -363,7 +351,7 @@
         private System.Windows.Forms.Button btThem;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.DataGridView dgvDanhSachNV;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtDiaChi;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Button btMacDinh;
         private System.Windows.Forms.Button btSave;

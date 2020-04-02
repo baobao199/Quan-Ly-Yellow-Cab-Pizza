@@ -11,15 +11,16 @@ namespace Quản_Lý_Yellow_Cab_Pizza.MVC_Model
     class nhapHang_Model
     {
         public DataTable load_NhapHang()
-            // load dữ liệu lên phần mềm
+            // load dữ liệu lên nhập hàng phần mềm
         {
             DataTable da;
             string sql = "select * from NhapHang ORDER BY SoHoaDon  DESC";
             da = xuly.creatTable(sql);
             return da;
         }
+
         public DataTable load_ChiTietNhapHang()
-        // load dữ liệu lên datagridview
+        // load dữ liệu lên chi tiết nhập hàng lên datagridview
         {
             DataTable da;
             string sql = "select * from ChiTietNhapHang";

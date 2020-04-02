@@ -37,7 +37,6 @@
             this.txtMaLoaiNL = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.btThoat = new System.Windows.Forms.Button();
-            this.btXoa = new System.Windows.Forms.Button();
             this.btSua = new System.Windows.Forms.Button();
             this.btThem = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
@@ -140,7 +139,7 @@
             this.btThoat.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btThoat.Image = global::Quản_Lý_Yellow_Cab_Pizza.Properties.Resources.exit;
             this.btThoat.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btThoat.Location = new System.Drawing.Point(327, 173);
+            this.btThoat.Location = new System.Drawing.Point(319, 173);
             this.btThoat.Margin = new System.Windows.Forms.Padding(6);
             this.btThoat.Name = "btThoat";
             this.btThoat.Size = new System.Drawing.Size(90, 52);
@@ -150,23 +149,6 @@
             this.btThoat.UseVisualStyleBackColor = false;
             this.btThoat.Click += new System.EventHandler(this.btThoat_Click);
             // 
-            // btXoa
-            // 
-            this.btXoa.BackColor = System.Drawing.Color.Gold;
-            this.btXoa.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btXoa.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btXoa.Image = global::Quản_Lý_Yellow_Cab_Pizza.Properties.Resources.delete;
-            this.btXoa.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btXoa.Location = new System.Drawing.Point(225, 173);
-            this.btXoa.Margin = new System.Windows.Forms.Padding(6);
-            this.btXoa.Name = "btXoa";
-            this.btXoa.Size = new System.Drawing.Size(90, 52);
-            this.btXoa.TabIndex = 4;
-            this.btXoa.Text = "Xóa";
-            this.btXoa.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btXoa.UseVisualStyleBackColor = false;
-            this.btXoa.Click += new System.EventHandler(this.btXoa_Click);
-            // 
             // btSua
             // 
             this.btSua.BackColor = System.Drawing.Color.Gold;
@@ -174,7 +156,7 @@
             this.btSua.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btSua.Image = global::Quản_Lý_Yellow_Cab_Pizza.Properties.Resources.edit;
             this.btSua.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btSua.Location = new System.Drawing.Point(123, 173);
+            this.btSua.Location = new System.Drawing.Point(197, 173);
             this.btSua.Margin = new System.Windows.Forms.Padding(6);
             this.btSua.Name = "btSua";
             this.btSua.Size = new System.Drawing.Size(90, 52);
@@ -191,7 +173,7 @@
             this.btThem.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btThem.Image = global::Quản_Lý_Yellow_Cab_Pizza.Properties.Resources.add;
             this.btThem.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btThem.Location = new System.Drawing.Point(21, 173);
+            this.btThem.Location = new System.Drawing.Point(75, 173);
             this.btThem.Margin = new System.Windows.Forms.Padding(6);
             this.btThem.Name = "btThem";
             this.btThem.Size = new System.Drawing.Size(90, 52);
@@ -248,7 +230,6 @@
             this.Controls.Add(this.txtTimKiem);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.btThoat);
-            this.Controls.Add(this.btXoa);
             this.Controls.Add(this.btSua);
             this.Controls.Add(this.btThem);
             this.Controls.Add(this.groupBox1);
@@ -275,7 +256,6 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button btThem;
         private System.Windows.Forms.Button btSua;
-        private System.Windows.Forms.Button btXoa;
         private System.Windows.Forms.Button btThoat;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.TextBox txtTimKiem;

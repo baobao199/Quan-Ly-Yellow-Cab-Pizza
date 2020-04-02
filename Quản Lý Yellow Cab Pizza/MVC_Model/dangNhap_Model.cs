@@ -11,6 +11,7 @@ namespace Quản_Lý_Yellow_Cab_Pizza.MVC_Model
     class dangNhap_Model
     {
         public DataTable check_TaiKhoan(string taiKhoan, string matKhau)
+            //load tài khoản lên database
         {
             DataTable dt;
             string sql = "SELECT * FROM TaiKhoanQuanLy WHERE TaiKhoan ='" + taiKhoan + "'";

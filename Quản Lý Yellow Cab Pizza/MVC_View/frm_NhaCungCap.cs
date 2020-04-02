@@ -60,6 +60,7 @@ namespace Quản_Lý_Yellow_Cab_Pizza
             txtSDT.Text = "";
             txtEmail.Text = "";
             txtDiaChi.Text = "";
+            txtTimKiem.Text = "";
         }
 
         private void btXoa_Click(object sender, EventArgs e)
@@ -146,6 +147,11 @@ namespace Quản_Lý_Yellow_Cab_Pizza
             {
                 dgvDanhSachNCC.DataSource = nhaCungCapModel.timKiem_Load(txtTimKiem.Text.Trim());
             }
+        }
+
+        private void txtTimKiem_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

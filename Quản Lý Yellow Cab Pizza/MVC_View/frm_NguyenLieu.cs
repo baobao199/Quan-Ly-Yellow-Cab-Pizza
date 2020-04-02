@@ -55,6 +55,7 @@ namespace Quản_Lý_Yellow_Cab_Pizza.MVC_View
             txtMaLoaiNL.Text = "";
             txtNCC.Text = "";
             txtGiaTien.Text = "";
+            txtTimKiem.Text = "";
         }
 
         private void btXoa_Click_1(object sender, EventArgs e)
@@ -123,9 +124,9 @@ namespace Quản_Lý_Yellow_Cab_Pizza.MVC_View
                 if (nguyenLieuControl.sua_NguyenLieu(txtMaNL.Text, txtTenNL.Text, txtMaLoaiNL.Text, txtNCC.Text, Int32.Parse( txtGiaTien.Text)))
                 {
                     MessageBox.Show("Nguyên liệu đã được cập nhật");
-                    btSave.Enabled = false;
                     frm_NguyenLieu_Load(sender, e);
                     macDinh();
+                    btSave.Enabled = false;
                 }
                 else
                 {
@@ -144,6 +145,11 @@ namespace Quản_Lý_Yellow_Cab_Pizza.MVC_View
             {
                 dgvNguyenLieu.DataSource = nguyenLieuModel.timKiem_Load(txtTimKiem.Text.Trim());
             }
+        }
+
+        private void btSua_Click(object sender, EventArgs e)
+        {
+            btSave.Enabled = true;
         }
     }
 }
