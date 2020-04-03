@@ -25,6 +25,9 @@ namespace Quản_Lý_Yellow_Cab_Pizza
         taiKhoan_Control taiKhoanControl = new taiKhoan_Control();
         private void btThoat_Click(object sender, EventArgs e)
         {
+            Application.Exit();
+            frm_DangNhap dangNhap = new frm_DangNhap();
+            dangNhap.Show();
             this.Close();
             Dispose();
         }
@@ -70,9 +73,9 @@ namespace Quản_Lý_Yellow_Cab_Pizza
             {
                 taiKhoanControl.capNhat_MatKhau(txtTKNhanVien.Text, txtMatKhauMoi.Text);
                 MessageBox.Show("Cập nhật mật khẩu thành công");
-                frm_DangNhap dangNhap = new frm_DangNhap();
-                this.Hide();
-                dangNhap.Show();
+
+                
+                
             }
             else
             {

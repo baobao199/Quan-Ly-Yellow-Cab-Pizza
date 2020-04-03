@@ -347,6 +347,7 @@
             this.btMacDinh.Text = "Mặc Định";
             this.btMacDinh.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btMacDinh.UseVisualStyleBackColor = false;
+            this.btMacDinh.Click += new System.EventHandler(this.btMacDinh_Click_1);
             // 
             // btThoat
             // 
@@ -363,6 +364,7 @@
             this.btThoat.Text = "Thoát";
             this.btThoat.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btThoat.UseVisualStyleBackColor = false;
+            this.btThoat.Click += new System.EventHandler(this.btThoat_Click_1);
             // 
             // label8
             // 
@@ -391,6 +393,8 @@
             this.Controls.Add(this.btn_xoa);
             this.Controls.Add(this.groupBox1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.MinimumSize = new System.Drawing.Size(1080, 580);
             this.Name = "frm_QuanLyNguyenLieu";
             this.Text = "Quản lý nguyên liệu";

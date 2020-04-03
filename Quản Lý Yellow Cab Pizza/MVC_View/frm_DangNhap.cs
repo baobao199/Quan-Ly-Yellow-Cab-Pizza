@@ -17,6 +17,7 @@ namespace Quản_Lý_Yellow_Cab_Pizza.MVC_View
         public frm_DangNhap()
         {
             InitializeComponent();
+            this.ControlBox = false;
         }
         dangNhap_Model dangNhapModel = new dangNhap_Model();
 
@@ -36,20 +37,18 @@ namespace Quản_Lý_Yellow_Cab_Pizza.MVC_View
                     MessageBox.Show("Mật khẩu chưa được nhập");
                     txtMatKhau.Focus();
                 }
-                else if (txtTenDangNhap.Text != dt.Rows[0][0].ToString() && txtMatKhau.Text == dt.Rows[0][1].ToString())
+                else if (txtTenDangNhap.Text.Trim() != dt.Rows[0][0].ToString() && txtMatKhau.Text == dt.Rows[0][1].ToString())
                 {
                     MessageBox.Show("Tên đăng nhập không đúng");
                     txtTenDangNhap.Focus();
                 }
-                else if (txtTenDangNhap.Text == dt.Rows[0][0].ToString() && txtMatKhau.Text != dt.Rows[0][1].ToString())
+                else if (txtTenDangNhap.Text.Trim() == dt.Rows[0][0].ToString() && txtMatKhau.Text != dt.Rows[0][1].ToString())
                 {
                     MessageBox.Show("Mật khẩu không đúng");
                     txtMatKhau.Focus();
                 }
-                else if (txtTenDangNhap.Text == dt.Rows[0][0].ToString() && txtMatKhau.Text == dt.Rows[0][1].ToString())
+                else if (txtTenDangNhap.Text.Trim() == dt.Rows[0][0].ToString() && txtMatKhau.Text == dt.Rows[0][1].ToString())
                 {
-
-                    MessageBox.Show("Đăng nhập thành công");
                     frm_Main main = new frm_Main();
                     main.Show();
                     this.Hide();
@@ -64,7 +63,8 @@ namespace Quản_Lý_Yellow_Cab_Pizza.MVC_View
 
         private void bt_huy_Click(object sender, EventArgs e)
         {
-            Close();
+            Environment.Exit(0);
+            Application.Exit();
         }
 
         private void frm_DangNhap_Load(object sender, EventArgs e)

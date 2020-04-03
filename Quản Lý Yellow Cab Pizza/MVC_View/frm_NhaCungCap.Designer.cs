@@ -298,6 +298,8 @@
             this.Controls.Add(this.btSua);
             this.Controls.Add(this.btThem);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.MinimumSize = new System.Drawing.Size(600, 580);
             this.Name = "frm_NhaCungCap";
             this.Text = "Quản lý nhà cung cấp";

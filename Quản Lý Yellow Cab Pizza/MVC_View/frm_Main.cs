@@ -19,7 +19,7 @@ namespace Quản_Lý_Yellow_Cab_Pizza
         }
         private void frm_Main_Load(object sender, EventArgs e)
         {
-            WindowState = FormWindowState.Maximized;
+            
         }
         private void quảnLýNguyênLiệuToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -188,6 +188,11 @@ namespace Quản_Lý_Yellow_Cab_Pizza
             {
                 ActiveChildForm("frm_NguyenLieu");
             }
+        }
+
+        private void frm_Main_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            Application.Exit();
         }
     }
 }

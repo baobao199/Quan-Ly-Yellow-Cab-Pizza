@@ -114,32 +114,40 @@ namespace Quản_Lý_Yellow_Cab_Pizza.MVC_View
                 DateTime ngayXuat = DateTime.Now;
                 DataTable dt = xuatHangModel.check_ConHang(Int32.Parse(txtSoLuong.Text),txtMaNL.Text);
                 int iD1 =Int32.Parse(dt.Rows[0][0].ToString());
-                if (iD1 < 0)
+                if (iD1 <= 0)
                 {
+                   
                     MessageBox.Show("Nguyên liệu không đủ để xuất");
                 }
                 else
                 {
-                    if (xuatHangControl.them_BaoCaoXuatHang(txtSoHoaDon.Text, txtMaNL.Text, txtTenNL.Text, txtMaLoaiNL.Text, txtNhaCC.Text, ngayXuat, Int32.Parse(txtSoLuong.Text), Int32.Parse(txtGiaTien.Text)))
+                    if (Int32.Parse(txtSoLuong.Text) <= 0)
                     {
-
-                        xuatHangControl.them_ChiTietXuatNguyenLieu(txtSoHoaDon.Text, txtMaNL.Text, txtTenNL.Text, txtMaLoaiNL.Text, txtNhaCC.Text, Int32.Parse(txtSoLuong.Text), Int32.Parse(txtGiaTien.Text));
-                        if ((xuatHangControl.check_NguyenLieu(txtMaNL.Text)))
-                        {
-
-                            xuatHangControl.capnhat_SoLuong(Int32.Parse(txtSoLuong.Text), txtMaNL.Text);
-                        }
-                        else
-                        {
-                            MessageBox.Show("Nguyên liệu không tồn tại hoặc đã hết");
-                        }
-
-                        MessageBox.Show("Một sản phẩm đã được thêm");
-                        txtMaNL.Focus();
+                        MessageBox.Show("Số lượng không được âm");
                     }
                     else
                     {
-                        MessageBox.Show("Không thể thêm sản phẩm");
+                        if (xuatHangControl.them_BaoCaoXuatHang(txtSoHoaDon.Text, txtMaNL.Text, txtTenNL.Text, txtMaLoaiNL.Text, txtNhaCC.Text, ngayXuat, Int32.Parse(txtSoLuong.Text), Int32.Parse(txtGiaTien.Text)))
+                        {
+
+                            xuatHangControl.them_ChiTietXuatNguyenLieu(txtSoHoaDon.Text, txtMaNL.Text, txtTenNL.Text, txtMaLoaiNL.Text, txtNhaCC.Text, Int32.Parse(txtSoLuong.Text), Int32.Parse(txtGiaTien.Text));
+                            if ((xuatHangControl.check_NguyenLieu(txtMaNL.Text)))
+                            {
+
+                                xuatHangControl.capnhat_SoLuong(Int32.Parse(txtSoLuong.Text), txtMaNL.Text);
+                            }
+                            else
+                            {
+                                MessageBox.Show("Nguyên liệu không tồn tại hoặc đã hết");
+                            }
+
+                            MessageBox.Show("Một sản phẩm đã được thêm");
+                            txtMaNL.Focus();
+                        }
+                        else
+                        {
+                            MessageBox.Show("Không thể thêm sản phẩm");
+                        }
                     }
                     frm_XuatHang_Load(sender, e);
                     macDinh();
@@ -151,6 +159,12 @@ namespace Quản_Lý_Yellow_Cab_Pizza.MVC_View
                 macDinh();
             }
         }
+
+        private void WriteLine(int iD1)
+        {
+            throw new NotImplementedException();
+        }
+
         public void macDinh()
         {
             txtMaNL.Text = "";
@@ -205,39 +219,59 @@ namespace Quản_Lý_Yellow_Cab_Pizza.MVC_View
             }
             else
             {
-                try {
-                    //giá trị chênh lệch để chỉnh sửa cập nhật số lượng quản lý nguyên liệu
-                    int i;
-                    i = dgvNguyenLieuXuat.CurrentRow.Index;
-                    int soDu = Int32.Parse(dgvNguyenLieuXuat.Rows[i].Cells[5].Value.ToString()) - Int32.Parse(txtSoLuong.Text);
-                    if (xuatHangControl.sua_ChiTietXuatHang(txtSoHoaDon.Text, txtMaNL.Text, txtTenNL.Text, txtMaLoaiNL.Text, txtNhaCC.Text, Int32.Parse(txtSoLuong.Text), Int32.Parse(txtGiaTien.Text)))
-                    {
-                        if (soDu > 0)
-                        //bớt sản phẩm
-                        {
-                            xuatHangControl.capnhat_SoLuongSuaThem(layDuong(soDu), txtMaNL.Text);
-                        }
-                        else
-                        // thêm sản phẩm 
-                        {
-                            xuatHangControl.capnhat_SoLuongSuaBot(layDuong(soDu), txtMaNL.Text);
-                        }
-
-                        xuatHangControl.sua_BaoCaoXuatHang(txtSoHoaDon.Text, txtMaNL.Text, txtTenNL.Text, txtMaLoaiNL.Text, txtNhaCC.Text, Int32.Parse(txtSoLuong.Text), Int32.Parse(txtGiaTien.Text));
-                        MessageBox.Show("Nguyên liệu đã được cập nhật");
-                    }
-
-                    else
-                    {
-                        MessageBox.Show("Nguyên liệu không được cập nhật");
-                    }
-                    frm_XuatHang_Load(sender, e);
-                }
-                
-                catch
+                DataTable dt = xuatHangModel.check_ConHang(Int32.Parse(txtSoLuong.Text), txtMaNL.Text);
+                int iD1 = Int32.Parse(dt.Rows[0][0].ToString());
+                if (iD1 <= 0)
                 {
 
+                    MessageBox.Show("Nguyên liệu không đủ để xuất");
                 }
+                else
+                {
+                    if (Int32.Parse(txtSoLuong.Text) <= 0)
+                    {
+                        MessageBox.Show("Số lượng không được âm");
+                    }
+                    else
+                    {
+
+
+
+                        try
+                        {
+                            //giá trị chênh lệch để chỉnh sửa cập nhật số lượng quản lý nguyên liệu
+                            int i;
+                            i = dgvNguyenLieuXuat.CurrentRow.Index;
+                            int soDu = Int32.Parse(dgvNguyenLieuXuat.Rows[i].Cells[5].Value.ToString()) - Int32.Parse(txtSoLuong.Text);
+                            if (xuatHangControl.sua_ChiTietXuatHang(txtSoHoaDon.Text, txtMaNL.Text, txtTenNL.Text, txtMaLoaiNL.Text, txtNhaCC.Text, Int32.Parse(txtSoLuong.Text), Int32.Parse(txtGiaTien.Text)))
+                            {
+                                if (soDu > 0)
+                                //bớt sản phẩm
+                                {
+                                    xuatHangControl.capnhat_SoLuongSuaThem(layDuong(soDu), txtMaNL.Text);
+                                }
+                                else
+                                // thêm sản phẩm 
+                                {
+                                    xuatHangControl.capnhat_SoLuongSuaBot(layDuong(soDu), txtMaNL.Text);
+                                }
+
+                                xuatHangControl.sua_BaoCaoXuatHang(txtSoHoaDon.Text, txtMaNL.Text, txtTenNL.Text, txtMaLoaiNL.Text, txtNhaCC.Text, Int32.Parse(txtSoLuong.Text), Int32.Parse(txtGiaTien.Text));
+                                MessageBox.Show("Nguyên liệu đã được cập nhật");
+                            }
+                            else
+                            {
+                                MessageBox.Show("Nguyên liệu không được cập nhật");
+                            }
+
+                        }
+                        catch
+                        {
+
+                        }
+                    }
+                }
+                frm_XuatHang_Load(sender, e);
             }
 
         }

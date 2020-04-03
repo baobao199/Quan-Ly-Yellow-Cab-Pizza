@@ -234,6 +234,8 @@
             this.Controls.Add(this.btThem);
             this.Controls.Add(this.groupBox1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.MinimumSize = new System.Drawing.Size(457, 558);
             this.Name = "frm_LoaiNguyenLieu";
             this.Text = "Quản lý loại nguyên liệu";

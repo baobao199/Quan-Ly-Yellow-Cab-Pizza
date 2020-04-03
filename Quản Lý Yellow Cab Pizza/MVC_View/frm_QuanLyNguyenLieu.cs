@@ -133,5 +133,16 @@ namespace Quản_Lý_Yellow_Cab_Pizza
                 dgvNguyenLieu.DataSource = nguyenLieuModel.timKiem_Load(txtTimKiem.Text.Trim());
             }
         }
+
+        private void btThoat_Click_1(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void btMacDinh_Click_1(object sender, EventArgs e)
+        {
+            macDinh();
+            frm_NguyenLieu_Load(sender, e);
+        }
     }
 }

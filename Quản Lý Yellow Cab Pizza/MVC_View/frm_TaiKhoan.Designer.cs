@@ -211,8 +211,11 @@
             this.Controls.Add(this.btCapNhat);
             this.Controls.Add(this.groupBox1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.MinimumSize = new System.Drawing.Size(361, 374);
             this.Name = "frm_TaiKhoan";
+            this.RightToLeftLayout = true;
             this.Text = "Tài khoản";
             this.Load += new System.EventHandler(this.frm_TaiKhoan_Load);
             this.groupBox1.ResumeLayout(false);

@@ -320,6 +320,8 @@
             this.Controls.Add(this.btThem);
             this.Controls.Add(this.groupBox1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "frm_NhanVien";
             this.Text = "Quản lý nhân viên";
             this.Load += new System.EventHandler(this.frm_NhanVien_Load);

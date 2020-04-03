@@ -167,6 +167,8 @@
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.MinimumSize = new System.Drawing.Size(995, 600);
             this.Name = "frm_ReportXuatHang";
             this.Text = "Báo cáo xuất hàng";

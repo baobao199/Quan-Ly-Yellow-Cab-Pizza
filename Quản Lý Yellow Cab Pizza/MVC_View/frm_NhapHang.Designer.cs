@@ -184,6 +184,7 @@
             // 
             // txtGiaTien
             // 
+            this.txtGiaTien.Enabled = false;
             this.txtGiaTien.Location = new System.Drawing.Point(438, 19);
             this.txtGiaTien.Name = "txtGiaTien";
             this.txtGiaTien.Size = new System.Drawing.Size(164, 20);
@@ -209,6 +210,7 @@
             // 
             // txtNhaCC
             // 
+            this.txtNhaCC.Enabled = false;
             this.txtNhaCC.Location = new System.Drawing.Point(144, 136);
             this.txtNhaCC.Name = "txtNhaCC";
             this.txtNhaCC.Size = new System.Drawing.Size(164, 20);
@@ -365,12 +367,15 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.ClientSize = new System.Drawing.Size(1064, 541);
+            this.ControlBox = false;
             this.Controls.Add(this.txtSoHoaDon);
             this.Controls.Add(this.btTaoHD);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.groupBox2);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.MinimumSize = new System.Drawing.Size(1080, 580);
             this.Name = "frm_NhapHang";
             this.Text = "Nhập hàng";

@@ -17,6 +17,7 @@ namespace Quản_Lý_Yellow_Cab_Pizza.MVC_View
         public frm_InHoaDon()
         {
             InitializeComponent();
+            this.ControlBox = false;
         }
         inHoaDon_Model inHoaDonModel = new inHoaDon_Model();
         inHoaDon_Control inHoaDonControl = new inHoaDon_Control();
@@ -38,6 +39,11 @@ namespace Quản_Lý_Yellow_Cab_Pizza.MVC_View
             frm_NhapHang nhapHang = new frm_NhapHang();
             nhapHang.Show();
             this.Close();
+        }
+
+        private void crystalReportViewer1_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

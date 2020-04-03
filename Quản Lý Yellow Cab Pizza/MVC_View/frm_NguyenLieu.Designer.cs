@@ -315,6 +315,8 @@
             this.Controls.Add(this.btThem);
             this.Controls.Add(this.groupBox1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.MinimumSize = new System.Drawing.Size(671, 600);
             this.Name = "frm_NguyenLieu";
             this.Text = "Nguyên liệu";
