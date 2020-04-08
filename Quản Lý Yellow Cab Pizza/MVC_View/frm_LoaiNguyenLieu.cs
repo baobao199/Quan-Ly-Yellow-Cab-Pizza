@@ -139,5 +139,28 @@ namespace Quản_Lý_Yellow_Cab_Pizza
                 dgvLoaiNL.DataSource = loaiNguyenLieuModel.timKiem_Load(txtTimKiem.Text.Trim());
             }
         }
+
+        private void btXoa_Click_1(object sender, EventArgs e)
+        {
+            int i;
+            i = dgvLoaiNL.CurrentRow.Index;
+            DialogResult dr;
+            dr = MessageBox.Show("Bạn có chắc muốn xóa?", "Xóa", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+            if (dr == DialogResult.Yes)
+            {
+                string id = dgvLoaiNL.Rows[i].Cells[0].Value.ToString();
+                if(loaiNguyenLieuControl.xoa_LoaiNguyenLieu(id) == true)
+                {  
+                    MessageBox.Show("Loại nguyên liệu đã được xóa");
+                }
+                else if (loaiNguyenLieuControl.xoa_LoaiNguyenLieu(id) == false)
+                {
+                    MessageBox.Show("Mã loại nguyên liệu đang được dùng");
+                    MessageBox.Show("Loại Nguyên liệu chưa được xóa");
+                }
+                frm_LoaiNguyenLieu_Load(sender, e);
+                macDinh();
+            }
+        }
     }
 }

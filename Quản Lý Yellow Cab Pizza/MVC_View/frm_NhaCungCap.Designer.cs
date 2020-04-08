@@ -49,6 +49,7 @@
             this.btThoat = new System.Windows.Forms.Button();
             this.btSua = new System.Windows.Forms.Button();
             this.btThem = new System.Windows.Forms.Button();
+            this.btXoa = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDanhSachNCC)).BeginInit();
@@ -240,7 +241,7 @@
             this.btThoat.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btThoat.Image = global::Quản_Lý_Yellow_Cab_Pizza.Properties.Resources.exit;
             this.btThoat.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btThoat.Location = new System.Drawing.Point(406, 185);
+            this.btThoat.Location = new System.Drawing.Point(447, 185);
             this.btThoat.Margin = new System.Windows.Forms.Padding(6);
             this.btThoat.Name = "btThoat";
             this.btThoat.Size = new System.Drawing.Size(90, 52);
@@ -257,7 +258,7 @@
             this.btSua.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btSua.Image = global::Quản_Lý_Yellow_Cab_Pizza.Properties.Resources.edit;
             this.btSua.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btSua.Location = new System.Drawing.Point(244, 185);
+            this.btSua.Location = new System.Drawing.Point(200, 185);
             this.btSua.Margin = new System.Windows.Forms.Padding(6);
             this.btSua.Name = "btSua";
             this.btSua.Size = new System.Drawing.Size(90, 52);
@@ -274,7 +275,7 @@
             this.btThem.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btThem.Image = global::Quản_Lý_Yellow_Cab_Pizza.Properties.Resources.add;
             this.btThem.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btThem.Location = new System.Drawing.Point(85, 185);
+            this.btThem.Location = new System.Drawing.Point(77, 184);
             this.btThem.Margin = new System.Windows.Forms.Padding(6);
             this.btThem.Name = "btThem";
             this.btThem.Size = new System.Drawing.Size(90, 52);
@@ -284,12 +285,30 @@
             this.btThem.UseVisualStyleBackColor = false;
             this.btThem.Click += new System.EventHandler(this.btThem_Click);
             // 
+            // btXoa
+            // 
+            this.btXoa.BackColor = System.Drawing.Color.Gold;
+            this.btXoa.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btXoa.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btXoa.Image = global::Quản_Lý_Yellow_Cab_Pizza.Properties.Resources.delete1;
+            this.btXoa.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btXoa.Location = new System.Drawing.Point(320, 185);
+            this.btXoa.Margin = new System.Windows.Forms.Padding(6);
+            this.btXoa.Name = "btXoa";
+            this.btXoa.Size = new System.Drawing.Size(90, 52);
+            this.btXoa.TabIndex = 34;
+            this.btXoa.Text = "Xóa";
+            this.btXoa.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btXoa.UseVisualStyleBackColor = false;
+            this.btXoa.Click += new System.EventHandler(this.btXoa_Click_1);
+            // 
             // frm_NhaCungCap
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.ClientSize = new System.Drawing.Size(584, 541);
+            this.Controls.Add(this.btXoa);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.txtTimKiem);
@@ -335,5 +354,6 @@
         private System.Windows.Forms.DataGridView dgvDanhSachNCC;
         private System.Windows.Forms.Button btSave;
         private System.Windows.Forms.Button btMacDinh;
+        private System.Windows.Forms.Button btXoa;
     }
 }

@@ -64,6 +64,12 @@
       <DependentUpon>inHoaDon.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="inHoaDonXuat.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>inHoaDonXuat.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="MVC_Control\inHoaDon_Control.cs" />
     <Compile Include="MVC_Control\quanLyNhanVien_Control.cs" />
     <Compile Include="MVC_Control\taiKhoan_Control.cs" />
@@ -166,11 +172,21 @@
     <Compile Include="MVC_View\frm_XuatHang.Designer.cs">
       <DependentUpon>frm_XuatHang.cs</DependentUpon>
     </Compile>
+    <Compile Include="MVC_View\frm_inHoaDonXuat.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MVC_View\frm_inHoaDonXuat.Designer.cs">
+      <DependentUpon>frm_inHoaDonXuat.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="inHoaDon.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>inHoaDon.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="inHoaDonXuat.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>inHoaDonXuat.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="MVC_View\frm_DangNhap.resx">
       <DependentUpon>frm_DangNhap.cs</DependentUpon>
@@ -210,6 +226,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="MVC_View\frm_XuatHang.resx">
       <DependentUpon>frm_XuatHang.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MVC_View\frm_inHoaDonXuat.resx">
+      <DependentUpon>frm_inHoaDonXuat.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

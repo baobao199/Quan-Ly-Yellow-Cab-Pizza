@@ -177,24 +177,11 @@ namespace Quản_Lý_Yellow_Cab_Pizza.MVC_View
 
         private void btIn_Click(object sender, EventArgs e)
         {
-            btThem.Enabled = false;
-            btXoa.Enabled = false;
-            btIn.Enabled = false;
-            btSua.Enabled = false;
-            if (xuatHangControl.xoa_ChiTietXuatNguyenLieu(txtSoHoaDon.Text))
-            {
-                MessageBox.Show("Hóa đơn đang được xuất file exel");
-
-            }
-            else
-            {
-                MessageBox.Show("Xuất hóa đơn thất bại");
-                xuatHangControl.xoa_XuatHang(txtSoHoaDon.Text);
-            }
-
             macDinh();
             txtSoHoaDon.Text = "";
-            frm_XuatHang_Load(sender, e);
+            frm_inHoaDonXuat inHoaDonXuat = new frm_inHoaDonXuat();
+            inHoaDonXuat.Show();
+            this.Close();
         }
 
         private void dgvNguyenLieuXuat_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)

@@ -14,5 +14,9 @@ namespace Quản_Lý_Yellow_Cab_Pizza.MVC_Control
         {
             return inHoaDonModel.xoa_ChiTietNguyenLieu(soHoaDon);
         }
+        public Boolean xoa_ChiTietXuatHang(string soHoaDon)
+        {
+            return inHoaDonModel.xoa_ChiTietXuatHang(soHoaDon);
+        }
     }
 }

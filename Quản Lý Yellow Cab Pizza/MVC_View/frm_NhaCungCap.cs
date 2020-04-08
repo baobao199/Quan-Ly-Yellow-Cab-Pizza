@@ -153,5 +153,28 @@ namespace Quản_Lý_Yellow_Cab_Pizza
         {
 
         }
+
+        private void btXoa_Click_1(object sender, EventArgs e)
+        {
+            int i;
+            i = dgvDanhSachNCC.CurrentRow.Index;
+            DialogResult dr;
+            dr = MessageBox.Show("Bạn có chắc muốn xóa?", "Xóa", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+            if (dr == DialogResult.Yes)
+            {
+                string id = dgvDanhSachNCC.Rows[i].Cells[0].Value.ToString();
+                if (nhaCungCapControl.xoa_NhaCungCap(id) == true)
+                {
+                    MessageBox.Show("Nhà cung cấp đã được xóa");
+                }
+                else if (nhaCungCapControl.xoa_NhaCungCap(id) == false)
+                {
+                    MessageBox.Show("Nhà cung cấp đang được dùng");
+                    MessageBox.Show("Nhà cung cấp chưa được xóa");
+                }
+                frm_NhaCungCap_Load(sender, e);
+                macDinh();
+            }
+        }
     }
 }
