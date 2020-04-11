@@ -17,7 +17,7 @@ namespace Quản_Lý_Yellow_Cab_Pizza
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new frm_Main());
+            Application.Run(new frm_DangNhap());
         }
     }
 }

@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frm_inHoaDonXuat));
             this.crystalReportViewer1 = new CrystalDecisions.Windows.Forms.CrystalReportViewer();
             this.btTroVe = new System.Windows.Forms.Button();
             this.SuspendLayout();
@@ -53,15 +54,16 @@
             this.btTroVe.UseVisualStyleBackColor = false;
             this.btTroVe.Click += new System.EventHandler(this.btTroVe_Click);
             // 
-            // inHoaDonXuat
+            // frm_inHoaDonXuat
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1006, 450);
             this.Controls.Add(this.btTroVe);
             this.Controls.Add(this.crystalReportViewer1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MinimumSize = new System.Drawing.Size(1022, 489);
-            this.Name = "inHoaDonXuat";
+            this.Name = "frm_inHoaDonXuat";
             this.Text = "inHoaDonXuat";
             this.Load += new System.EventHandler(this.inHoaDonXuat_Load);
             this.ResumeLayout(false);

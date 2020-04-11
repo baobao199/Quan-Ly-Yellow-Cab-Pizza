@@ -92,7 +92,7 @@ namespace Quản_Lý_Yellow_Cab_Pizza
                 }
                 else
                 {
-                    MessageBox.Show("Nhân viên chưa được cập nhật");
+                    MessageBox.Show("Mã nhân viên không được sửa");
                 }
             }
         }

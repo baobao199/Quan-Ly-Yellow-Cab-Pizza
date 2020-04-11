@@ -130,7 +130,7 @@ namespace Quản_Lý_Yellow_Cab_Pizza.MVC_View
                 }
                 else
                 {
-                    MessageBox.Show("Nguyên liệu chưa được cập nhật");
+                    MessageBox.Show("Mã nguyên liệu không được sửa");
                 }
             }
         }

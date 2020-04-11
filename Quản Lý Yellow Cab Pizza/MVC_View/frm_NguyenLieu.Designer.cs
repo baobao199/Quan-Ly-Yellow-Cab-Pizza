@@ -81,7 +81,7 @@
             this.txtNCC.Location = new System.Drawing.Point(413, 31);
             this.txtNCC.Name = "txtNCC";
             this.txtNCC.Size = new System.Drawing.Size(146, 20);
-            this.txtNCC.TabIndex = 39;
+            this.txtNCC.TabIndex = 4;
             // 
             // label5
             // 
@@ -133,7 +133,7 @@
             this.txtGiaTien.Location = new System.Drawing.Point(413, 62);
             this.txtGiaTien.Name = "txtGiaTien";
             this.txtGiaTien.Size = new System.Drawing.Size(146, 20);
-            this.txtGiaTien.TabIndex = 4;
+            this.txtGiaTien.TabIndex = 5;
             // 
             // label4
             // 

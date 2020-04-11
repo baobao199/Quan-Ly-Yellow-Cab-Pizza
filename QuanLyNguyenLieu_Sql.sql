@@ -1,19 +1,27 @@
-﻿use QLYellowCabPizza
+﻿create table QLYellowCabPizza
+use QLYellowCabPizza
+--TaiKhoanQuanLy(TaiKhoan, MatKhau, TenQuanLy)
 create table TaiKhoanQuanLy
 (
 	TaiKhoan varchar(30) not null primary key,
 	MatKhau varchar(10) not null,
 	TenQuanLy nvarchar(30) not null,
 );
-
-
+--NhanVien(MaNhanVien, TenNhanVien, NamSinh, DiaChi, SoDienThoai)
+create table NhanVien
+(
+	MaNhanVien varchar(30) primary key,
+	TenNhanVien nvarchar(100),
+	NamSinh int,
+	DiaChi nvarchar(100),
+	SoDienThoai varchar(10)
+);
 --DanhMucNguyenLieu(MaNguyenLieu, TenDanhMuc)
 create table LoaiNguyenLieu
 (
 	MaLoaiNguyenLieu varchar(30) not null primary key,
 	TenLoaiNguyenLieu nvarchar(30) not null
 );
-
 --NhaCungCap(MaNhaCungCap, TenNhaCungCap, DiaChi, Email, SoDienThoai)
 create table NhaCungCap
 (
@@ -55,7 +63,7 @@ create table NhapHang
 	NgayNhap date default getdate(),
 
 );
-
+--ChiTietNhapHang(SoHoaDon, MaNguyenLieu, MaLoaiNguyenLieu, MaNhaCungCap, SoLuong, GiaTien)
 create table ChiTietNhapHang
 (
 	SoHoaDon varchar(30),
@@ -71,7 +79,7 @@ create table ChiTietNhapHang
 	foreign key (MaLoaiNguyenLieu) references LoaiNguyenLieu(MaLoaiNguyenLieu),
 	foreign key (MaNhaCungCap) references NhaCungCap(MaNhaCungCap),
 );
-
+--BaoCaoNhapHang(SoHoaDon, MaNguyenLieu, TenNguyenLieu, MaLoaiNguyenLieu, MaNhaCungCap, NgayNhap, GiaTien)
 create table BaoCaoNhapHang
 (
 	SoHoaDon  varchar(30),
@@ -88,13 +96,13 @@ create table BaoCaoNhapHang
 	foreign key (MaNhaCungCap) references NhaCungCap(MaNhaCungCap),
 	foreign key (SoHoaDon) references NhapHang(SoHoaDon)
 );
-
+--XuatHang(SoHoaDon,  NgayXuat)
 create table XuatHang
 (
 	SoHoaDon  varchar(30) primary key,
 	NgayXuat date default getdate(),
 );
-
+--ChiTietNhapHang(SoHoaDon, MaNguyenLieu, MaLoaiNguyenLieu, MaNhaCungCap, SoLuong, GiaTien)
 create table ChiTietXuatHang
 (
 	SoHoaDon varchar(30),
@@ -110,7 +118,7 @@ create table ChiTietXuatHang
 	foreign key (MaNhaCungCap) references NhaCungCap(MaNhaCungCap),
 	foreign key (SoHoaDon) references XuatHang(SoHoaDon)
 );
-
+--BaoCaoNhapHang(SoHoaDon, MaNguyenLieu, TenNguyenLieu, MaLoaiNguyenLieu, MaNhaCungCap, NgayNhap, GiaTien)
 create table BaoCaoXuatHang
 (
 	SoHoaDon  varchar(30),
@@ -127,23 +135,3 @@ create table BaoCaoXuatHang
 	foreign key (MaNhaCungCap) references NhaCungCap(MaNhaCungCap),
 	foreign key (SoHoaDon) references XuatHang(SoHoaDon)
 );
-
-insert into BaoCaoXuatHang values ('YLCXH0001','H','HAM','MS','TT','',10,12000)
-
-create table NhanVien
-(
-	MaNhanVien varchar(30) primary key,
-	TenNhanVien nvarchar(100),
-	NamSinh int,
-	DiaChi nvarchar(100),
-	SoDienThoai varchar(10)
-);
-
-
-update QuanLyNguyenLieu set SoLuong = SoLuong - 
-(select SoLuong from ChiTietNhapHang where MaNguyenLieu = 'H' and SoHoaDon = 'YLCNH0016') 
-where MaNguyenLieu = 'H'
-
-select * from NguyenLieu where MaNguyenLieu='h';
-
-SELECT * FROM TaiKhoanQuanLy WHERE TaiKhoan ='tuankiet96' and MatKhau='12345'

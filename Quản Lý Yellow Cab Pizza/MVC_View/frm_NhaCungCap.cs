@@ -126,7 +126,7 @@ namespace Quản_Lý_Yellow_Cab_Pizza
                 }
                 else
                 {
-                    MessageBox.Show("Nhà cung cấp chưa được cập nhật");
+                    MessageBox.Show("Mã nhà cung cấp không được sửa");
                 }
             }
         }
