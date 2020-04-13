@@ -17,6 +17,7 @@ namespace Quản_Lý_Yellow_Cab_Pizza.MVC_Model
         public static string str = @"Data Source=localhost\SQLEXPRESS;Initial Catalog=QLYellowCabPizza;Integrated Security=True";
 
         public static DataTable creatTable(string sql)
+            //tạo bảng để load dữ liệu lên datagridview
         {
             con = new SqlConnection(str);
             con.Open();
@@ -28,6 +29,7 @@ namespace Quản_Lý_Yellow_Cab_Pizza.MVC_Model
         }
         public static int executeQuery(string sql)
         {
+            //thực hiện câu truy vấn
             int re = 0;
             try
             {

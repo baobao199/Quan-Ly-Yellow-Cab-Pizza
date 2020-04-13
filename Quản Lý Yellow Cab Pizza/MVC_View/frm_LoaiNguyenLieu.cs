@@ -40,6 +40,7 @@ namespace Quản_Lý_Yellow_Cab_Pizza
         }
 
         private void macDinh()
+            //trở về trạng thái mặc định
         {
             txtMaLoaiNL.Text = "";
             txtTenLoaiNL.Text = "";
